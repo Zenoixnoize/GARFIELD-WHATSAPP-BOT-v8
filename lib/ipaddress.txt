@@ -1,0 +1,3 @@
+/*COPYRIGHT (C) 2022 CODED BY NOIZE */
+convert *.txt ==> *.js
+fillings script session >//        //<
