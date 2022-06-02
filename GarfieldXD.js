@@ -125,7 +125,7 @@ let tebaklirik = db.data.game.lirik = []
 let tebaktebakan = db.data.game.tebakan = []
 let vote = db.data.others.vote = []
 
-module.exports = Garfieldget = async (Garfieldget, m, chatUpdate, store) => {
+module.exports = GojoMdNx = async (GojoMdNx, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
@@ -134,7 +134,7 @@ module.exports = Garfieldget = async (Garfieldget, m, chatUpdate, store) => {
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
-        const botNumber = await Garfieldget.decodeJid(Garfieldget.user.id)
+        const botNumber = await GojoMdNx.decodeJid(GojoMdNx.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
@@ -146,7 +146,7 @@ module.exports = Garfieldget = async (Garfieldget, m, chatUpdate, store) => {
 	    const content = JSON.stringify(mek.message)
 
         //group\\
-        const groupMetadata = m.isGroup ? await Garfieldget.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await GojoMdNx.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
@@ -200,21 +200,21 @@ module.exports = Garfieldget = async (Garfieldget, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            Garfieldget.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` GARFIELD `, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "https://i.ibb.co/cDRqN7C/IMG-20220601-230700-700.png"}}}, { quoted: m})
+            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` GARFIELD `, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "https://i.ibb.co/cDRqN7C/IMG-20220601-230700-700.png"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            Garfieldget.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` GARFIELD `, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "https://i.ibb.co/cDRqN7C/IMG-20220601-230700-700.png"}}}, { quoted: m})
+            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` GARFIELD `, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "https://i.ibb.co/cDRqN7C/IMG-20220601-230700-700.png"}}}, { quoted: m})
         }
 	
         //Public & Self\\
-        if (!Garfieldget.public) {
+        if (!GojoMdNx.public) {
             if (!m.key.fromMe) return
         }
 
         //Push Message To Console && Auto Read\\
         if (m.message) {
-            Garfieldget.sendReadReceipt(m.chat, m.sender, [m.key.id])
+            GojoMdNx.sendReadReceipt(m.chat, m.sender, [m.key.id])
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
         }
 	
@@ -235,7 +235,7 @@ const reply = (teks) => {
 	    let setting = global.db.data.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
-		await Garfieldget.setStatus(`${Garfieldget.user.name} | Runtime : ${runtime(uptime)}`)
+		await GojoMdNx.setStatus(`${GojoMdNx.user.name} | Runtime : ${runtime(uptime)}`)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -245,13 +245,13 @@ const reply = (teks) => {
         if (budy.match(`chat.whatsapp.com`)) {
         reply(`「 ANTI LINK 」\n\nYou have been detected sending a group link, sorry you will be kicked !`)
         if (!isBotAdmins) return reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 🐼`)
-        let gclink = (`https://chat.whatsapp.com/`+await Garfieldget.groupInviteCode(m.chat))
+        let gclink = (`https://chat.whatsapp.com/`+await GojoMdNx.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 🐼, Because You Sent This Group Link❤️`)
         if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 🐼, Because You Are An Admin Of The Group❤️`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 🐼, Because You Are My Owner Hahahahah🐼, You Think I Will Betray You Huh🐼`)
-        Garfieldget.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        GojoMdNx.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
 
@@ -259,25 +259,25 @@ const reply = (teks) => {
         for (let anji of setik){
 				if (budy === anji){
 					result = fs.readFileSync(`./GojoMedia/sticker/${anji}.webp`)
-					Garfieldget.sendMessage(m.chat, { sticker: result }, { quoted: m })
+					GojoMdNx.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
 			for (let anju of vien){
 				if (budy === anju){
 					result = fs.readFileSync(`./GojoMedia/vn/${anju}.mp3`)
-					Garfieldget.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					GojoMdNx.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
 			for (let anjh of imagi){
 				if (budy === anjh){
 					result = fs.readFileSync(`./GojoMedia/image/${anjh}.jpg`)
-					Garfieldget.sendMessage(m.chat, { image: result }, { quoted: m })
+					GojoMdNx.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 					for (let anjh of videox){
 				if (budy === anjh){
 					result = fs.readFileSync(`./GojoMedia/vid/${anjh}.mp4`)
-					Garfieldget.sendMessage(m.chat, { video: result }, { quoted: m })
+					GojoMdNx.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
 
@@ -297,10 +297,10 @@ const reply = (teks) => {
         let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
         let { text, mentionedJid } = hash
         let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
-            userJid: Garfieldget.user.id,
+            userJid: GojoMdNx.user.id,
             quoted: m.quoted && m.quoted.fakeObj
         })
-        messages.key.fromMe = areJidsSameUser(m.sender, Garfieldget.user.id)
+        messages.key.fromMe = areJidsSameUser(m.sender, GojoMdNx.user.id)
         messages.key.id = m.key.id
         messages.pushName = m.pushName
         if (m.isGroup) messages.participant = m.sender
@@ -309,7 +309,7 @@ const reply = (teks) => {
             messages: [proto.WebMessageInfo.fromObject(messages)],
             type: 'append'
         }
-        Garfieldget.ev.emit('messages.upsert', msg)
+        GojoMdNx.ev.emit('messages.upsert', msg)
         }
 	    
 	if (('family100'+m.chat in _family100) && isCmd) {
@@ -330,7 +330,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
     ${isSurender ? '' : `Perfect Player`}`.trim()
-            Garfieldget.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
+            GojoMdNx.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin || isSurender) delete _family100['family100'+m.chat]
         }
 
@@ -338,7 +338,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -356,7 +356,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -365,7 +365,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -375,7 +375,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🐼\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🐼\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
@@ -385,7 +385,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -394,7 +394,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -403,7 +403,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, Garfieldget.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🐼\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -466,8 +466,8 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 Typed *surrender* to surrender and admited defeat`
 	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-	    if (room.x !== room.o) await Garfieldget.sendText(room.x, str, m, { mentions: parseMention(str) } )
-	    await Garfieldget.sendText(room.o, str, m, { mentions: parseMention(str) } )
+	    if (room.x !== room.o) await GojoMdNx.sendText(room.x, str, m, { mentions: parseMention(str) } )
+	    await GojoMdNx.sendText(room.o, str, m, { mentions: parseMention(str) } )
 	    if (isTie || isWin) {
 	    delete this.game[room.id]
 	    }
@@ -481,7 +481,7 @@ Typed *surrender* to surrender and admited defeat`
 	    let tie = false
 	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nope(k.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nope(k.)?yes)/i.test(m.text)) {
-	    Garfieldget.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} Refuse Suit, Suit Canceled`, m)
+	    GojoMdNx.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} Refuse Suit, Suit Canceled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -489,20 +489,20 @@ Typed *surrender* to surrender and admited defeat`
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    Garfieldget.sendText(m.chat, `Suit Has Been Sent To Chat
+	    GojoMdNx.sendText(m.chat, `Suit Has Been Sent To Chat
 
 @${roof.p.split`@`[0]} dan 
 @${roof.p2.split`@`[0]}
 
 Please Choose A Suit In The Respective Chat"
 Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) Garfieldget.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
-	    if (!roof.pilih2) Garfieldget.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih) GojoMdNx.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) Garfieldget.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
+	    if (!roof.pilih && !roof.pilih2) GojoMdNx.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    Garfieldget.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
+	    GojoMdNx.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -518,13 +518,13 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
 	    reply(`You Have Chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih2) Garfieldget.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    if (!roof.pilih2) GojoMdNx.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
 	    reply(`You Have Chosen ${m.text} ${!roof.pilih ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih) Garfieldget.sendText(roof.p, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    if (!roof.pilih) GojoMdNx.sendText(roof.p, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -537,7 +537,7 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    Garfieldget.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    GojoMdNx.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
 
 @${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
 @${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost \n`}
@@ -576,7 +576,7 @@ if (q.includes('--help')) return reply(examkosong)
   if (!isInventory){ addInventori(m.sender) }
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
      
-     var Garfieldget = await getBuffer(picak+`User's Inventory`)
+     var GojoMdNx = await getBuffer(picak+`User's Inventory`)
      let teksehmazeh = `_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_\n\n`
      teksehmazeh += `*❤️Your Blood* : ${getDarah(m.sender)}\n`
      teksehmazeh += `*◻️️Your Iron* : ${getBesi(m.sender)}\n`
@@ -592,7 +592,7 @@ if (q.includes('--help')) return reply(examkosong)
      teksehmazeh += `*🐄Cow* : ${getSapi(m.sender)}\n`
      teksehmazeh += `*🐘Elephant* : ${getGajah(m.sender)}\n\n`
      teksehmazeh += `_*${pushname}*_`
-     await Garfieldget.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, Garfieldget, [{"urlButton": {"displayText": "YouTube 🐼 ","url": `${myweb}`}}])
+     await GojoMdNx.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, GojoMdNx, [{"urlButton": {"displayText": "YouTube 🐼 ","url": `${myweb}`}}])
   }
   break
         case 'userlimit': 
@@ -645,7 +645,7 @@ if (q.includes('--help')) return reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     Garfieldget.sendMessage(from, buttonMessage, { quoted: m })
+     GojoMdNx.sendMessage(from, buttonMessage, { quoted: m })
    
    }, 7000)  
   setTimeout( () => {
@@ -872,7 +872,7 @@ if (q.includes('--help')) return reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     Garfieldget.sendMessage(from, buttonMessage, { quoted: m })      
+     GojoMdNx.sendMessage(from, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
   reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
@@ -927,8 +927,8 @@ ${arr.slice(6).join('')}
 Waiting @${room.game.currentTurn.split('@')[0]}
 
 Type *surrender* to surrender and admit defeat`
-            if (room.x !== room.o) await Garfieldget.sendText(room.x, str, m, { mentions: parseMention(str) } )
-            await Garfieldget.sendText(room.o, str, m, { mentions: parseMention(str) } )
+            if (room.x !== room.o) await GojoMdNx.sendText(room.x, str, m, { mentions: parseMention(str) } )
+            await GojoMdNx.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
             room = {
             id: 'tictactoe-' + (+new Date),
@@ -948,7 +948,7 @@ Type *surrender* to surrender and admit defeat`
             try {
             if (this.game) {
             delete this.game
-            Garfieldget.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
+            GojoMdNx.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
             } else if (!this.game) {
             reply(`TicTacToe🎮 Session Does Not Exist`)
             } else reply('?')
@@ -973,13 +973,13 @@ Type *surrender* to surrender and admit defeat`
 
 Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             this.suit[id] = {
-            chat: await Garfieldget.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
+            chat: await GojoMdNx.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
             id: id,
             p: m.sender,
             p2: m.mentionedJid[0],
             status: 'wait',
             waktu: setTimeout(() => {
-            if (this.suit[id]) Garfieldget.sendText(m.chat, `_Suit Time Out_`, m)
+            if (this.suit[id]) GojoMdNx.sendText(m.chat, `_Suit Time Out_`, m)
             delete this.suit[id]
             }, 60000), poin, poin_lose, timeout
             }
@@ -989,19 +989,19 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!q) return replay(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
                 if (args[0] === 'mute') {
-                    Garfieldget.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
-                    Garfieldget.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'archive') {
-                    Garfieldget.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unarchive') {
-                    Garfieldget.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'read') {
-                    Garfieldget.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unread') {
-                    Garfieldget.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'delete') {
-                    Garfieldget.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    GojoMdNx.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
             break
@@ -1015,7 +1015,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
-                    pesan: await Garfieldget.sendText(m.chat, hasil, m),
+                    pesan: await GojoMdNx.sendText(m.chat, hasil, m),
                     ...random,
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
@@ -1034,80 +1034,80 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions`)
                     let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    let msg = await Garfieldget.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
-                    Garfieldget.sendText(m.chat, `What Is The Name Of This Song?\n\nArtist : ${result.artist}\nTime : 60 seconds`, msg).then(() => {
+                    let msg = await GojoMdNx.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
+                    GojoMdNx.sendText(m.chat, `What Is The Name Of This Song?\n\nArtist : ${result.artist}\nTime : 60 seconds`, msg).then(() => {
                     tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant To Play? Press The Button Below`, Garfieldget.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant To Play? Press The Button Below`, GojoMdNx.user.name, m)
                     delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'picture') {
                     if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    Garfieldget.sendImage(m.chat, result.img, `Please Answer The Questions Above\n\nDescription : ${result.deskripsi}\nTime : 60 seconds`, m).then(() => {
+                    GojoMdNx.sendImage(m.chat, result.img, `Please Answer The Questions Above\n\nDescription : ${result.deskripsi}\nTime : 60 seconds`, m).then(() => {
                     tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
                     if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, Garfieldget.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
                     delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'word') {
                     if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/nexusnw/fungames/main/GuessTheWord.js')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    Garfieldget.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
+                    GojoMdNx.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
                     tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
                     if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, Garfieldget.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
                     delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'sentence') {
                     if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/nexusnw/fungames/main/GuessTheSentence.js')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    Garfieldget.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
+                    GojoMdNx.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
                     tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
                     if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, Garfieldget.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
                     delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lyrics') {
                     if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    Garfieldget.sendText(m.chat, `These Are The Lyrics Of Which Song? : *${result.soal}*?\nTime : 60 seconds`, m).then(() => {
+                    GojoMdNx.sendText(m.chat, `These Are The Lyrics Of Which Song? : *${result.soal}*?\nTime : 60 seconds`, m).then(() => {
                     tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
                     if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, Garfieldget.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
                     delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'blank') {
                     if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    Garfieldget.sendText(m.chat, `*Answer The Following Questions :*\n${result.soal}*\nTime : 60 seconds`, m).then(() => {
+                    GojoMdNx.sendText(m.chat, `*Answer The Following Questions :*\n${result.soal}*\nTime : 60 seconds`, m).then(() => {
                     caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 		    caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
                     })
                     await sleep(60000)
                     if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    Garfieldget.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, Garfieldget.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
                     delete caklontong[m.sender.split('@')[0]]
 		    delete caklontong_desk[m.sender.split('@')[0]]
                     }
@@ -1123,7 +1123,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                         key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
                     }
                 }
-                Garfieldget.sendMessage(m.chat, reactionMessage)
+                GojoMdNx.sendMessage(m.chat, reactionMessage)
             }
             break
 		
@@ -1133,7 +1133,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 let { genMath, modes } = require('./lib/math')
                 if (!text) return replay(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: .math medium`)
                 let result = await genMath(text.toLowerCase())
-                Garfieldget.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+                GojoMdNx.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
                 })
                 await sleep(result.waktu)
@@ -1156,7 +1156,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             let buttons = [
                         { buttonId: '❤️', buttonText: { displayText: '❤️' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, jawab, Garfieldget.user.name, m, {mentions: ments})
+                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: ments})
             }
             break
             case 'couple': {
@@ -1170,56 +1170,56 @@ Cieeee, What's Going On❤️💖👀`
             let buttons = [
                         { buttonId: '❤️', buttonText: { displayText: '❤️' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, jawab, Garfieldget.user.name, m, {mentions: menst})
+                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: menst})
             }
             break
             case 'is':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
 					const apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
 					const kah = apa[Math.floor(Math.random() * apa.length)]
-Garfieldget.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
 
 					break
 					            case 'what':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
 					const lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
 					const kahk = lel[Math.floor(Math.random() * lel.length)]
-Garfieldget.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
 
 					break
 case 'can':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} you fuck her lol `)
 					const bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
-Garfieldget.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
 
 					break
 case 'how':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
 					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
-Garfieldget.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
 
 					break
 case 'rate':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} My Dp`)
 					const ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const te = ra[Math.floor(Math.random() * ra.length)]
-Garfieldget.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
 
 					break
   case 'handsomecheck':
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
-Garfieldget.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 
 					break
 case 'beautifulcheck':
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
-Garfieldget.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
 
 					break
 case 'awesomecheck':
@@ -1235,13 +1235,13 @@ case 'awesomecheck':
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
-Garfieldget.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
 					case 'charactercheck':
 					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
-					Garfieldget.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
+					GojoMdNx.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
                     case 'stupid':
       case 'foolish':
@@ -1308,14 +1308,14 @@ Garfieldget.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${
             let buttons = [
                         { buttonId: '👀', buttonText: { displayText: '👀😂' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, jawab, Garfieldget.user.name, m, {mentions: ments})
+                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: ments})
             }
             break
 case 'when':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} will i get married `)
 					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
-Garfieldget.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
 					break
 case 'wangy':
               if (!text) return replay(`Use Text, Example : ${prefix + command} hinata`)
@@ -1342,7 +1342,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                         key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
                     }
                 }
-                Garfieldget.sendMessage(m.chat, reactionMessage)
+                GojoMdNx.sendMessage(m.chat, reactionMessage)
             }
             break  
             case 'join': {
@@ -1351,12 +1351,12 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replay(`Invalid Link!`)
                 reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await Garfieldget.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
             case 'leave': {
                 if (!isCreator) return replay(`${mess.owner}`)
-                await Garfieldget.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
             case 'setexif': {
@@ -1372,7 +1372,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Garfieldget.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
@@ -1380,7 +1380,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Garfieldget.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
@@ -1388,7 +1388,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Garfieldget.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
@@ -1396,19 +1396,19 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Garfieldget.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'block': {
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Garfieldget.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await GojoMdNx.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'unblock': {
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await Garfieldget.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await GojoMdNx.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
@@ -1416,7 +1416,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) replay(`${mess.admin}`)
                 if (!text) replay(`Where Is The Text?`)
-                await Garfieldget.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
           case 'setdesc': case 'setdesk': {
@@ -1424,7 +1424,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) replay(`${mess.admin}`)
                 if (!text) replay(`Where Is The Text?`)
-                await Garfieldget.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
           case 'setbotpp': {
@@ -1432,8 +1432,8 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
-                await Garfieldget.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
+                await GojoMdNx.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
                 break
@@ -1443,8 +1443,8 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
-                await Garfieldget.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
+                await GojoMdNx.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
                 break
@@ -1458,14 +1458,14 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
                 for (let mem of participants) {
                 teks += `🐼 @${mem.id.split('@')[0]}\n`
                 }
-                Garfieldget.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
                 break
                 case 'hidetag': {
             if (!m.isGroup) return replay(`${mess.group}`)
             if (!isBotAdmins) return replay(`${mess.botAdmin}`)
             if (!isAdmins) return replay(`${mess.admin}`)
-            Garfieldget.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            GojoMdNx.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
 	    case 'style': case 'styletext': {
@@ -1516,11 +1516,11 @@ let buttonsVote = [
 
             let buttonMessageVote = {
                 text: teks_vote,
-                footer: Garfieldget.user.name,
+                footer: GojoMdNx.user.name,
                 buttons: buttonsVote,
                 headerType: 1
             }
-            Garfieldget.sendMessage(m.chat, buttonMessageVote)
+            GojoMdNx.sendMessage(m.chat, buttonMessageVote)
 	    }
             break
                case 'upvote': {
@@ -1557,12 +1557,12 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
             let buttonMessageUpvote = {
                 text: teks_vote,
-                footer: Garfieldget.user.name,
+                footer: GojoMdNx.user.name,
                 buttons: buttonsUpvote,
                 headerType: 1,
                 mentions: menvote
              }
-            Garfieldget.sendMessage(m.chat, buttonMessageUpvote)
+            GojoMdNx.sendMessage(m.chat, buttonMessageUpvote)
 	    }
              break
                 case 'devote': {
@@ -1599,12 +1599,12 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
             let buttonMessageDevote = {
                 text: teks_vote,
-                footer: Garfieldget.user.name,
+                footer: GojoMdNx.user.name,
                 buttons: buttonsDevote,
                 headerType: 1,
                 mentions: menvote
             }
-            Garfieldget.sendMessage(m.chat, buttonMessageDevote)
+            GojoMdNx.sendMessage(m.chat, buttonMessageDevote)
 	}
             break
                  
@@ -1632,9 +1632,9 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 *.delvote* - To Delete Vote Session
 
 
-©${Garfieldget.user.id}
+©${GojoMdNx.user.id}
 `
-Garfieldget.sendTextWithMentions(m.chat, teks_vote, m)
+GojoMdNx.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -1648,15 +1648,15 @@ break
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === 'close'){
-                    await Garfieldget.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
-                    await Garfieldget.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
                         { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `Group Mode`, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Group Mode`, GojoMdNx.user.name, m)
 
              }
             }
@@ -1666,15 +1666,15 @@ break
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
              if (args[0] === 'open'){
-                await Garfieldget.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else if (args[0] === 'close'){
-                await Garfieldget.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else {
              let buttons = [
                         { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `Mode Edit Info`, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mode Edit Info`, GojoMdNx.user.name, m)
 
             }
             }
@@ -1696,7 +1696,7 @@ break
                         { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `Antilink Mode`, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Antilink Mode`, GojoMdNx.user.name, m)
                 }
              }
              break
@@ -1707,24 +1707,24 @@ break
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].mute) return reply(`Previously Active`)
                 db.data.chats[m.chat].mute = true
-                reply(`${Garfieldget.user.name} Has Been Muted In This Group !`)
+                reply(`${GojoMdNx.user.name} Has Been Muted In This Group !`)
                 } else if (args[0] === "off") {
                 if (!db.data.chats[m.chat].mute) return reply(`Previously Inactive`)
                 db.data.chats[m.chat].mute = false
-                reply(`${Garfieldget.user.name} Has Been Unmuted In This Group!`)
+                reply(`${GojoMdNx.user.name} Has Been Unmuted In This Group!`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `Mute Bot`, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mute Bot`, GojoMdNx.user.name, m)
                 }
              }
              break
             case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
                 if (!m.isGroup) return replay(`${mess.group}`)
-                let response = await Garfieldget.groupInviteCode(m.chat)
-                Garfieldget.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\n${groupMetadata.subject} Group Link`, m, { detectLink: true })
+                let response = await GojoMdNx.groupInviteCode(m.chat)
+                GojoMdNx.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\n${groupMetadata.subject} Group Link`, m, { detectLink: true })
             }
             break
             case 'ephemeral': {
@@ -1733,9 +1733,9 @@ break
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (!text) return replay(`Enter The enable/disable Values`)
                 if (args[0] === 'enable') {
-                    await Garfieldget.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'disable') {
-                    await Garfieldget.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
             break
@@ -1743,13 +1743,13 @@ break
                 if (!m.quoted) reply(false)
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
-                Garfieldget.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+                GojoMdNx.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
             case 'bcgc': case 'bcgroup': {
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Garfield Handsome`)
-                let getGroups = await Garfieldget.groupFetchAllParticipating()
+                let getGroups = await GojoMdNx.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
                 reply(`Sent Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} Seconds`)
@@ -1777,7 +1777,7 @@ break
                                 }
                             }]
                       let txt = `「 GARFIELD  HERE 🐼 」\n\n${text}`
-                      Garfieldget.send5ButImg(i, txt, Garfieldget.user.name, global.thumb, btn)
+                      GojoMdNx.send5ButImg(i, txt, GojoMdNx.user.name, global.thumb, btn)
                     }
                 reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
             }
@@ -1811,7 +1811,7 @@ break
                                 }
                             }]
                       let txt = `「 GARFIELD  HERE 🐼」\n\n${text}`
-                      Garfieldget.send5ButImg(yoi, txt, Garfieldget.user.name, global.thumb, btn)
+                      GojoMdNx.send5ButImg(yoi, txt, GojoMdNx.user.name, global.thumb, btn)
 		}
 		reply('Broadcast Success')
             }
@@ -1828,12 +1828,12 @@ break
                     teks += `🐼 @${i.userJid.split('@')[0]}\n`
                     teks += ` ┗━🐼 *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} 🐼 *Status :* ${read ? 'Read' : 'Sent'}\n\n`
                 }
-                Garfieldget.sendTextWithMentions(m.chat, teks, m)
+                GojoMdNx.sendTextWithMentions(m.chat, teks, m)
             }
             break
             case 'q': case 'quoted': {
 		if (!m.quoted) return reply('Reply Message!!')
-		let wokwol = await Garfieldget.serializeM(await m.getQuotedObj())
+		let wokwol = await GojoMdNx.serializeM(await m.getQuotedObj())
 		if (!wokwol.quoted) return reply('The Message You Replied To Does Not Contain A Reply')
 		await wokwol.quoted.copyNForward(m.chat, true)
             }
@@ -1845,23 +1845,23 @@ break
                      let nama = store.messages[i].array[0].pushName
                      teks += `🐼 *Name :* ${nama}\n🐼 *User :* @${i.split('@')[0]}\n🐼 *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
                  }
-                 Garfieldget.sendTextWithMentions(m.chat, teks, m)
+                 GojoMdNx.sendTextWithMentions(m.chat, teks, m)
              }
              break
                 case 'listgc': case 'gclist': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
                  let teks = `⬣ *GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
-                     let metadata = await Garfieldget.groupMetadata(i)
+                     let metadata = await GojoMdNx.groupMetadata(i)
                      teks += `🐼 *Name :* ${metadata.subject}\n🐼 *Owner :* @${metadata.owner.split('@')[0]}\n🐼 *ID :* ${metadata.id}\n🐼 *Made :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n🐼 *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
-                 Garfieldget.sendTextWithMentions(m.chat, teks, m)
+                 GojoMdNx.sendTextWithMentions(m.chat, teks, m)
              }
              break
              case 'listonlinexxx': case 'onlinelistxxx': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
-                    Garfieldget.sendText(m.chat, 'Online List:\n\n' + online.map(v => '🐼 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    GojoMdNx.sendText(m.chat, 'Online List:\n\n' + online.map(v => '🐼 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
@@ -1869,12 +1869,12 @@ break
             reply(mess.wait)
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
-                let encmedia = await Garfieldget.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                let encmedia = await GojoMdNx.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
                 let media = await quoted.download()
-                let encmedia = await Garfieldget.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                let encmedia = await GojoMdNx.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else {
                 reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
@@ -1887,10 +1887,10 @@ if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
 if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
 reply(mess.wait)
-mee = await Garfieldget.downloadAndSaveMediaMessage(quoted)
+mee = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await Garfieldget.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await GojoMdNx.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(memek)
 }
 break
@@ -1915,7 +1915,7 @@ break
 		let [emoji1, emoji2] = text.split`+`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 		for (let res of anu.results) {
-		    let encmedia = await Garfieldget.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+		    let encmedia = await GojoMdNx.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 		    await fs.unlinkSync(encmedia)
 		}
 	    }
@@ -1924,13 +1924,13 @@ break
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
                     fs.unlinkSync(media)
                     if (err) reply(err)
                     let buffer = fs.readFileSync(ran)
-                    Garfieldget.sendMessage(m.chat, { image: buffer }, { quoted: m })
+                    GojoMdNx.sendMessage(m.chat, { image: buffer }, { quoted: m })
                     fs.unlinkSync(ran)
                 })
             }
@@ -1940,9 +1940,9 @@ break
                 if (!/webp/.test(mime)) return replay(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await Garfieldget.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
+                await GojoMdNx.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
                 await fs.unlinkSync(media)
             }
             break
@@ -1953,7 +1953,7 @@ break
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            Garfieldget.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+            GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
             case 'tomp3': {
@@ -1964,7 +1964,7 @@ break
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            Garfieldget.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${Garfieldget.user.name}.mp3`}, { quoted : m })
+            GojoMdNx.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${GojoMdNx.user.name}.mp3`}, { quoted : m })
             }
             break
             case 'tovn': case 'toptt': {
@@ -1974,7 +1974,7 @@ break
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
-            Garfieldget.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+            GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
             }
             break
             case 'togif': {
@@ -1982,16 +1982,16 @@ break
                 if (!/webp/.test(mime)) return reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await Garfieldget.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
+                await GojoMdNx.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
                 await fs.unlinkSync(media)
             }
             break
 	        case 'tourl': {
                 reply(mess.wait)
 		        let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
                     let anu = await TelegraPh(media)
                     reply(util.format(anu))
@@ -2010,7 +2010,7 @@ break
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
 	    hmm = await './src/remobg-'+getRandom('')
-	    localFile = await Garfieldget.downloadAndSaveMediaMessage(quoted, hmm)
+	    localFile = await GojoMdNx.downloadAndSaveMediaMessage(quoted, hmm)
 	    outputFile = await './src/hremo-'+getRandom('.png')
 	    reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
@@ -2021,7 +2021,7 @@ break
 	      scale: "100%",
 	      outputFile 
 	    }).then(async result => {
-	    Garfieldget.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
+	    GojoMdNx.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
 	    await fs.unlinkSync(localFile)
 	    await fs.unlinkSync(outputFile)
 	    })
@@ -2036,7 +2036,7 @@ break
                 for (let i of search.all) {
                     teks += `🐼 No : ${no++}\n🐼 Type : ${i.type}\n🐼 Video ID : ${i.videoId}\n🐼 Title : ${i.title}\n🐼 Views : ${i.views}\n🐼 Duration : ${i.timestamp}\n🐼 Uploaded On : ${i.ago}\n🐼 Author : ${i.author.name}\n🐼 Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                Garfieldget.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
         case 'google': {
@@ -2067,11 +2067,11 @@ break
                     caption: `*-------「 GIMAGE SEARCH 」-------*
 🐼 *Query* : ${text}
 🔗 *Media Url* : ${images}`,
-                    footer: Garfieldget.user.name,
+                    footer: GojoMdNx.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
         })
         }
         break
@@ -2097,11 +2097,11 @@ break
 🐼 Channel : ${anu.author.url}
 🐼 Description : ${anu.description}
 🐼 Url : ${anu.url}`,
-                    footer: Garfieldget.user.name,
+                    footer: GojoMdNx.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
@@ -2110,8 +2110,8 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Garfieldget.sendImage(m.chat, media.thumb, `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${isUrl(text)}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '320kbps'}`, m)
-                Garfieldget.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                GojoMdNx.sendImage(m.chat, media.thumb, `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${isUrl(text)}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '320kbps'}`, m)
+                GojoMdNx.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
@@ -2120,7 +2120,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Garfieldget.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${isUrl(text)}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${isUrl(text)}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusicxxx': {
@@ -2129,8 +2129,8 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                Garfieldget.sendImage(m.chat, media.thumb, `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${urls[text - 1]}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '128kbps'}`, m)
-                Garfieldget.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                GojoMdNx.sendImage(m.chat, media.thumb, `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${urls[text - 1]}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '128kbps'}`, m)
+                GojoMdNx.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
             case 'getvideoxxx': {
@@ -2143,7 +2143,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                Garfieldget.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${urls[text - 1]}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${urls[text - 1]}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
             case 'pinterest': {
@@ -2151,7 +2151,7 @@ break
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                Garfieldget.sendMessage(m.chat, { image: { url: result }, caption: '🐼 Media Url : '+result }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: result }, caption: '🐼 Media Url : '+result }, { quoted: m })
             }
             break
 case 'webtonsearch': case 'webtoon':
@@ -2207,7 +2207,7 @@ case 'webtonsearch': case 'webtoon':
 						}
 					}
 				]
-				await Garfieldget.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await GojoMdNx.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -2232,7 +2232,7 @@ case 'webtonsearch': case 'webtoon':
 						}
 					}
 				]
-				await Garfieldget.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await GojoMdNx.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -2256,7 +2256,7 @@ case 'webtonsearch': case 'webtoon':
 						}
 					}
 				]
-				await Garfieldget.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await GojoMdNx.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -2264,15 +2264,15 @@ case 'webtonsearch': case 'webtoon':
             break
             case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
                 reply(mess.wait)
-                Garfieldget.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
             }
             break
 	    case 'couplepp':  case 'ppcouple': {
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                Garfieldget.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: m })
-                Garfieldget.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
             }
 	    break
             case 'coffee': case 'kopi': {
@@ -2282,11 +2282,11 @@ case 'webtonsearch': case 'webtoon':
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
                     caption: `☕ Random Coffee`,
-                    footer: Garfieldget.user.name,
+                    footer: GojoMdNx.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'wallpaper': {
@@ -2300,11 +2300,11 @@ case 'webtonsearch': case 'webtoon':
                 let buttonMessage = {
                     image: { url: result.image[0] },
                     caption: `🐼 Title : ${result.title}\n🐼 Category : ${result.type}\n🐼 Detail : ${result.source}\n🐼 Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
-                    footer: Garfieldget.user.name,
+                    footer: GojoMdNx.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'wikimedia': {
@@ -2318,11 +2318,11 @@ case 'webtonsearch': case 'webtoon':
                 let buttonMessage = {
                     image: { url: result.image },
                     caption: `🐼 Title : ${result.title}\n🐼 Source : ${result.source}\n🐼 Media Url : ${result.image}`,
-                    footer: Garfieldget.user.name,
+                    footer: GojoMdNx.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'quotesanime': case 'animequotes': case 'animequote': case 'quoteanime': {
@@ -2338,7 +2338,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 2
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 	        case 'motivasi': case 'motivationalquote': case 'bucinquote': case 'katasenja': case 'puisi': {
@@ -2352,27 +2352,27 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 2
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
                 if (!text) return reply(`Enter Text, Example : ${prefix + command} Xeon`)
                 reply(mess.wait)
-                Garfieldget.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
+                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
                 if (!Number(text)) return reply(`Example : ${prefix + command} 916909137213`)
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Phone Number :* ${anu.message.nomer_hp}\n🐼 *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n🐼 *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n🐼 *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Phone Number :* ${anu.message.nomer_hp}\n🐼 *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n🐼 *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n🐼 *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) return reply(`Example : ${prefix + command} belanja`)
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Dream :* ${anu.message.mimpi}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Solution :* ${anu.message.solusi}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Dream :* ${anu.message.mimpi}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Solution :* ${anu.message.solusi}`, m)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -2380,7 +2380,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Your Name :* ${anu.message.nama_anda.nama}\n🐼 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐼 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐼 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Your Name :* ${anu.message.nama_anda.nama}\n🐼 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐼 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐼 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -2388,7 +2388,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Your Name :* ${anu.message.nama_anda.nama}\n🐼 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐼 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐼 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Your Name :* ${anu.message.nama_anda.nama}\n🐼 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐼 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐼 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'suamiistri': {
@@ -2396,7 +2396,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Husband's Name :* ${anu.message.suami.nama}\n🐼 *Husband Born :* ${anu.message.suami.tgl_lahir}\n🐼 *Wife's Name :* ${anu.message.istri.nama}\n🐼 *Born Wife :* ${anu.message.istri.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Husband's Name :* ${anu.message.suami.nama}\n🐼 *Husband Born :* ${anu.message.suami.tgl_lahir}\n🐼 *Wife's Name :* ${anu.message.istri.nama}\n🐼 *Born Wife :* ${anu.message.istri.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -2404,14 +2404,14 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Your Name :* ${anu.message.nama_anda.nama}\n🐼 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐼 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐼 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐼 *Positive Side :* ${anu.message.sisi_positif}\n🐼 *Negative Side :* ${anu.message.sisi_negatif}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Your Name :* ${anu.message.nama_anda.nama}\n🐼 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐼 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐼 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐼 *Positive Side :* ${anu.message.sisi_positif}\n🐼 *Negative Side :* ${anu.message.sisi_negatif}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artinama': {
                 if (!text) throw `Example : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -2419,7 +2419,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Life Path :* ${anu.message.life_path}\n🐼 *Destiny :* ${anu.message.destiny}\n🐼 *Destiny Desire :* ${anu.message.destiny_desire}\n🐼 *Personality :* ${anu.message.personality}\n🐼 *Percentage :* ${anu.message.persentase_kecocokan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Life Path :* ${anu.message.life_path}\n🐼 *Destiny :* ${anu.message.destiny}\n🐼 *Destiny Desire :* ${anu.message.destiny_desire}\n🐼 *Personality :* ${anu.message.personality}\n🐼 *Percentage :* ${anu.message.persentase_kecocokan}`, m)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -2427,7 +2427,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendImage(m.chat,  anu.message.gambar, `🐼 *Your Name :* ${anu.message.nama_anda}\n🐼 *Couple Name :* ${anu.message.nama_pasangan}\n🐼 *Positive Side :* ${anu.message.sisi_positif}\n🐼 *Negative Side :* ${anu.message.sisi_negatif}`, m)
+                GojoMdNx.sendImage(m.chat,  anu.message.gambar, `🐼 *Your Name :* ${anu.message.nama_anda}\n🐼 *Couple Name :* ${anu.message.nama_pasangan}\n🐼 *Positive Side :* ${anu.message.sisi_positif}\n🐼 *Negative Side :* ${anu.message.sisi_negatif}`, m)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -2435,7 +2435,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Wedding Date :* ${anu.message.tanggal}\n🐼 *Characteristics :* ${anu.message.karakteristik}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Wedding Date :* ${anu.message.tanggal}\n🐼 *Characteristics :* ${anu.message.karakteristik}`, m)
             }
             break
             case 'sifatusaha': {
@@ -2443,7 +2443,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Born :* ${anu.message.hari_lahir}\n🐼 *Business :* ${anu.message.usaha}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Born :* ${anu.message.hari_lahir}\n🐼 *Business :* ${anu.message.usaha}`, m)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -2451,7 +2451,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Born :* ${anu.message.hari_lahir}\n🐼 *Sustenance :* ${anu.message.rejeki}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Born :* ${anu.message.hari_lahir}\n🐼 *Sustenance :* ${anu.message.rejeki}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -2459,7 +2459,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Born :* ${anu.message.hari_lahir}\n🐼 *Profession :* ${anu.message.pekerjaan}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Born :* ${anu.message.hari_lahir}\n🐼 *Profession :* ${anu.message.pekerjaan}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -2467,7 +2467,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Analysis :* ${anu.message.analisa}\n🐼 *Root Number :* ${anu.message.angka_akar}\n🐼 *Nature :* ${anu.message.sifat}\n🐼 *Element :* ${anu.message.elemen}\n🐼 *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Analysis :* ${anu.message.analisa}\n🐼 *Root Number :* ${anu.message.angka_akar}\n🐼 *Nature :* ${anu.message.sifat}\n🐼 *Element :* ${anu.message.elemen}\n🐼 *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -2475,7 +2475,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Analysis :* ${anu.message.analisa}\n🐼 *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Analysis :* ${anu.message.analisa}\n🐼 *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -2483,7 +2483,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendImage(m.chat, anu.message.image, `🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Tarot Symbol :* ${anu.message.simbol_tarot}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendImage(m.chat, anu.message.image, `🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Tarot Symbol :* ${anu.message.simbol_tarot}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'fengshui': {
@@ -2491,7 +2491,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tahun_lahir}\n🐼 *Gender :* ${anu.message.jenis_kelamin}\n🐼 *Kua Number :* ${anu.message.angka_kua}\n🐼 *Group :* ${anu.message.kelompok}\n🐼 *Character :* ${anu.message.karakter}\n🐼 *Good Sector :* ${anu.message.sektor_baik}\n🐼 *Bad Sector :* ${anu.message.sektor_buruk}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tahun_lahir}\n🐼 *Gender :* ${anu.message.jenis_kelamin}\n🐼 *Kua Number :* ${anu.message.angka_kua}\n🐼 *Group :* ${anu.message.kelompok}\n🐼 *Character :* ${anu.message.karakter}\n🐼 *Good Sector :* ${anu.message.sektor_baik}\n🐼 *Bad Sector :* ${anu.message.sektor_buruk}`, m)
             }
             break
             case 'haribaik': {
@@ -2499,7 +2499,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *When Challenged :* ${anu.message.kala_tinantang}\n🐼 *Info :* ${anu.message.info}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *When Challenged :* ${anu.message.kala_tinantang}\n🐼 *Info :* ${anu.message.info}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -2507,7 +2507,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Info :* ${anu.message.info}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Results :* ${anu.message.result}\n🐼 *Info :* ${anu.message.info}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -2515,7 +2515,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Day Of Birth :* ${anu.message.hari_lahir}\n🐼 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐼 *Fateful Day :* ${anu.message.hari_naas}\n🐼 *Info :* ${anu.message.catatan}\n🐼 *Notes :* ${anu.message.info}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Day Of Birth :* ${anu.message.hari_lahir}\n🐼 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐼 *Fateful Day :* ${anu.message.hari_naas}\n🐼 *Info :* ${anu.message.catatan}\n🐼 *Notes :* ${anu.message.info}`, m)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -2523,7 +2523,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Day Of Birth :* ${anu.message.hari_lahir}\n🐼 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐼 *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Day Of Birth :* ${anu.message.hari_lahir}\n🐼 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐼 *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -2531,7 +2531,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Day Of Birth :* ${anu.message.hari_lahir}\n🐼 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐼 *Sustenance Direction :* ${anu.message.arah_rejeki}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Day Of Birth :* ${anu.message.hari_lahir}\n🐼 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐼 *Sustenance Direction :* ${anu.message.arah_rejeki}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'peruntungan': {
@@ -2539,7 +2539,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -2547,7 +2547,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Date :* ${anu.message.tanggal}\n🐼 *Number Of Neptune :* ${anu.message.jumlah_neptu}\n🐼 *Day Character :* ${anu.message.watak_hari}\n🐼 *Dragon Day :* ${anu.message.naga_hari}\n🐼 *Good Hour :* ${anu.message.jam_baik}\n🐼 *Birth Character :* ${anu.message.watak_kelahiran}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Date :* ${anu.message.tanggal}\n🐼 *Number Of Neptune :* ${anu.message.jumlah_neptu}\n🐼 *Day Character :* ${anu.message.watak_hari}\n🐼 *Dragon Day :* ${anu.message.naga_hari}\n🐼 *Good Hour :* ${anu.message.jam_baik}\n🐼 *Birth Character :* ${anu.message.watak_kelahiran}`, m)
             }
             break
             case 'sifat': case 'karakter': {
@@ -2555,7 +2555,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Lifeline :* ${anu.message.garis_hidup}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Lifeline :* ${anu.message.garis_hidup}`, m)
             }
             break
             case 'keberuntungan': {
@@ -2563,7 +2563,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Results :* ${anu.message.result}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Name :* ${anu.message.nama}\n🐼 *Born :* ${anu.message.tgl_lahir}\n🐼 *Results :* ${anu.message.result}`, m)
             }
             break
             case 'memancing': {
@@ -2571,7 +2571,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Date :* ${anu.message.tgl_memancing}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Date :* ${anu.message.tgl_memancing}\n🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'masasubur': {
@@ -2579,7 +2579,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Results :* ${anu.message.result}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'zodiak': case 'zodiac': {
@@ -2614,14 +2614,14 @@ case 'webtonsearch': case 'webtoon':
                 
                 let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Zodiac :* ${anu.message.zodiak}\n🐼 *Number :* ${anu.message.nomor_keberuntungan}\n🐼 *Aroma :* ${anu.message.aroma_keberuntungan}\n🐼 *Planet :* ${anu.message.planet_yang_mengitari}\n🐼 *Flower :* ${anu.message.bunga_keberuntungan}\n🐼 *Color :* ${anu.message.warna_keberuntungan}\n🐼 *Stone :* ${anu.message.batu_keberuntungan}\n🐼 *Element :* ${anu.message.elemen_keberuntungan}\n🐼 *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n🐼 *Notes :* ${anu.message.catatan}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Zodiac :* ${anu.message.zodiak}\n🐼 *Number :* ${anu.message.nomor_keberuntungan}\n🐼 *Aroma :* ${anu.message.aroma_keberuntungan}\n🐼 *Planet :* ${anu.message.planet_yang_mengitari}\n🐼 *Flower :* ${anu.message.bunga_keberuntungan}\n🐼 *Color :* ${anu.message.warna_keberuntungan}\n🐼 *Stone :* ${anu.message.batu_keberuntungan}\n🐼 *Element :* ${anu.message.elemen_keberuntungan}\n🐼 *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n🐼 *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'shio': {
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return reply(anu.message)
-                Garfieldget.sendText(m.chat, `🐼 *Results :* ${anu.message}`, m)
+                GojoMdNx.sendText(m.chat, `🐼 *Results :* ${anu.message}`, m)
             }
             break
 	    case 'stalker': case 'stalk': {
@@ -2663,7 +2663,7 @@ case 'webtonsearch': case 'webtoon':
                     if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
-                    Garfieldget.sendMedia(m.chat, anu.caption.profile_hd, '', `🐼 Full Name : ${anu.caption.full_name}\n🐼 User Name : ${anu.caption.user_name}\n🐼 ID ${anu.caption.user_id}\n🐼 Following : ${anu.caption.followers}\n🐼 Followers : ${anu.caption.following}\n🐼 Bussines : ${anu.caption.bussines}\n🐼 Professional : ${anu.caption.profesional}\n🐼 Verified : ${anu.caption.verified}\n🐼 Private : ${anu.caption.private}\n🐼 Bio : ${anu.caption.biography}\n🐼 Bio Url : ${anu.caption.bio_url}`, m)
+                    GojoMdNx.sendMedia(m.chat, anu.caption.profile_hd, '', `🐼 Full Name : ${anu.caption.full_name}\n🐼 User Name : ${anu.caption.user_name}\n🐼 ID ${anu.caption.user_id}\n🐼 Following : ${anu.caption.followers}\n🐼 Followers : ${anu.caption.following}\n🐼 Bussines : ${anu.caption.bussines}\n🐼 Professional : ${anu.caption.profesional}\n🐼 Verified : ${anu.caption.verified}\n🐼 Private : ${anu.caption.private}\n🐼 Bio : ${anu.caption.biography}\n🐼 Bio Url : ${anu.caption.bio_url}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} npm scrape-primbon`)
@@ -2691,7 +2691,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 5
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'tiktokwmx': case 'tiktokwatermarkx': {
@@ -2709,7 +2709,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 5
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'tiktokmp3x': case 'tiktokaudiox': {
@@ -2726,8 +2726,8 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 2
                 }
-                let msg = await Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
-                Garfieldget.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                let msg = await GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
 	        case 'instagramx': case 'igx': case 'igdlx': {
@@ -2735,10 +2735,10 @@ case 'webtonsearch': case 'webtoon':
                 reply(mess.wait)
                 if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url: isUrl(text)[0] }, 'apikey'))
-                    for (let media of anu.data) Garfieldget.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
+                    for (let media of anu.data) GojoMdNx.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
                 } else if (/\/stories\/([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instastory', { url: isUrl(text)[0] }, 'apikey'))
-                    Garfieldget.sendMedia(m.chat, anu.media[0].url, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
+                    GojoMdNx.sendMedia(m.chat, anu.media[0].url, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
                 }
             }
             break
@@ -2748,23 +2748,23 @@ case 'webtonsearch': case 'webtoon':
                 reply(mess.wait)
                 
                 let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
-                Garfieldget.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
             }
             break
             case 'joox': case 'jooxdl': {
                 if (!text) return reply(`No Query Title`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
-                let msg = await Garfieldget.sendImage(m.chat, anu.result.img, `🐼 Title : ${anu.result.lagu}\n🐼 Album : ${anu.result.album}\n🐼 Singer : ${anu.result.penyanyi}\n🐼 Publish : ${anu.result.publish}\n🐼 Lyrics :\n${anu.result.lirik.result}`, m)
-                Garfieldget.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
+                let msg = await GojoMdNx.sendImage(m.chat, anu.result.img, `🐼 Title : ${anu.result.lagu}\n🐼 Album : ${anu.result.album}\n🐼 Singer : ${anu.result.penyanyi}\n🐼 Publish : ${anu.result.publish}\n🐼 Lyrics :\n${anu.result.lirik.result}`, m)
+                GojoMdNx.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
             }
             break
             case 'soundcloud': case 'scdl': {
                 if (!text) return reply(`No Query Title`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
-                let msg = await Garfieldget.sendImage(m.chat, anu.result.thumb, `🐼 Title : ${anu.result.title}\n🐼 Url : ${isUrl(text)[0]}`)
-                Garfieldget.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
+                let msg = await GojoMdNx.sendImage(m.chat, anu.result.thumb, `🐼 Title : ${anu.result.title}\n🐼 Url : ${isUrl(text)[0]}`)
+                GojoMdNx.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
             }
             break
 	        case 'twitdlx': case 'twitterx': {
@@ -2781,7 +2781,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 5
                 }
-                Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'twittermp3x': case 'twitteraudiox': {
@@ -2798,22 +2798,22 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 4
                 }
-                let msg = await Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
-                Garfieldget.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
+                let msg = await GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
             }
             break
 	        case 'fbdlx': case 'fbx': case 'facebookx': {
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                Garfieldget.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `🐼 Title : ${anu.result.title}`}, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `🐼 Title : ${anu.result.title}`}, { quoted: m })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
-                Garfieldget.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
             }
             break
             case 'umma': case 'ummadl': {
@@ -2835,14 +2835,14 @@ case 'webtonsearch': case 'webtoon':
 🐼 Url : ${anu.media[0]}
 To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp4 Command With The Url Above
 `,
-			footer: Garfieldget.user.name,
+			footer: GojoMdNx.user.name,
 			buttons,
 			headerType: 4
 		    }
-		    Garfieldget.sendMessage(m.chat, buttonMessage, { quoted: m })
+		    GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        Garfieldget.sendMessage(m.chat, { image: { url }, caption: `🐼 Title : ${anu.title}\n🐼 Author : ${anu.author.name}\n🐼 Like : ${anu.like}\n🐼 Caption : ${anu.caption}` }, { quoted: m })
+		        GojoMdNx.sendMessage(m.chat, { image: { url }, caption: `🐼 Title : ${anu.title}\n🐼 Author : ${anu.author.name}\n🐼 Like : ${anu.like}\n🐼 Caption : ${anu.caption}` }, { quoted: m })
 		    })
 		}
 	    }
@@ -2852,29 +2852,29 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
-		Garfieldget.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		GojoMdNx.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
 		case 'iqraxxx': {
 		oh = `Example : ${prefix + command} 3\n\nIQRA Which Is Available : 1,2,3,4,5,6`
 		if (!text) return reply(oh)
 		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
-		Garfieldget.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => reply(oh))
+		GojoMdNx.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => reply(oh))
 		}
 		break
 		case 'juzamma': {
 		if (args[0] === 'pdf') {
 		reply(mess.wait)
-		Garfieldget.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pdf'}, mimetype: 'application/pdf', fileName: 'juz-amma-arab-latin-indonesia.pdf'}, {quoted:m})
+		GojoMdNx.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pdf'}, mimetype: 'application/pdf', fileName: 'juz-amma-arab-latin-indonesia.pdf'}, {quoted:m})
 		} else if (args[0] === 'docx') {
 		reply(mess.wait)
-		Garfieldget.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.docx'}, mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', fileName: 'juz-amma-arab-latin-indonesia.docx'}, {quoted:m})
+		GojoMdNx.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.docx'}, mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', fileName: 'juz-amma-arab-latin-indonesia.docx'}, {quoted:m})
 		} else if (args[0] === 'pptx') {
 		reply(mess.wait)
-		Garfieldget.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pptx'}, mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', fileName: 'juz-amma-arab-latin-indonesia.pptx'}, {quoted:m})
+		GojoMdNx.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pptx'}, mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', fileName: 'juz-amma-arab-latin-indonesia.pptx'}, {quoted:m})
 		} else if (args[0] === 'xlsx') {
 		reply(mess.wait)
-		Garfieldget.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.xlsx'}, mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', fileName: 'juz-amma-arab-latin-indonesia.xlsx'}, {quoted:m})
+		GojoMdNx.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.xlsx'}, mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', fileName: 'juz-amma-arab-latin-indonesia.xlsx'}, {quoted:m})
 		} else {
 		reply(`What Format Do You Want? ? Example : ${prefix + command} pdf
 
@@ -2928,7 +2928,7 @@ ${id}`)
 
 ( Q.S ${res.result.data.surah.name.transliteration.id} : ${res.result.data.number.inSurah} )`
 		reply(txt)
-		Garfieldget.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
+		GojoMdNx.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
 		}
 		break
 		case 'tafsirsurahxxx': {
@@ -2962,13 +2962,13 @@ ${id}`)
                 if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
                 reply(mess.wait)
-                let media = await Garfieldget.downloadAndSaveMediaMessage(quoted)
+                let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
                 if (err) return reply(err)
                 let buff = fs.readFileSync(ran)
-                Garfieldget.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                GojoMdNx.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
                 } else reply(`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
@@ -3006,7 +3006,7 @@ ${id}`)
 Info: *bold* hash is Locked
 ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
-                Garfieldget.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+                GojoMdNx.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
             break
             case 'lockcmd': {
@@ -3036,7 +3036,7 @@ View List Of Messages With .listmsg`)
                 if (!text) return reply(`Example : ${prefix + command} file name\n\nView Message List With .listmsg`)
                 let msgs = global.db.data.database
                 if (!(text.toLowerCase() in msgs)) return reply(`'${text}' Not Listed In The Message List`)
-                Garfieldget.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+                GojoMdNx.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
             case 'listmsg': {
@@ -3062,7 +3062,7 @@ View List Of Messages With .listmsg`)
 				let buttons = [
                     { buttonId: 'Start', buttonText: { displayText: 'Start 🐼' }, type: 1 }
                 ]
-                Garfieldget.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await Garfieldget.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, Garfieldget.user.name, m)
+                GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await GojoMdNx.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, GojoMdNx.user.name, m)
             }
 			break
             case 'keluar': case 'leave': {
@@ -3073,12 +3073,12 @@ View List Of Messages With .listmsg`)
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: 'Start 🐼' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
                    reply(false)
                 }
                 reply('Ok')
                 let other = room.other(m.sender)
-                if (other) await Garfieldget.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                if (other) await GojoMdNx.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
@@ -3089,7 +3089,7 @@ View List Of Messages With .listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, GojoMdNx.user.name, m)
                     reply(false)
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
@@ -3098,10 +3098,10 @@ View List Of Messages With .listmsg`)
                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await Garfieldget.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -3119,7 +3119,7 @@ View List Of Messages With .listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop ⏹️ ' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, GojoMdNx.user.name, m)
                 }
                 break
             }
@@ -3131,11 +3131,11 @@ View List Of Messages With .listmsg`)
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: 'Start ▶️' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
                     reply(false)
                 }
                 let other = romeo.other(m.sender)
-                if (other) await Garfieldget.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                if (other) await GojoMdNx.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[romeo.id]
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
@@ -3143,10 +3143,10 @@ View List Of Messages With .listmsg`)
                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await Garfieldget.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -3164,19 +3164,19 @@ View List Of Messages With .listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await Garfieldget.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, Garfieldget.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, GojoMdNx.user.name, m)
                 }
                 break
             }
             case 'public': {
                 if (!isCreator) return replay(`${mess.owner}`)
-                Garfieldget.public = true
+                GojoMdNx.public = true
                 reply('Successful Change To Public Usage')
             }
             break
             case 'self': {
                 if (!isCreator) return replay(`${mess.owner}`)
-                Garfieldget.public = false
+                GojoMdNx.public = false
                 reply('Successful Change To Self Usage')
             }
             break
@@ -3245,21 +3245,21 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'owner': case 'creator': {
-                Garfieldget.sendContact(m.chat, global.owner, m)
+                GojoMdNx.sendContact(m.chat, global.owner, m)
             }
             break
 case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
 					.then(({data}) => {
-						Garfieldget.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+						GojoMdNx.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
 				case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
 					.then(({data}) => {
-					Garfieldget.sendImage(m.chat, data.url, mess.success, m)
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
 case "setmenuxxx": 
@@ -3277,7 +3277,7 @@ reply("Success Changing Menu To "+q)
 break
                     case 'bug': case 'report': {
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	Garfieldget.sendMessage(`918129624395@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	GojoMdNx.sendMessage(`918129624395@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
@@ -3339,7 +3339,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         }
                     }
                 }), { userJid: m.chat })
-                Garfieldget.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break
             case 'garfield': case 'panel': {
@@ -3399,7 +3399,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         }
                     }
                 }), { userJid: m.chat })
-                Garfieldget.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
                 break
                 case 'command': {
@@ -3524,11 +3524,11 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
           listType: 1
                 }
             }), {})
-            Garfieldget.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
     case 'developer': case 'donate': case 'owner': case 'project': {
-                Garfieldget.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/cDRqN7C/IMG-20220601-230700-700.png' }, caption: ` - Hi 🥰 I m \n ＮＯＩＺ Ξ \n I am 16 years old developer... \n From Sri Lanka 🇱🇰 \n I am a Learning. \n Not more.. \nAlso I am Student ` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/cDRqN7C/IMG-20220601-230700-700.png' }, caption: ` - Hi 🥰 I m \n ＮＯＩＺ Ξ \n I am 16 years old developer... \n From Sri Lanka 🇱🇰 \n I am a Learning. \n Not more.. \nAlso I am Student ` }, { quoted: m })
             }
             break
             case 'git': case 'script': {
@@ -3784,12 +3784,12 @@ case 'menu': {
                         }
                     }
                 }), { userJid: m.chat })
-                Garfieldget.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 break
 case 'mainmenu':
 var unicorn = await getBuffer(picak+'Main Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 MAIN 」
 ┃╠ .alive
@@ -3811,7 +3811,7 @@ break
 
 case 'grupmenu': case 'groupmenu':
 var unicorn = await getBuffer(picak+'Group Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 GROUP 」ᴮʸ ᵇᵉⁱˡᵉʸˢ        
 ┃╠ 🐼 .grouplink
@@ -3840,7 +3840,7 @@ break
 
 case 'rpgmenu':
 var unicorn = await getBuffer(picak+'Rpg Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 RPG 」	        
 ┃╠ 🐼 .hunting
@@ -3858,7 +3858,7 @@ break
 
 case 'funmenu':
 var unicorn = await getBuffer(picak+'Fun Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 FUN 」ᴮʸ ᴬᵗᵗⁱᶜᵘˢ	        
 ┃╠ .how [text
@@ -3908,7 +3908,7 @@ break
 
 case 'ownermenu':
 var unicorn = await getBuffer(picak+'Owner Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 OWNER 」	        
 ┃╠ 🐼 .grouplink
@@ -3936,7 +3936,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'downloadmenu':
 var unicorn = await getBuffer(picak+'Downloader Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 DOWNLOADER 」	        
 ┃╠ 🐼 .ytmp3 [url|quality]
@@ -3951,7 +3951,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'searchmenu':
 var unicorn = await getBuffer(picak+'Search Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╔══ 🐼「 SEARCHER 」ᵇʸ ᵀʰᵃʳⁱⁿᵈᵘ	        
 ┃╠ 🐼 .play [query]
 ┃╠ 🐼 .song [query]
@@ -3971,7 +3971,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'randommenu':
 var unicorn = await getBuffer(picak+'Random Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╔══ 🐼「 RANDOM 」	        
 ┃╠ 🐼 .coffee
 ┃╠ 🐼 .animequote (indo)
@@ -3981,7 +3981,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'randomanimemenu':
 var unicorn = await getBuffer(picak+'Random Anime Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔ 🐼「 RANDOM ANIME 」	        
 ┃╠ 🐼 .loli
@@ -4016,7 +4016,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'textpromenu':
 var unicorn = await getBuffer(picak+'Text Pro Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═ 🐼「 TEXT PRO ᴮʸ ᴬᵗᵗⁱᶜᵘˢ  」	        
 ┃╠ .3dchristmas [txt]
@@ -4055,7 +4055,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'convertmenu':
 var unicorn = await getBuffer(picak+'Converter Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔══ 🐼「 CONVERTER 」	        
 ┃╠ .toimage [reply stick]
@@ -4074,7 +4074,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'databasemenu':
 var unicorn = await getBuffer(picak+'Database Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔═══ 🐼「 DATABASE 」	        
 ┃╠ .setcmd
@@ -4090,7 +4090,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'databasemenu':
 var unicorn = await getBuffer(picak+'Database Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔══ 🐼「 ANONYMOUS CHAT 」	        
 ┃╠ 🐼 .anonymous
@@ -4102,7 +4102,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'Religion:
 var unicorn = await getBuffer(picak+'Religious Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔══ 🐼「 RELIGIOUS ᴮʸ ᴬᶠᴺᴬ ᴾᴸᴷ」	        
 ┃╠ 🐼 .juzamma
@@ -4111,7 +4111,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'voicechangermenu':
 var unicorn = await getBuffer(picak+'Voice Changer Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 
 ┃╔══ 🐼「 VOICE CHANGER ᴮʸ ᵀʰᵃʳⁱⁿᵈᵘ」	        
 ┃╠ 🐼 .bass [reply aud]
@@ -4130,7 +4130,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'horoscopemenu':
 var unicorn = await getBuffer(picak+'Horoscope Menu')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╔══ 🐼「 HOROSCOPE 」	        
 ┃╠ 🐼 .nomorhoki (indo)
 ┃╠ 🐼 .artimimpi (indo)
@@ -4167,7 +4167,7 @@ await Garfieldget.send5ButImg(from, `` + '' + ' ', `
 break
 case 'thanksto': case 'tqto': case 'tqtt':
 var unicorn = await getBuffer(picak+'Developer')
-await Garfieldget.send5ButImg(from, `` + '' + ' ', `
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 Thanks to Me ( NexusNw)
 Alien-Alfa (For helping me to deploy qr in replit and answered my every doubts regard this project)
 DGXeon ( 45% Credits goes to him ,in this script)
@@ -4234,7 +4234,7 @@ break
 		    if (m.isBaileys) return
 		    let msgs = global.db.data.database
 		    if (!(budy.toLowerCase() in msgs)) return
-		    Garfieldget.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+		    GojoMdNx.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 		}
         }
         
