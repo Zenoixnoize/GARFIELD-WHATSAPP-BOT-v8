@@ -1,0 +1,39 @@
+{
+  "name": "GARFIELD-WHATSAPP-BOT",
+  "version": "8.0.0",
+  "description": "GARFIELD BY NOIZE",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "GARFIELD",
+    "NOIZE",
+    "2022",
+    "THARINDU",
+    "ZENOI",
+    "NOIZE",
+    "BOT",
+    "NEW",
+    "multi-device"
+  ],
+  "author": "Zenoixnoize",
+  "license": "MIT",
+  "dependencies": {
+    "xmoduleslatest": "1.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "src": "src"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8/issues"
+  },
+  "homepage": "https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8#readme"
+}
