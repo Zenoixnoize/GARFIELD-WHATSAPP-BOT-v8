@@ -1,0 +1,27 @@
+{
+  "name": "GARFIELD BOT v8",
+  "description": "GARFIELD BY NOIZE",
+  "repository": "https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8",
+  "logo": "https://i.ibb.co/G2bpd2B/Pics-Art-22-03-26-14-51-06-509.png",
+  "keywords": ["NOIZE", "Tharindu Liyanage", "whatsapp bot", "GARFIELD BOT", "Whatsapp"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+   "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
