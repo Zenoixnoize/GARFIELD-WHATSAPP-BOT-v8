@@ -2045,9 +2045,9 @@ break
                 google({'query': text}).then(res => {
                 let teks = `Google Search Title : ${text}\n\n`
                 for (let g of res) {
-                teks += `🐼 *Title* : ${g.title}\n`
-                teks += `🐼 *Description* : ${g.snippet}\n`
-                teks += `🐼 *Link* : ${g.link}\n\n────────────────────────\n\n`
+                teks += ` *Title* : ${g.title}\n`
+                teks += ` *Description* : ${g.snippet}\n`
+                teks += ` *Link* : ${g.link}\n\n────────────────────────\n\n`
                 } 
                 reply(teks)
                 })
@@ -2079,7 +2079,7 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
+                let anu = search.videos[Math.floor(1*Math.random() * search.videos.length)]
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶 Audio'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'Video 📽️'}, type: 1}
@@ -2087,14 +2087,14 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
-*Title : ' + anu.title + '*
-*Duration : ' +anu.timestamp +'*
-*Viewes : ' + anu.views +'*
-*Uploaded On : ' + anu.ago +'*
-*Author : ' + anu.author.name +'*
-*Channel : ' + anu.author.url +'*
-*Description : ' +anu.description +'
-*URL : ' + anu.url + '*`,
+```Title``` - *' + anu.title + '*
+```Duration``` - *' + anu.timestamp + '*
+```Viewes``` - *' + anu.views + '*
+```Uploaded On``` - *' + anu.ago + '*
+```Author``` - *' + anu.author.name + '*
+```Channel``` - *' + anu.author.url + '*
+```Description``` - *' + anu + '*
+```URL``` - *' + anu.url + '*`,
                     footer: `Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
