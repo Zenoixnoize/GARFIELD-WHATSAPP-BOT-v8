@@ -2053,7 +2053,7 @@ break
                 })
                 }
                 break
-        case 'gimage': case 'googleimage': {
+        case 'gimage': case 'img': {
         if (!text) return reply(`Example : ${prefix + command} gojo`)
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -2079,7 +2079,7 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * 2)]
+                let anu = search.videos[Math.floor(Math.random() * 1)]
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶 Audio'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'Video 📽️'}, type: 1}
@@ -3351,7 +3351,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │🦋 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │🦋 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 └┬──────────────┈ ⳹
-   │  Please Select The Button Below
+   │  Garfield Bot v8.0 2022 ©
    └───────────────┈ ⳹`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3584,7 +3584,7 @@ case 'allmenu': {
 ┃╠ 🐼 umma [Text]
 ┃╠ 🐼 joox [Text]
 ┃╠ 🐼 soundcloud [url]
-┃╠══ 「 *SEARCHER 🔍* 」 
+┃╠══ 「 *SEARCHER 🔎* 」 
 ┃╠ 🐼 play [Text]
 ┃╠ 🐼 song [Text]
 ┃╠ 🐼 yts [Text]
@@ -3649,7 +3649,6 @@ case 'allmenu': {
 ┃╠ 🐼 couple
 ┃╠ 🐼 mysoulmate
 ┃╠ 🐼 hot
-┃╠ 🐼 sexy
 ┃╠ 🐼 kind
 ┃╠ 🐼 idiot
 ┃╠ 🐼 handsome
@@ -3701,7 +3700,7 @@ case 'allmenu': {
 ┃╠ 🐼 start
 ┃╠ 🐼 next
 ┃╠ 🐼 leave
-┃╠═ ©「 *VOICE CHANGER 🎙*️ 」
+┃╠═ ©「 *VOICE CHANGER 🎙️* 」
 ┃╠ 🐼 bass [reply aud]
 ┃╠ 🐼 blown [reply aud]
 ┃╠ 🐼 deep [reply aud]
@@ -3745,7 +3744,7 @@ case 'allmenu': {
 ┃╠ 🐼 zodiak (Text)
 ┃╠ 🐼 shio (Text)
 ┃╚═══════
-┗━「 ＮＯＩＺＥ*  」━©`
+┗━「 *ＮＯＩＺＥ 2022 ©*  」━©`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -3789,7 +3788,7 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠ 🐼 donate
 ┃╠ 🐼 report [bug]
 ┃╚═════════════ 
-┗━━「 User ${pushname} 🐼 」━©`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script 🌈","url": `${sc}`}},{"quickReplyButton": {"displayText": "Donate 🚀","id": 'donate'}},{"quickReplyButton": {"displayText": "Developer 🦋","id": 'owner'}}] )
+┗━━「 User ${pushname} 🐼 」━©`,unicorn, [{"urlButton": {"displayText": "Follow us ℹ️ ","url": `${myweb}`}},{"urlButton": {"displayText": "Script 🌈","url": `${sc}`}},{"quickReplyButton": {"displayText": "Donate 🚀","id": 'donate'}},{"quickReplyButton": {"displayText": "Developer 🦋","id": 'owner'}}] )
 break
 
 case 'grupmenu': case 'groupmenu':
@@ -4004,7 +4003,7 @@ case 'textpromenu':
 var unicorn = await getBuffer(picak+'Text Pro Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 User ${pushname} 🐼 」━━ 
-┃╔═ ©「 TEXT PRO 🦓 」	        
+┃╔═ ©「 LOGO MAKER 🦓 」	        
 ┃╠ 🐼 3dchristmas [Text]
 ┃╠ 🐼 3ddeepsea [Text]
 ┃╠ 🐼 americanflag [Text]
