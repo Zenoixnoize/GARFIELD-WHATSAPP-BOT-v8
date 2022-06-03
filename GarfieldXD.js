@@ -2086,7 +2086,7 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: "
+                    caption: '
 ```Title``` - *' + anu.title + '*
 ```Duration``` - *' + anu.timestamp + '*
 ```Viewes``` - *' + anu.views + '*
@@ -2095,7 +2095,7 @@ break
 ```Channel``` - *' + anu.author.url + '*
 ```Description``` - *' + anu + '*
 ```URL``` - *' + anu.url + '*
-",
+',
                     footer: `Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
