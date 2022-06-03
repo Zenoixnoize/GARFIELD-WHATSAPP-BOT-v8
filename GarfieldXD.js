@@ -1920,7 +1920,7 @@ break
 		}
 	    }
 	    break
-            case 'image': case 'img': {
+            case 'toimage': case 'toimg': {
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1935,7 +1935,7 @@ break
                 })
             }
             break
-	        case 'mp4': case 'video': {
+	        case 'tomp4': case 'tovideo': {
                 if (!quoted) reply(`Reply Image`)
                 if (!/webp/.test(mime)) return replay(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1946,7 +1946,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'toaud': case 'audio': {
+            case 'toaud': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             reply(mess.wait)
@@ -1956,7 +1956,7 @@ break
             GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
-            case 'mp3': {
+            case 'tomp3': {
             if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -2034,7 +2034,7 @@ break
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += '```🐼 No : ${no++}\n🐼 Type : ${i.type}\n🐼 Video ID : ${i.videoId}\n🐼 Title : ${i.title}\n🐼 Views : ${i.views}\n🐼 Duration : ${i.timestamp}\n🐼 Uploaded On : ${i.ago}\n🐼 Author : ${i.author.name}\n🐼 Url : ${i.url}\n\n─────────────────\n\n```'
+                    teks += `🐼 No : ${no++}\n🐼 Type : ${i.type}\n🐼 Video ID : ${i.videoId}\n🐼 Title : ${i.title}\n🐼 Views : ${i.views}\n🐼 Duration : ${i.timestamp}\n🐼 Uploaded On : ${i.ago}\n🐼 Author : ${i.author.name}\n🐼 Url : ${i.url}\n\n─────────────────\n\n`
                 }
                 GojoMdNx.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -2064,9 +2064,9 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: images },
-                    caption: `*-------「 GIMAGE SEARCH 」-------*
-🤠 *Query* : ${text}
-🔗 *Media Url* : ${images}`,
+                    caption: `*-------「 ＮＯＩＺＥ  ＳＥＡＲＣＨ  ＥＥＮＧＩＮＥ」-------*
+🐼 *Query* : ${text}
+🔗 *URL* : ${images}`,
                     footer: `© Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
@@ -2075,11 +2075,11 @@ break
         })
         }
         break
-	    case 'play': case 'song': case 'ytplay': {
+	    case 'play': case 'song': case 'video': {
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[Math.floor(1*Math.random() * search.videos.length)]
+                let anu = search.videos[Math.floor(1) search.videos.length]
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶 Audio'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'Video 📽️'}, type: 1}
@@ -2364,30 +2364,7 @@ case 'webtonsearch': case 'webtoon':
                 if (anu.status == false) return reply(anu.message)
                 GojoMdNx.sendText(m.chat, `🐼 *Dream :* ${anu.message.mimpi}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Solution :* ${anu.message.solusi}`, m)
             }
-            break          
-            case 'playstore':
-              try {
-              if (args.length == 0) return reply(`Send orders *${prefix}playstore [ apk ]*\nExample : ${prefix}playstore pubg`)
-              query = args.join(" ")
-              reply(mess.wait)
-              get_result = await fetchJson(`https://api.zeks.xyz/api/sgplay?apikey=${zekskey}&q=${query}`)
-              get_result = get_result.result
-              teks = ` ＮＯＩＺＥ ＳＥＡＲＣＨ
-              ＥＮＧＩＮＥＳ
-*Data Successfully Obtained!*\n`
-for(let i = 0; i < get_result.length; i++) {
-teks += `*▢ Title : ${get_result[i].title}*
-*🦋 Price : ${get_result[i].price}*
-*🦋 Rate : ${get_result[i].rating}*
-*🦋 Link : ${get_result[i].url}*
-`
-}
-              ini_buffer = await getBuffer(get_result[0].thumb)
-              bosco.sendMessage(from, ini_buffer, image, { quoted: mek, caption: teks })
-              } catch {
-              reply(`Sorry app ${query} not found`)
-}
-              break                     
+            break
             case 'ramalanjodoh': case 'ramaljodoh': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
@@ -3367,13 +3344,14 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │ 「 Deployer 」
 │🦋 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │🦋 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+│🦋 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
 │🦋 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-│🦋 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : _@Dev_
+│🦋 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
 │🦋 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │🦋 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │🦋 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 └┬──────────────┈ ⳹
-   │  GARFIELD BOT v8.0
+   │  Please Select The Button Below
    └───────────────┈ ⳹`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3444,7 +3422,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}groupmenu`
 										},
 									{
-										"title": "Games Menu",
+										"title": "Rpg Menu",
 										"description": "Displays The List Of Rpg Features",
 										"rowId": `${prefix}rpgmenu`
 									},
@@ -3494,7 +3472,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}textpromenu`
 										},
 										{
-											"title": "Religion Menu",
+											"title": "Islamic Menu",
 										"description": "Displays The List Of Islamic Features",
 										"rowId": `${prefix}islamicmenu`
 										},
@@ -3723,7 +3701,7 @@ case 'allmenu': {
 ┃╠ 🐼 start
 ┃╠ 🐼 next
 ┃╠ 🐼 leave
-┃╠═ ©「 *VOICE CHANGER 🎙️*️ 」
+┃╠═ ©「 *VOICE CHANGER 🎙*️ 」
 ┃╠ 🐼 bass [reply aud]
 ┃╠ 🐼 blown [reply aud]
 ┃╠ 🐼 deep [reply aud]
@@ -3767,7 +3745,7 @@ case 'allmenu': {
 ┃╠ 🐼 zodiak (Text)
 ┃╠ 🐼 shio (Text)
 ┃╚═══════
-┗━「 *ＮＯＩＺＥ*  」━©`
+┗━「 ＮＯＩＺＥ*  」━©`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -3796,7 +3774,7 @@ case 'mainmenu':
 var unicorn = await getBuffer(picak+'Main Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 User ${pushname} 🐼 」━━ 
-┃╔═ ©「 MAIN 🦋  」
+┃╔═ ©「 MAIN 🦋*  」
 ┃╠ 🐼 alive
 ┃╠ 🐼 script
 ┃╠ 🐼 speedtest
