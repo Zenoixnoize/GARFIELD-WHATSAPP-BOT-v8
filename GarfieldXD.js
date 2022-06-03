@@ -2387,21 +2387,7 @@ teks += `*▢ Title : ${get_result[i].title}*
               } catch {
               reply(`Sorry app ${query} not found`)
 }
-              break   
-              case 'mediafire':
-               if (args.length < 1) return reply('*Where is the link?*')
-               if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
-               teks = args.join(' ')
-               res = await mediafireDl(teks)
-               result = `*MediaFire Downloader*
-      
-📜 Name : ${res[0].nama}
-💡 Size : ${res[0].size}
-🖇️ Link : ${res[0].link}
-*_please wait_*`
-             reply(result)
-             sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
-             break                  
+              break                     
             case 'ramalanjodoh': case 'ramaljodoh': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
@@ -3381,14 +3367,13 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │ 「 Deployer 」
 │🦋 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │🦋 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-│🦋 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
 │🦋 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-│🦋 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
+│🦋 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : _@Dev_
 │🦋 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │🦋 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │🦋 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 └┬──────────────┈ ⳹
-   │  Please Select The Button Below
+   │  GARFIELD BOT v8.0
    └───────────────┈ ⳹`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3459,7 +3444,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}groupmenu`
 										},
 									{
-										"title": "Rpg Menu",
+										"title": "Games Menu",
 										"description": "Displays The List Of Rpg Features",
 										"rowId": `${prefix}rpgmenu`
 									},
@@ -3509,7 +3494,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}textpromenu`
 										},
 										{
-											"title": "Islamic Menu",
+											"title": "Religion Menu",
 										"description": "Displays The List Of Islamic Features",
 										"rowId": `${prefix}islamicmenu`
 										},
@@ -3738,7 +3723,7 @@ case 'allmenu': {
 ┃╠ 🐼 start
 ┃╠ 🐼 next
 ┃╠ 🐼 leave
-┃╠═ ©「 *VOICE CHANGER 🎙*️ 」
+┃╠═ ©「 *VOICE CHANGER 🎙️*️ 」
 ┃╠ 🐼 bass [reply aud]
 ┃╠ 🐼 blown [reply aud]
 ┃╠ 🐼 deep [reply aud]
@@ -3782,7 +3767,7 @@ case 'allmenu': {
 ┃╠ 🐼 zodiak (Text)
 ┃╠ 🐼 shio (Text)
 ┃╚═══════
-┗━「 ＮＯＩＺＥ*  」━©`
+┗━「 *ＮＯＩＺＥ*  」━©`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -3811,7 +3796,7 @@ case 'mainmenu':
 var unicorn = await getBuffer(picak+'Main Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 User ${pushname} 🐼 」━━ 
-┃╔═ ©「 MAIN 🦋*  」
+┃╔═ ©「 MAIN 🦋  」
 ┃╠ 🐼 alive
 ┃╠ 🐼 script
 ┃╠ 🐼 speedtest
