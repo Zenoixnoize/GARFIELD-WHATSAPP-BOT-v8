@@ -1920,7 +1920,7 @@ break
 		}
 	    }
 	    break
-            case 'toimage': case 'toimg': {
+            case 'image': case 'img': {
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1935,7 +1935,7 @@ break
                 })
             }
             break
-	        case 'tomp4': case 'tovideo': {
+	        case 'mp4': case 'video': {
                 if (!quoted) reply(`Reply Image`)
                 if (!/webp/.test(mime)) return replay(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1946,7 +1946,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'toaud': case 'toaudio': {
+            case 'toaud': case 'audio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             reply(mess.wait)
@@ -1956,7 +1956,7 @@ break
             GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
-            case 'tomp3': {
+            case 'mp3': {
             if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -2034,7 +2034,7 @@ break
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `🐼 No : ${no++}\n🐼 Type : ${i.type}\n🐼 Video ID : ${i.videoId}\n🐼 Title : ${i.title}\n🐼 Views : ${i.views}\n🐼 Duration : ${i.timestamp}\n🐼 Uploaded On : ${i.ago}\n🐼 Author : ${i.author.name}\n🐼 Url : ${i.url}\n\n─────────────────\n\n`
+                    teks += '```🐼 No : ${no++}\n🐼 Type : ${i.type}\n🐼 Video ID : ${i.videoId}\n🐼 Title : ${i.title}\n🐼 Views : ${i.views}\n🐼 Duration : ${i.timestamp}\n🐼 Uploaded On : ${i.ago}\n🐼 Author : ${i.author.name}\n🐼 Url : ${i.url}\n\n─────────────────\n\n```'
                 }
                 GojoMdNx.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -2364,6 +2364,39 @@ case 'webtonsearch': case 'webtoon':
                 if (anu.status == false) return reply(anu.message)
                 GojoMdNx.sendText(m.chat, `🐼 *Dream :* ${anu.message.mimpi}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Solution :* ${anu.message.solusi}`, m)
             }
+            
+            break
+      case 'playstore':
+              try {
+              if (args.length == 0) return reply(`Send orders *${prefix}playstore [ apk ]*\nExample : ${prefix}playstore pubg`)
+              query = args.join(" ")
+              reply(mess.wait)
+              get_result = await fetchJson(`https://api.zeks.xyz/api/sgplay?apikey=${zekskey}&q=${query}`)
+              get_result = get_result.result
+              teks = ` ＮＯＩＺＥ  ＳＥＡＲＣＨ 
+               ＥＮＧＩＮＥＳ             
+*Data Successfully Obtained! 🐼*\n`
+for(let i = 0; i < get_result.length; i++) {
+teks += `*▢ Title : ${get_result[i].title}*
+*Price : ${get_result[i].price}*
+*Rate : ${get_result[i].rating}*
+*Link : ${get_result[i].url}*
+`      
+       break
+        case 'mediafire':
+               if (args.length < 1) return reply('*Where is the link?*')
+               if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
+               teks = args.join(' ')
+               res = await mediafireDl(teks)
+               result = `*MediaFire Downloader*
+      
+📜 Name : ${res[0].nama}
+💡 Size : ${res[0].size}
+🖇️ Link : ${res[0].link}
+*_please wait_*`
+             reply(result)
+             sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
+
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
