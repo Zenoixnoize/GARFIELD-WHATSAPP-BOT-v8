@@ -2078,7 +2078,7 @@ break
 	    case 'play': case 'song': case 'video': {
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
-                let search = await yts(match[1])  
+                let results = await yts(text)
                 let anu = await yts(match[1])
                     anu = anu.all
                 if(anu.length < 1)
