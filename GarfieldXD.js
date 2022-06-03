@@ -1308,7 +1308,7 @@ GojoMdNx.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${san
             let buttons = [
                         { buttonId: '👀', buttonText: { displayText: 'Yes ඇත්ත 😹' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: ments})
+                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab,`Coded by Tharindu Liyanage` , m, {mentions: ments})
             }
             break
 case 'when':
@@ -2087,14 +2087,14 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
-*🐼 Title* : ${anu.title}
-*🐼 Duration* : ${anu.timestamp}
-*🐼 Viewes* : ${anu.views}
-*🐼 Uploaded* On : ${anu.ago}
-*🐼 Author* : ${anu.author.name}
-*🐼 Channel* : ${anu.author.url}
-*🐼 Description* : ${anu.description}
-*🐼 URL* : ${anu.url}`,
+*Title : ' + anu.title + '*
+*Duration : ' +anu.timestamp +'*
+*Viewes : ' + anu.views +'*
+*Uploaded On : ' + anu.ago +'*
+*Author : ' + anu.author.name +'*
+*Channel : ' + anu.author.url +'*
+*Description : ' +anu.description +'
+*URL : ' + anu.url + '*`,
                     footer: `Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
@@ -2108,7 +2108,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                GojoMdNx.sendImage(m.chat, media.thumb, `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${isUrl(text)}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '320kbps'}`, m)
+                GojoMdNx.sendImage(m.chat, media.thumb, `*Title* : ${media.title}\n*File Size* : ${media.filesizeF}\n*🐼 URL* : ${isUrl(text)}\n*Resolution* : ${args[1] || '320kbps'}`, m)
                 GojoMdNx.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -4171,10 +4171,10 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
   ▰▰▰▰▰▰▰▰▰▰▰▰▰
   ᴀʟᴡᴀʏꜱ ᴏɴ ꜰɪʀꜱᴛ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍ ɪɴ ꜱʀɪ ʟᴀɴᴋᴀ 🇱🇰 
   ▰▰▰▰▰▰▰▰▰▰▰▰▰
-  ᴄᴏᴅᴇᴅ ʙʏ ＺＥＮＯＩ
+  ᴄᴏᴅᴇᴅ ʙʏ ＺＥＮＯＩ2022 ©
   ▰▰▰▰▰▰▰▰▰▰▰▰▰ 
   ＳＰＥＣＩＡＬ  ＴＨＡＮＫＳ
-   - ʜᴀꜱɪɴᴅᴜ ᴅɪɴᴜꜱʜᴀɴ , ʟᴀꜱɪɴᴅᴜ ɴᴇᴛʜꜱᴀʀᴀ, ᴍᴀʟᴇᴇꜱʜᴀ ɴᴇᴛʜꜱᴀʀᴀ , ꜱᴀʀᴀɴɪ ᴍᴇᴛʜꜱᴀᴅᴇᴇ,ꜱᴇᴡᴍɪ ᴍᴀʟᴇᴇꜱɢᴀ , ᴀꜰɴᴀ ᴘᴀʟɪᴋᴋᴀʟ , ꜰᴀʀʜᴀɴ , ᴀᴛᴛɪᴄᴜꜱ , ʙᴀɪʟᴇʏꜱ , ᴛʜɪᴄᴄʏ ,ʏᴜꜱᴜꜰᴜꜱᴛᴀ 
+   - ʜᴀꜱɪɴᴅᴜ ᴅɪɴᴜꜱʜᴀɴ , ʟᴀꜱɪɴᴅᴜ ɴᴇᴛʜꜱᴀʀᴀ, ᴍᴀʟᴇᴇꜱʜᴀ ɴᴇᴛʜꜱᴀʀᴀ , ꜱᴀʀᴀɴɪ ᴍᴇᴛʜꜱᴀᴅᴇᴇ,ꜱᴇᴡᴍɪ ᴍᴀʟᴇᴇꜱʜᴀ , ᴀꜰɴᴀ ᴘᴀʟɪᴋᴋᴀʟ , ꜰᴀʀʜᴀɴ , ᴀᴛᴛɪᴄᴜꜱ , ʙᴀɪʟᴇʏꜱ , ᴛʜɪᴄᴄʏ ,ʏᴜꜱᴜꜰᴜꜱᴛᴀ 
    `,unicorn, [{"urlButton": {"displayText": "Follow Us ℹ️ ","url": `${myweb}`}},{"urlButton": {"displayText": "Script 🌈","url": `${sc}`}},{"quickReplyButton": {"displayText": "Donate 🚀","id": 'donate'}},{"quickReplyButton": {"displayText": "Developer 🦋","id": 'owner'}}] )
 break
             default:
