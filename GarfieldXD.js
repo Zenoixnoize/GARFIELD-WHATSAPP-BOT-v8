@@ -2365,22 +2365,6 @@ case 'webtonsearch': case 'webtoon':
                 GojoMdNx.sendText(m.chat, `🐼 *Dream :* ${anu.message.mimpi}\n🐼 *Meaning :* ${anu.message.arti}\n🐼 *Solution :* ${anu.message.solusi}`, m)
             }
             break
-      case 'playstore':
-              try {
-              if (args.length == 0) return reply(`Send orders *${prefix}playstore [ apk ]*\nExample : ${prefix}playstore pubg`)
-              query = args.join(" ")
-              reply(mess.wait)
-              get_result = await fetchJson(`https://api.zeks.xyz/api/sgplay?apikey=${zekskey}&q=${query}`)
-              get_result = get_result.result
-              teks = ` ＮＯＩＺＥ  ＳＥＡＲＣＨ 
-               ＥＮＧＩＮＥＳ             
-*Data Successfully Obtained! 🐼*\n`
-for(let i = 0; i < get_result.length; i++) {
-teks += `*▢ Title : ${get_result[i].title}*
-*Price : ${get_result[i].price}*
-*Rate : ${get_result[i].rating}*
-*Link : ${get_result[i].url}*`     
-            break
             case 'ramalanjodoh': case 'ramaljodoh': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
