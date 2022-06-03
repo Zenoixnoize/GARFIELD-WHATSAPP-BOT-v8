@@ -2094,7 +2094,8 @@ break
 ```Author``` - *' + anu.author.name + '*
 ```Channel``` - *' + anu.author.url + '*
 ```Description``` - *' + anu + '*
-```URL``` - *' + anu.url + '*`,
+```URL``` - *' + anu.url + '*
+`,
                     footer: `Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
