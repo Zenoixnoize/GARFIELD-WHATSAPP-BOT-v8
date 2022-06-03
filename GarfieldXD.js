@@ -1516,7 +1516,7 @@ let buttonsVote = [
 
             let buttonMessageVote = {
                 text: teks_vote,
-                footer: `Coded by Tharindu Liyanage`,
+                footer: `© Coded by Tharindu Liyanage`,
                 buttons: buttonsVote,
                 headerType: 1
             }
@@ -1557,7 +1557,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
             let buttonMessageUpvote = {
                 text: teks_vote,
-                footer: `Coded by Tharindu Liyanage`,
+                footer: `© Coded by Tharindu Liyanage`,
                 buttons: buttonsUpvote,
                 headerType: 1,
                 mentions: menvote
@@ -1599,7 +1599,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
             let buttonMessageDevote = {
                 text: teks_vote,
-                footer: `Coded by Tharindu Liyanage`,
+                footer: `© Coded by Tharindu Liyanage`,
                 buttons: buttonsDevote,
                 headerType: 1,
                 mentions: menvote
@@ -2067,7 +2067,7 @@ break
                     caption: `*-------「 GIMAGE SEARCH 」-------*
 🤠 *Query* : ${text}
 🔗 *Media Url* : ${images}`,
-                    footer: `Coded by Tharindu Liyanage`,
+                    footer: `© Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2086,17 +2086,10 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: '
-```Title``` - *' + anu.title + '*
-```Duration``` - *' + anu.timestamp + '*
-```Viewes``` - *' + anu.views + '*
-```Uploaded On``` - *' + anu.ago + '*
-```Author``` - *' + anu.author.name + '*
-```Channel``` - *' + anu.author.url + '*
-```Description``` - *' + anu + '*
-```URL``` - *' + anu.url + '*
-',
-                    footer: `Coded by Tharindu Liyanage`,
+                    caption: `
+```Title``` - *' + anu.title + '*\n```Duration``` - *' + anu.timestamp + '*\n```Viewes``` - *' + anu.views + '*\n```Uploaded On``` - *' + anu.ago + '*\n```Author``` - *' + anu.author.name + '*\n```Channel``` - *' + anu.author.url + '*\n```Description``` - *' + anu + '*\n```URL``` - *' + anu.url + '*
+`,
+                    footer: `© Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2281,7 +2274,7 @@ case 'webtonsearch': case 'webtoon':
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
                     caption: `☕ Random Coffee`,
-                    footer: `Coded by Tharindu Liyanage`,
+                    footer: `© Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2299,7 +2292,7 @@ case 'webtonsearch': case 'webtoon':
                 let buttonMessage = {
                     image: { url: result.image[0] },
                     caption: `🐼 Title : ${result.title}\n🐼 Category : ${result.type}\n🐼 Detail : ${result.source}\n🐼 Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
-                    footer: `Coded by Tharindu Liyanage`,
+                    footer: `© Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2317,7 +2310,7 @@ case 'webtonsearch': case 'webtoon':
                 let buttonMessage = {
                     image: { url: result.image },
                     caption: `🐼 Title : ${result.title}\n🐼 Source : ${result.source}\n🐼 Media Url : ${result.image}`,
-                    footer: `Coded by Tharindu Liyanage`,
+                    footer: `© Coded by Tharindu Liyanage`,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2834,7 +2827,7 @@ case 'webtonsearch': case 'webtoon':
 *🐼 URL* : ${anu.media[0]}
 To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp4 Command With The Url Above
 `,
-			footer: `Coded by Tharindu Liyanage`,
+			footer: `© Coded by Tharindu Liyanage`,
 			buttons,
 			headerType: 4
 		    }
