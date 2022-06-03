@@ -2079,9 +2079,7 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let results = await yts(text)
-                let anu = await yts(match[1])
-                    anu = anu.all
-                if(anu.length < 1)
+                let anu = search.videos(arama.length < 1)             
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶 Audio'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'Video 📽️'}, type: 1}
