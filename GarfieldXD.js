@@ -2100,7 +2100,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                GojoMdNx.sendImage(m.chat, media.thumb, `*Title* : ${media.title}\n*File Size* : ${media.filesizeF}\n*🐼 URL* : ${isUrl(text)}\n*Resolution* : ${args[1] || '320kbps'}`, m)
+                GojoMdNx.sendImage(m.chat, media.thumb, '```Title``` : *' + media.title + '*\n ```File Size``` : *' + media.filesizeF + '*\n```URL``` : *' + isUrl(text) + '*\n```Quality``` : *Hight*\n', m)
                 GojoMdNx.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2110,7 +2110,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                GojoMdNx.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${isUrl(text)}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: '```Title``` : *' + media.title + '*\n ```File Size``` : *' + media.filesizeF + '*\n```URL``` : *' + isUrl(text) + '*\n```Quality``` : *Hight*\n ' }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -2119,7 +2119,7 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                GojoMdNx.sendImage(m.chat, media.thumb, `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${urls[text - 1]}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '128kbps'}`, m)
+                GojoMdNx.sendImage(m.chat, media.thumb, '```Title``` : *' + media.title + '*\n ```File Size``` : *' + media.filesizeF + '*\n```URL``` : *' + isUrl(text) + '*\n```Quality``` : *Hight*\n', m)
                 GojoMdNx.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2133,7 +2133,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                GojoMdNx.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐼 Title : ${media.title}\n🐼 File Size : ${media.filesizeF}\n🐼 Url : ${urls[text - 1]}\n🐼 Ext : MP3\n🐼 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: '```Title``` : *' + media.title + '*\n ```File Size``` : *' + media.filesizeF + '*\n```URL``` : *' + isUrl(text) + '*\n```Quality``` : *Hight*\n' }, { quoted: m })
             }
             break
             case 'pinterest': {
