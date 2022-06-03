@@ -2064,7 +2064,7 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: images },
-                    caption: `*-------「 ＮＯＩＺＥ  ＳＥＡＲＣＨ  ＥＥＮＧＩＮＥ」-------*
+                    caption: `*-------「 ＮＯＩＺＥ  ＳＥＡＲＣＨ  ＥＮＧＩＮＥ」-------*
 🐼 *Query* : ${text}
 🔗 *URL* : ${images}`,
                     footer: `© Coded by Tharindu Liyanage`,
@@ -2078,8 +2078,8 @@ break
 	    case 'play': case 'song': case 'video': {
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
-                let search = await yts(text)
-                let anu = search.videos[Math.floor(1) search.videos.length]
+                let search = await yts(text)  
+                let anu = await search.videos.(isUrl(text)[0])
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶 Audio'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'Video 📽️'}, type: 1}
@@ -2352,7 +2352,7 @@ case 'webtonsearch': case 'webtoon':
 	    }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
-                if (!Number(text)) return reply(`Example : ${prefix + command} 916909137213`)
+                if (!Number(text)) return reply(`Example : ${prefix + command} 94711502119`)
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return reply(anu.message)
                 GojoMdNx.sendText(m.chat, `🐼 *Phone Number :* ${anu.message.nomer_hp}\n🐼 *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n🐼 *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n🐼 *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
