@@ -2387,7 +2387,21 @@ teks += `*▢ Title : ${get_result[i].title}*
               } catch {
               reply(`Sorry app ${query} not found`)
 }
-              break     
+              break   
+              case 'mediafire':
+               if (args.length < 1) return reply('*Where is the link?*')
+               if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
+               teks = args.join(' ')
+               res = await mediafireDl(teks)
+               result = `*MediaFire Downloader*
+      
+📜 Name : ${res[0].nama}
+💡 Size : ${res[0].size}
+🖇️ Link : ${res[0].link}
+*_please wait_*`
+             reply(result)
+             sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
+             break                  
             case 'ramalanjodoh': case 'ramaljodoh': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
