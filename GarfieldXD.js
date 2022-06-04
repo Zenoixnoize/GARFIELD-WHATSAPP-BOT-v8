@@ -2044,7 +2044,7 @@ break
                 })
                 }
                 break
-        case 'gimage': case 'img': {
+        case 'gimage': case 'photo': {
         if (!text) return reply(`Example : ${prefix + command} gojo`)
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -3388,14 +3388,14 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "Main Features",
 								"rows": [
 									{
-										"title": "Main Menu 🦋",
+										"title": "Garfield Main Menu 🦋",
 										"description": "Displays The List Of Garfield Main Features",
 										"rowId": `${prefix}mainmenu`
 									}
 								]
 							},
 							{
-								"title": "Garfield Bot Features 🍎",
+								"title": "Garfield Bot Features",
 								"rows": [
 									{
 										"title": "All Menu 🐼️",
