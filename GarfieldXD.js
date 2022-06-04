@@ -2009,9 +2009,9 @@ break
 	    let remobg = require('remove.bg')
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
-	    hmm = await './src/remobg-'+getRandom('')
+	    hmm = await './X628/remobg-'+getRandom('')
 	    localFile = await GojoMdNx.downloadAndSaveMediaMessage(quoted, hmm)
-	    outputFile = await './src/hremo-'+getRandom('.png')
+	    outputFile = await './X628/hremo-'+getRandom('.png')
 	    reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
 	      path: localFile,
@@ -3892,7 +3892,7 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 break
 
 case 'ownermenu':
-var unicorn = await getBuffer(picak+'Owner Menu')
+var unicorn = await getBuffer(global.flaming)
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 User ${pushname} 🐼 」━━ 
 ┃╔═ ©「 OWNER 🐣 」	        
