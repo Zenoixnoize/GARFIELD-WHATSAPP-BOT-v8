@@ -200,11 +200,11 @@ module.exports = GojoMdNx = async (GojoMdNx, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Gojo-Satoru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png"}}}, { quoted: m})
+            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title":` 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т `,"body": ` NOIZE DEVELOPERS`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "http://Wa.me//+94711502119?text=*Hello🦋*"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Gojo-Satoru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png"}}}, { quoted: m})
+            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title":` 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т `,"body": ` NOIZE DEVELOPERS`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": "http://Wa.me//+94711502119?text=*Hello🦋*"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -230,15 +230,6 @@ const reply = (teks) => {
             timezone: "Asia/Kolkata"
         })
         
-	//auto set bio\\
-	if (db.data.settings[botNumber].autobio) {
-	    let setting = global.db.data.settings[botNumber]
-	    if (new Date() * 1 - setting.status > 1000) {
-		let uptime = await runtime(process.uptime())
-		await GojoMdNx.setStatus(`${GojoMdNx.user.name} | Runtime : ${runtime(uptime)}`)
-		setting.status = new Date() * 1
-	    }
-	}
 	
 	  //antilink\\
         if (db.data.chats[m.chat].antilink) {
@@ -250,7 +241,7 @@ const reply = (teks) => {
         let isgclink = isLinkThisGc.test(m.text)
         if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
         if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are An Admin Of The Group❤️`)
-        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐼`)
+        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐼 `)
         GojoMdNx.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -338,7 +329,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -356,7 +347,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -365,7 +356,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -375,7 +366,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
@@ -385,7 +376,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -394,7 +385,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -403,7 +394,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, GojoMdNx.user.name, m)
+                await GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, `ＮＯＩＺＥ`, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -1041,7 +1032,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await sleep(60000)
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant To Play? Press The Button Below`, GojoMdNx.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant To Play? Press The Button Below`, `ＮＯＩＺＥ`, m)
                     delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'picture') {
@@ -1054,7 +1045,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await sleep(60000)
                     if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `Time Has Run Out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, `ＮＯＩＺＥ`, m)
                     delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'word') {
@@ -1067,7 +1058,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await sleep(60000)
                     if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, `ＮＯＩＺＥ`, m)
                     delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'sentence') {
@@ -1080,7 +1071,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await sleep(60000)
                     if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant To Play Again? PressThe Button Below`, `ＮＯＩＺＥ`, m)
                     delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lyrics') {
@@ -1093,7 +1084,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await sleep(60000)
                     if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, `ＮＯＩＺＥ`, m)
                     delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'blank') {
@@ -1107,7 +1098,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     await sleep(60000)
                     if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, GojoMdNx.user.name, m)
+                    GojoMdNx.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\Want To Play Again? PressThe Button Below`, `ＮＯＩＺＥ`, m)
                     delete caklontong[m.sender.split('@')[0]]
 		    delete caklontong_desk[m.sender.split('@')[0]]
                     }
@@ -1156,7 +1147,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             let buttons = [
                         { buttonId: '❤️', buttonText: { displayText: '❤️' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: ments})
+                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, `ＮＯＩＺＥ`, m, {mentions: ments})
             }
             break
             case 'couple': {
@@ -1170,7 +1161,7 @@ Cieeee, What's Going On❤️💖👀`
             let buttons = [
                         { buttonId: '❤️', buttonText: { displayText: '❤️' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, GojoMdNx.user.name, m, {mentions: menst})
+                    await GojoMdNx.sendButtonText(m.chat, buttons, jawab, `ＮＯＩＺＥ`, m, {mentions: menst})
             }
             break
             case 'is':
@@ -1239,7 +1230,7 @@ GojoMdNx.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${san
 					break
 					case 'charactercheck':
 					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
-					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','p, anyway','Helpful']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
 					GojoMdNx.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
@@ -1313,7 +1304,7 @@ GojoMdNx.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${san
             break
 case 'when':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} will i get married `)
-					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
+					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','morrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
 GojoMdNx.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
 					break
@@ -1656,7 +1647,7 @@ break
                         { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Group Mode`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Group Mode`, `ＮＯＩＺＥ`, m)
 
              }
             }
@@ -1674,7 +1665,7 @@ break
                         { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mode Edit Info`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mode Edit Info`, `ＮＯＩＺＥ`, m)
 
             }
             }
@@ -1696,7 +1687,7 @@ break
                         { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Antilink Mode`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Antilink Mode`, `ＮＯＩＺＥ`, m)
                 }
              }
              break
@@ -1707,17 +1698,17 @@ break
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].mute) return reply(`Previously Active`)
                 db.data.chats[m.chat].mute = true
-                reply(`${GojoMdNx.user.name} Has Been Muted In This Group !`)
+                reply(`${`ＮＯＩＺＥ`} Has Been Muted In This Group !`)
                 } else if (args[0] === "off") {
                 if (!db.data.chats[m.chat].mute) return reply(`Previously Inactive`)
                 db.data.chats[m.chat].mute = false
-                reply(`${GojoMdNx.user.name} Has Been Unmuted In This Group!`)
+                reply(`${`ＮＯＩＺＥ`} Has Been Unmuted In This Group!`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mute Bot`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mute Bot`, `ＮＯＩＺＥ`, m)
                 }
              }
              break
@@ -1748,7 +1739,7 @@ break
             break
             case 'bcgc': case 'bcgroup': {
                 if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
+                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} ZENOI `)
                 let getGroups = await GojoMdNx.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
@@ -1777,7 +1768,7 @@ break
                                 }
                             }]
                       let txt = `「 ＮＯＩＺＥ © 」\n\n${text}`
-                      GojoMdNx.send5ButImg(i, txt, GojoMdNx.user.name, global.thumb, btn)
+                      GojoMdNx.send5ButImg(i, txt, `ＮＯＩＺＥ`, global.thumb, btn)
                     }
                 reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
             }
@@ -1811,7 +1802,7 @@ break
                                 }
                             }]
                       let txt = `「 ＮＯＩＺＥ 」\n\n${text}`
-                      GojoMdNx.send5ButImg(yoi, txt, GojoMdNx.user.name, global.thumb, btn)
+                      GojoMdNx.send5ButImg(yoi, txt, `ＮＯＩＺＥ`, global.thumb, btn)
 		}
 		reply('Broadcast Success')
             }
@@ -1920,7 +1911,7 @@ break
 		}
 	    }
 	    break
-            case 'toimage': case 'toimg': {
+            case 'image': case 'img': {
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1935,7 +1926,7 @@ break
                 })
             }
             break
-	        case 'tomp4': case 'tovideo': {
+	        case 'mp4': case 'video': {
                 if (!quoted) reply(`Reply Image`)
                 if (!/webp/.test(mime)) return replay(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1946,7 +1937,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'toaud': case 'toaudio': {
+            case 'aud': case 'audio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             reply(mess.wait)
@@ -1956,7 +1947,7 @@ break
             GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
-            case 'tomp3': {
+            case 'mp3': {
             if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -1964,10 +1955,10 @@ break
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            GojoMdNx.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${GojoMdNx.user.name}.mp3`}, { quoted : m })
+            GojoMdNx.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${`ＮＯＩＺＥ`}.mp3`}, { quoted : m })
             }
             break
-            case 'tovn': case 'toptt': {
+            case 'vn': case 'ptt': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
             if (!quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
             reply(mess.wait)
@@ -1977,7 +1968,7 @@ break
             GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
             }
             break
-            case 'togif': {
+            case 'gif': {
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) return reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -1988,7 +1979,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-	        case 'tourl': {
+	        case 'url': {
                 reply(mess.wait)
 		        let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await GojoMdNx.downloadAndSaveMediaMessage(quoted)
@@ -3050,9 +3041,9 @@ View List Of Messages With ${prefix}listmsg`)
                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
-                    { buttonId: 'Start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
+                    { buttonId: 'Start', buttonText: { displayText: 'Start 🦋' }, type: 1 }
                 ]
-                GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await GojoMdNx.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, GojoMdNx.user.name, m)
+                GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await GojoMdNx.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, `ＮＯＩＺＥ`, m)
             }
 			break
             case 'keluar': case 'leave': {
@@ -3061,7 +3052,7 @@ View List Of Messages With ${prefix}listmsg`)
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!room) {
                     let buttons = [
-                        { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
+                        { buttonId: 'start', buttonText: { displayText: 'Start 🦋' }, type: 1 }
                     ]
                     await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
                    reply(false)
@@ -3077,21 +3068,21 @@ View List Of Messages With ${prefix}listmsg`)
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, `ＮＯＩＺＥ`, m)
                     reply(false)
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
                     let buttons = [
-                        { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'next', buttonText: { displayText: 'Skip ⏩' }, type: 1 },
+                        { buttonId: 'keluar', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, `ＮＯＩＺＥ`, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await GojoMdNx.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, `ＮＯＩＺＥ`, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -3107,9 +3098,9 @@ View List Of Messages With ${prefix}listmsg`)
                         },
                     }
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, `ＮＯＩＺＥ`, m)
                 }
                 break
             }
@@ -3119,7 +3110,7 @@ View List Of Messages With ${prefix}listmsg`)
                 let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!romeo) {
                     let buttons = [
-                        { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
+                        { buttonId: 'start', buttonText: { displayText: 'Start 🦋' }, type: 1 }
                     ]
                     await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
                     reply(false)
@@ -3130,13 +3121,13 @@ View List Of Messages With ${prefix}listmsg`)
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
                     let buttons = [
-                        { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'next', buttonText: { displayText: 'Skip ⏩' }, type: 1 },
+                        { buttonId: 'keluar', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, `ＮＯＩＺＥ`, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await GojoMdNx.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, `ＮＯＩＺＥ`, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -3152,9 +3143,9 @@ View List Of Messages With ${prefix}listmsg`)
                         },
                     }
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, `ＮＯＩＺＥ`, m)
                 }
                 break
             }
@@ -3674,15 +3665,15 @@ case 'allmenu': {
 ┃╠ 🐼 math [mode]
 ┃╠ 🐼 suitpvp [tag]
 ┃╠═══ 「 *CONVERTER 🎳* 」 
-┃╠ 🐼 toimage [reply stick]
+┃╠ 🐼 image [reply stick]
 ┃╠ 🐼 sticker [reply img|gif]
 ┃╠ 🐼 emojimix [moji+moji]
-┃╠ 🐼 tovideo [reply img]
-┃╠ 🐼 togif [reply stick]
-┃╠ 🐼 tourl [reply img]
-┃╠ 🐼 tovn [reply aud]
-┃╠ 🐼 tomp3 [reply vn]
-┃╠ 🐼 toaudio [reply vid]
+┃╠ 🐼 video [reply img]
+┃╠ 🐼 gif [reply stick]
+┃╠ 🐼 url [reply img]
+┃╠ 🐼 vn [reply aud]
+┃╠ 🐼 mp3 [reply vn]
+┃╠ 🐼 audio [reply vid]
 ┃╠ 🐼 ebinary [reply Text]
 ┃╠ 🐼 dbinary [reply Text]
 ┃╠ 🐼 styletext [text]
@@ -4043,15 +4034,15 @@ var unicorn = await getBuffer(picak+'Converter Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 User ${pushname} 🐼 」━━ 
 ┃╔══  「 CONVERTER 🔃 」	        
-┃╠ 🐼 toimage [reply stick]
+┃╠ 🐼 image [reply stick]
 ┃╠ 🐼 sticker [reply img|gif]
 ┃╠ 🐼 emojimix [moji+moji]
-┃╠ 🐼 tovideo [reply img]
-┃╠ 🐼 togif [reply stick]
-┃╠ 🐼 tourl [reply media]
-┃╠ 🐼 tovn [reply aud]
-┃╠ 🐼 tomp3 [reply vn]
-┃╠ 🐼 toaudio [reply vid]
+┃╠ 🐼 video [reply img]
+┃╠ 🐼 gif [reply stick]
+┃╠ 🐼 url [reply media]
+┃╠ 🐼 vn [reply aud]
+┃╠ 🐼 mp3 [reply vn]
+┃╠ 🐼 audio [reply vid]
 ┃╠ 🐼 ebinary [reply Text]
 ┃╠ 🐼 dbinary [reply Text]
 ┃╚═════════════ 
