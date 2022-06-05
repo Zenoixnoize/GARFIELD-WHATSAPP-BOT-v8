@@ -30,7 +30,7 @@ Contains over 200+ plugins. This will give you a better experience on WhatsApp. 
  
   <img src="/TempCloud/PicsArt_22-04-17_17-34-37-772.png">
     
-  <b><h1>To scan the Qr code and Link to WhatsApp Multi Device (24×7 Hour Bot) 🛰️</b></h1>
+  <b><h1>To scan the Qr code and Link 🔗 to WhatsApp Multi Device (24×7 Hour Bot) 🛰️</b></h1>
   
  <center>
 <a href="https://replit.com/@zenoi/Garfield-Whatsapp-Bot-Multidevice-Linker-v80?outputonly=1&lite=1#index.js"><img src="/TempCloud/PicsArt_22-04-16_22-52-38-348.png"></center>
