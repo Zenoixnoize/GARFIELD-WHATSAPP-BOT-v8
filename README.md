@@ -45,26 +45,26 @@ You can use it without any hesitation
   <br>
      <b><h1>How to deploy 🍎</h1></b>
      
-  ⬇️ First create a Heroku account  [Click Now](https://signup.heroku.com/) Select Node js as your programming language
+  🦋 First create a Heroku account  [Click Now](https://signup.heroku.com/) Select Node js as your programming language
    <br>
-  ⬇️ After Scan Garfield QR for Whatsapp Multi device beta (24 Hour Activation)
+  🦋 After Scan Garfield QR for Whatsapp Multi device beta (24 Hour Activation)
    <br>
-   ⬇️ After fork this repo Clicking [Here](https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8/fork) and replace your session.js on it
+   🦋 After fork this repo Clicking [Here](https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8/fork) and replace your session.js on it
    <br>
-   ⬇️ Then click on the Deploy App button and add app name 
+   🦋 Then click on the Deploy App button and add app name 
    <br>
-   ⬇️ After click deploy app button 
+   🦋 After click deploy app button 
    <br>
-   ⬇️ wait for 5 minutes to finish deploy (Do not let the screen turn off without switching to other apps ⚠️)
+   🦋 wait for 5 minutes to finish deploy (Do not let the screen turn off without switching to other apps ⚠️)
   <br>
-   ⬇️ Then go to the Manage app.
+   🦋 Then go to the Manage app.
    <br>
-   ⬇️ Then go to Resources and turn on worker ✏️ 
+   🦋 Then go to Resources and turn on worker ✏️ 
    <br>
-   ⬇️ Then go More > View logs and Once loaded, open your WhatsApp and keep it online
+   🦋 Then go More > View logs and Once loaded, open your WhatsApp and keep it online
 <br>
    <br>
-  <center><img src="/TempCloud/cover.png">
+  <center><img src="/TempCloud/logo.png">
     <br>
    <h1>Licence 📑</h1>
     This project is protected by GNU General Public Licence v3.0 ©️ Copyright 2022.
