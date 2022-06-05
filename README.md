@@ -1,4 +1,4 @@
-# GARFIELD WHATSAPP USER BOT LATEST VERSION 🦋 (Button Update And 24×7 hour Working)
+# GARFIELD WHATSAPP USER BOT LATEST VERSION (Button Update 🦋 And 24×7 hour Working 🐼 )
 <img src="/TempCloud/PicsArt_22-04-17_16-25-53-440.png">
 
 <br>
