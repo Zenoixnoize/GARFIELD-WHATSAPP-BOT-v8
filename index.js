@@ -51,7 +51,7 @@ if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
   }, 30 * 1000)
 
-async function startGojoMdNx() {
+async function startGarfieldAdd() {
     const GarfieldAdd = GarfieldAddConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -94,9 +94,7 @@ async function startGojoMdNx() {
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
-//dokumen random
-let doku = [f1,f2,f3,f4,f5,f6]
-let feler = pickRandom(doku)
+
 // yoi
 
     GarfieldAdd.ev.on('group-participants.update', async (anu) => {
@@ -259,12 +257,12 @@ GarfieldAdd.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); GarfieldAdd.logout(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting 🐼 ...."); startGojoMdNx(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startGojoMdNx(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting 🐼 ...."); startGarfieldAdd(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startGarfieldAdd(); }
             else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); GarfieldAdd.logout(); }
             else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); GarfieldAdd.logout(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startGojoMdNx(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startGojoMdNx(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startGarfieldAdd(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startGarfieldAdd(); }
             else GarfieldAdd.end(`Unknown DisconnectReason: ${reason}|${connection}`)
         }
         console.log('Garfield working Now... 🐼 .', update)
@@ -680,7 +678,7 @@ GarfieldAdd.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
     return GarfieldAdd
 }
 
-startGojoMdNx()
+startGarfieldAdd()
 
 
 let file = require.resolve(__filename)
