@@ -10,6 +10,9 @@ const path = require('path')
 const os = require('os')
 const fetch = require('node-fetch')
 const google = require('google-it')
+const mel = require('kitsune-api')
+const xa = require('xfarr-api')
+const hx = require('hxz-api')
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
 const speed = require('performance-now')
@@ -145,6 +148,7 @@ module.exports = GarfieldAdd = async (GarfieldAdd, m, chatUpdate, store) => {
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
 	    const isMedia = /image|video|sticker|audio/.test(mime)
+	    const isBan = banned.includes(m.sender)
 	    const from = mek.key.remoteJid
 	    const type = Object.keys(mek.message)[0]        
 	    const content = JSON.stringify(mek.message)
@@ -1371,17 +1375,13 @@ case 'who':
       case 'thank you bot':
       case 'thank bot':
       case 'thanks bot':
-      case 'Thanks':
       case 'තෑන්ක්ස්':
       case 'Tnx':
       case 'බොහොම ස්තූතියි':
       case 'thank you':
-      case 'Thanks':
-      case 'Thank':
-      case 'tnks':
       case 'tnks':
       case 'tnx you':
-      case 'tnks': {
+      case 'තෑන්ක් යූ': {
             if (!m.isGroup) return replay(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -4850,8 +4850,8 @@ await GarfieldAdd.send5ButImg(from, `` + '' + ' ', `
 ┗━━「 User ${pushname}  ${global.emoji01} 」━©`,unicorn, [{"urlButton": {"displayText": "Follow Us ℹ️ ","url": `${myweb}`}},{"urlButton": {"displayText": "Script 🌈","url": `${sc}`}},{"quickReplyButton": {"displayText": "Donate 🚀","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 🦋","id": 'owner'}}] )
 break
 case 'helpers': case 'help': case 'project':
-var unicorn = await getBuffer(picak+'Developer')
-await GarfieldAdd.send5ButImg(from, `` + '' + ' ', ` ＧＡＲＦＩＥＬＤ\nＷＨＡＴＳＡＰＰ ＢＯＴ\n ꜰʀᴏᴍ ɴᴏɪᴢᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀꜱ\n▰▰▰▰▰▰▰▰▰▰▰▰▰\n𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘣𝘺 𝘟-𝘯𝘰𝘥𝘦𝘴\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nᴀʟᴡᴀʏꜱ ᴏɴ ꜰɪʀꜱᴛ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍ ɪɴ ꜱʀɪ ʟᴀɴᴋᴀ 🇱🇰 \n▰▰▰▰▰▰▰▰▰▰▰▰▰\nᴄᴏᴅᴇᴅ ʙʏ ＺＥＮＯＩ2022 ©\n▰▰▰▰▰▰▰▰▰▰▰▰▰ \nＳＰＥＣＩＡＬ  ＴＨＡＮＫＳ\n- ʜᴀꜱɪɴᴅᴜ ᴅɪɴᴜꜱʜᴀɴ , ʟᴀꜱɪɴᴅᴜ ɴᴇᴛʜꜱᴀʀᴀ, ᴍᴀʟᴇᴇꜱʜᴀ ɴᴇᴛʜꜱᴀʀᴀ , ꜱᴀʀᴀɴɪ ᴍᴇᴛʜꜱᴀᴅᴇᴇ,ꜱᴇᴡᴍɪ ᴍᴀʟᴇᴇꜱʜᴀ , ᴀꜰɴᴀ ᴘᴀʟɪᴋᴋᴀʟ , ꜰᴀʀʜᴀɴ , ᴀᴛᴛɪᴄᴜꜱ , ʙᴀɪʟᴇʏꜱ , ᴛʜɪᴄᴄʏ ,ʏᴜꜱᴜꜰᴜꜱᴛᴀ  `,unicorn, [{"urlButton": {"displayText": "Follow Us ℹ️ ","url": `${myweb}`}},{"urlButton": {"displayText": "Script 🌈","url": `${sc}`}},{"quickReplyButton": {"displayText": "Donate 🚀","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 🦋","id": 'owner'}}] )
+var unicorn = await getBuffer(picak)
+await GarfieldAdd.send5ButImg(from, `` + '' + ' ', ` Garfield\nWhatsapp Bot\n From NOIZE Developers\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nPowered By X Nodes\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nAlways On First Whatsapp User Bot in Sri Lanka 🇱🇰 \n▰▰▰▰▰▰▰▰▰▰▰▰▰\nCoded by ZENOI 2022 ©\n▰▰▰▰▰▰▰▰▰▰▰▰▰ \nSPECIAL THANKS \n- ʜᴀꜱɪɴᴅᴜ ᴅɪɴᴜꜱʜᴀɴ , ʟᴀꜱɪɴᴅᴜ ɴᴇᴛʜꜱᴀʀᴀ, ᴍᴀʟᴇᴇꜱʜᴀ ɴᴇᴛʜꜱᴀʀᴀ , ꜱᴀʀᴀɴɪ ᴍᴇᴛʜꜱᴀᴅᴇᴇ,ꜱᴇᴡᴍɪ ᴍᴀʟᴇᴇꜱʜᴀ , ᴀꜰɴᴀ ᴘᴀʟɪᴋᴋᴀʟ , ꜰᴀʀʜᴀɴ , ᴀᴛᴛɪᴄᴜꜱ , ʙᴀɪʟᴇʏꜱ , ᴛʜɪᴄᴄʏ ,ʏᴜꜱᴜꜰᴜꜱᴛᴀ  `,unicorn, [{"urlButton": {"displayText": "Follow Us ℹ️ ","url": `${myweb}`}},{"urlButton": {"displayText": "Script 🌈","url": `${sc}`}},{"quickReplyButton": {"displayText": "Donate 🚀","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner 🦋","id": 'owner'}}] )
 break
             default:
                 if (budy.startsWith('=>')) {
