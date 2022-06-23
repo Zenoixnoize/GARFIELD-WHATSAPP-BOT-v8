@@ -1,4 +1,4 @@
-/*COPYRIGHT (C) 2022 CODED BY THARINDU LIYANAGE*/
+/*COPYRIGHT (C)2022 CODED BY THARINDU LIYANAGE*/
 // Set this up the way you want it
 // Create this file using your information and a bot name of your choice
 const fs = require('fs')
