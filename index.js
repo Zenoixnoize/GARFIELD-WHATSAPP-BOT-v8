@@ -82,7 +82,7 @@ async function startGarfieldAdd() {
         if (!GarfieldAdd.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         m = smsg(GarfieldAdd, mek, store)
-        require("./Garfield.js")(GarfieldAdd, m, chatUpdate, store)
+        require("./Garfield")(GarfieldAdd, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
