@@ -2157,7 +2157,7 @@ if (!text) throw '*Enter a Link Query!*'
 if (!isUrl(args[0]) && !args[0].includes('googledrive.com')) throw '*The link you provided is not valid*'
 
             
-anu = await fetchJson(`https://xteam.xyz/dl/drive?url=${text}&APIKEY=${setting.riy}`)
+anu = await fetchJson(`https://xteam.xyz/dl/drive?url=${text}&APIKEY=${global.riy}`)
 m.reply(`${util.format(anu)}`)
 GarfieldAdd.sendMessage(m.chat, {document: await getBuffer(anu.result.server2), mimetype: 'application/zip', fileName: `${anu.result.title}`}, {quoted:m}).catch ((err) => m.reply('*Failed to download File*'))     
 }
@@ -2495,7 +2495,6 @@ GarfieldAdd.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : 
 }
 break
 case 'apk': case 'apkmod': case 'apkdl': {      
-      
   if (!text) return m.reply(`Use${prefix + command} vpn`) 
   let noh = require('./lib/myfunc2')                
   noh.rexdl(`${text}`).then(async (data) => {
@@ -2530,10 +2529,6 @@ case 'donlod': {
 
                 if (!text) return m.reply(`Use${prefix + command} whatsapp`)
                 if (!isUrl(args[0]) && !args[0].includes('rexdl.com')) throw '*The link you provided is not valid*'
-if (!isInventoryLimit){ addInventoriLimit(m.sender) }
-            if (isLimit < 5) return m.reply(mess.endLimit)
-            kurangLimit(m.sender, 5)
-            m.reply(`*5 limits used*`)
            let rex = require('./lib/ApkDown.js')
            rex.ApkDown(`${text}`).then(async (anu) => {        
            if (anu[0].size.split('MB')[0] >= 150) return m.reply('*File Over Limit* '+util.format(anu))
@@ -2553,21 +2548,19 @@ GarfieldAdd.sendMessage(m.chat, {text:`@${m.sender.split("@")[0]}`, contextInfo:
 
 break
        case 'wiki': case 'wikipedia': {
-       // //if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 if (!text) throw `Example : ${prefix + command} Sri Lanka`
-                anu = await fetchJson(`https://api.lolhuman.xyz/api/wiki?apikey=${setting.lolkey}&query=${text}`)
+                anu = await fetchJson(`https://api.lolhuman.xyz/api/wiki?apikey=${global.lolkey}&query=${text}`)
                 m.reply(`*Wikipedia 🦋*\n\n${anu.result}`)
             }
         break
-        case 'covidglobal': {	       
-           //if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)                      
-					ngtod = await fetchJson(`https://api.lolhuman.xyz/api/corona/global?apikey=${setting.lolkey}`)
+        case 'covidglobal': {	                        
+					ngtod = await fetchJson(`https://api.lolhuman.xyz/api/corona/global?apikey=${global.lolkey}`)
 					m.reply(`*Total corona global*\n*Positif* : ${ngtod.result.positif}\n*Sembuh* : ${ngtod.result.sembuh}\n*Dirawat* : ${ngtod.result.dirawat}\n*Meninggal* : ${ngtod.result.meninggal}`)
 					}
 	    break
         case 'jadwaltv': {				  
             //if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)                      
-					ngtod = await fetchJson(`https://api.lolhuman.xyz/api/jadwaltv/now?apikey=${setting.lolkey}`)
+					ngtod = await fetchJson(`https://api.lolhuman.xyz/api/jadwaltv/now?apikey=${global.lolkey}`)
 					m.reply(`*Jadwal Tv Hari Ini*\n*ANTV* : ${ngtod.result.antv}\n*GTV* : ${ngtod.result.gtv}\n*INDOSIAR* : ${ngtod.result.indosiar}\n*KOMPASTV* : ${ngtod.result.kompastv}\n*INEWSTV* : ${ngtod.result.inewstv}\n*MNCTV* : ${ngtod.result.mnctv}\*RCTI* : ${ngtod.result.rcti}\n*SCTV* : ${ngtod.result.sctv}\n*TRANSTV* : ${ngtod.result.transtv}\n*TVRI* : ${ngtod.result.tvri}\n*TRANS7* : ${ngtod.result.trans7}\n*NETTV* : ${ngtod.result.nettv}`)
 					}
 	    break
@@ -2576,7 +2569,7 @@ break
 				if (!text) throw `Example : ${prefix + command} Jawatimur`
 				
             
-					anu = await fetchJson(`https://api.lolhuman.xyz/api/cuaca/${text}?apikey=${setting.lolkey}`)
+					anu = await fetchJson(`https://api.lolhuman.xyz/api/cuaca/${text}?apikey=${global.lolkey}`)
 					m.reply(`*Tempat* : ${anu.result.tempat}\n*Cuaca* : ${anu.result.cuaca}\n*Angin* ${anu.result.angin}\n*Kelembapan* : ${anu.result.kelembapan}\n*Suhu* ${anu.result.suhu}\n*Permukaan_Laut* : ${anu.result.permukaan_laut}\n*Latitude* : ${anu.result.latitude}\n*Longitude* : ${anu.result.longitude}`)
 					}
         break
@@ -2584,7 +2577,7 @@ case 'fb2': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 if (!text) throw '*Enter a Link Query!*'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'    
-                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${setting.violkey}&url=${text}`)
+                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
                 tummb = await getBuffer('https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png')    
                 GarfieldAdd.sendMessage(m.chat, { video: { url: anu.result.url[0].url }, jpegThumbnail:tummb, caption: `*📽️ FACEBOOK DOWNLOADER*\n\n*Name* : ${anu.result.meta.title}\n*Quality* : ${anu.result.url[0].subname}\n*Ext* : ${anu.result.url[0].ext}\n`}, { quoted: m }).catch((err) => m.reply('*Sorry, the feature is in error*'))
             }
