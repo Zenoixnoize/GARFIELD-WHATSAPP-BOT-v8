@@ -2455,7 +2455,8 @@ let listmenu = [`ytmp4 ${search.all[0].url}`,`ytmp3 ${search.all[1].url}`,`ytmp4
                case 'readmore': {
             
             ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
-                if (!text) throw `Example : ${prefix + command} *නාකි මයින මැරි*`    anu = await fetchJson(`https://cililitan.herokuapp.com/api/readmore?teks=${text}`)
+                if (!text) throw `Example : ${prefix + command} *නාකි මයින මැරි*`   
+                 anu = await fetchJson(`https://cililitan.herokuapp.com/api/readmore?teks=${text}`)
                m.reply(`${anu.result}`)
             }
             break
