@@ -2583,7 +2583,8 @@ break
 case 'fb2': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 if (!text) throw '*Enter a Link Query!*'
-                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'    anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${setting.violkey}&url=${text}`)
+                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'    
+                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${setting.violkey}&url=${text}`)
                 tummb = await getBuffer('https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png')    
                 GarfieldAdd.sendMessage(m.chat, { video: { url: anu.result.url[0].url }, jpegThumbnail:tummb, caption: `*📽️ FACEBOOK DOWNLOADER*\n\n*Name* : ${anu.result.meta.title}\n*Quality* : ${anu.result.url[0].subname}\n*Ext* : ${anu.result.url[0].ext}\n`}, { quoted: m }).catch((err) => m.reply('*Sorry, the feature is in error*'))
             }
