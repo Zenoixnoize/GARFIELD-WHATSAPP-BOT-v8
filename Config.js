@@ -1,6 +1,5 @@
-/*COPYRIGHT (C)2022 CODED BY THARINDU LIYANAGE*/
+/*COPYRIGHT (C) 2022 CODED BY NOIZE */
 // Set this up the way you want it
-// Create this file using your information and a bot name of your choice
 const fs = require('fs')
 const chalk = require('chalk')
 
@@ -17,7 +16,7 @@ global.emoji01 = ["🐼"] // 👈 Enter your Emoji
 global.emoji02 = ["🦋"] //👈 Enter your Emoji
 global.ownernomer = [+94711502119] //👈 Enter Your number
 global.ownername = ["ZENOI"] //👈 Enter Your name
-global.botname = ["ＧＡＲＦＩＥＬＤ ＢＯＴ ｖ8.2"] //👈 Enter Your Bot name
+global.botname = ["ＧＡＲＤＩＥＬＤ ＢＯＴ ｖ8.2"] //👈 Enter Your Bot name
 global.footer = ["Coded by Tharindu Liyanage"] //👈 Enter Your Name
 global.ig = ["https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8"]
 global.region = ["SriLanka"] // 👈 Enter Your country
@@ -40,6 +39,21 @@ global.mess = {
     error: ["Error! Maybe Api Key Is Expired 🐼!"], // 👈 Use these in your language of choice
     endLimit: ["Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours"],
 }
+
+setting.limitAwal =  "99999999999999999",
+setting.lolkey =  "835641f3d2d1b6971e1fd132",
+setting.xteam =  "apivproject",
+setting.xcodeapi =  "5S3epf7hC2",
+setting.dapaapi =  "piceg",
+setting.sankey =  "sanuwa",
+setting.xteamkey =  "nandowangy",
+setting.carkey =  "cakrayp24Q6",
+setting.violkey =  "beta",
+setting.HunterApi =  "FuckBitch",
+setting.neokey =  "V8qnSaTq",
+setting.riy =  "RiyGanz"
+
+
     global.limitawal = { //Do not change
     premium: "Infinity",
     free: 12,
