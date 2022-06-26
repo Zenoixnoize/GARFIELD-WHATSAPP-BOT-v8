@@ -882,6 +882,58 @@ var _0x6cce=["\x48\x6F\x72\x6F\x73\x63\x6F\x70\x65\x20\x4D\x65\x6E\x75","","\x20
 case 'helpers': case 'help': case 'project':
 var _0x91e6=["","\x20","\x20\x47\x61\x72\x66\x69\x65\x6C\x64\x5C\x6E\x57\x68\x61\x74\x73\x61\x70\x70\x20\x42\x6F\x74\x5C\x6E\x20\x46\x72\x6F\x6D\x20\x4E\x4F\x49\x5A\x45\x20\x44\x65\x76\x65\x6C\x6F\x70\x65\x72\x73\x5C\x6E\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\x5C\x6E\x50\x6F\x77\x65\x72\x65\x64\x20\x42\x79\x20\x58\x20\x4E\x6F\x64\x65\x73\x5C\x6E\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\x5C\x6E\x41\x6C\x77\x61\x79\x73\x20\x4F\x6E\x20\x46\x69\x72\x73\x74\x20\x57\x68\x61\x74\x73\x61\x70\x70\x20\x55\x73\x65\x72\x20\x42\x6F\x74\x20\x69\x6E\x20\x53\x72\x69\x20\x4C\x61\x6E\x6B\x61\x20\uD83C\uDDF1\uD83C\uDDF0\x20\x5C\x6E\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\x5C\x6E\x43\x6F\x64\x65\x64\x20\x62\x79\x20\x5A\x45\x4E\x4F\x49\x20\x32\x30\x32\x32\x20\xA9\x5C\x6E\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\u25B0\x20\x5C\x6E\x53\x50\x45\x43\x49\x41\x4C\x20\x54\x48\x41\x4E\x4B\x53\x20\x5C\x6E\x2D\x20\u029C\u1D00\uA731\u026A\u0274\u1D05\u1D1C\x20\u1D05\u026A\u0274\u1D1C\uA731\u029C\u1D00\u0274\x20\x2C\x20\u029F\u1D00\uA731\u026A\u0274\u1D05\u1D1C\x20\u0274\u1D07\u1D1B\u029C\uA731\u1D00\u0280\u1D00\x2C\x20\u1D0D\u1D00\u029F\u1D07\u1D07\uA731\u029C\u1D00\x20\u0274\u1D07\u1D1B\u029C\uA731\u1D00\u0280\u1D00\x20\x2C\x20\uA731\u1D00\u0280\u1D00\u0274\u026A\x20\u1D0D\u1D07\u1D1B\u029C\uA731\u1D00\u1D05\u1D07\u1D07\x2C\uA731\u1D07\u1D21\u1D0D\u026A\x20\u1D0D\u1D00\u029F\u1D07\u1D07\uA731\u029C\u1D00\x20\x2C\x20\u1D00\uA730\u0274\u1D00\x20\u1D18\u1D00\u029F\u026A\u1D0B\u1D0B\u1D00\u029F\x20\x2C\x20\uA730\u1D00\u0280\u029C\u1D00\u0274\x20\x2C\x20\u1D00\u1D1B\u1D1B\u026A\u1D04\u1D1C\uA731\x20\x2C\x20\u0299\u1D00\u026A\u029F\u1D07\u028F\uA731\x20\x2C\x20\u1D1B\u029C\u026A\u1D04\u1D04\u028F\x20\x2C\u028F\u1D1C\uA731\u1D1C\uA730\u1D1C\uA731\u1D1B\u1D00\x20\x20","\x46\x6F\x6C\x6C\x6F\x77\x20\x55\x73\x20\u2139\uFE0F\x20","\x53\x63\x72\x69\x70\x74\x20\uD83C\uDF08","\x44\x6F\x6E\x61\x74\x65\x20\uD83D\uDE80","\x64\x6F\x6E\x61\x74\x65","\x4F\x77\x6E\x65\x72\x20\uD83E\uDD8B","\x6F\x77\x6E\x65\x72","\x73\x65\x6E\x64\x35\x42\x75\x74\x49\x6D\x67"];var unicorn= await getBuffer(picak); await GarfieldAdd[_0x91e6[9]](from,`${_0x91e6[0]}`+ _0x91e6[0]+ _0x91e6[1],`${_0x91e6[2]}`,unicorn,[{"\x75\x72\x6C\x42\x75\x74\x74\x6F\x6E":{"\x64\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74":_0x91e6[3],"\x75\x72\x6C":`${_0x91e6[0]}${myweb}${_0x91e6[0]}`}},{"\x75\x72\x6C\x42\x75\x74\x74\x6F\x6E":{"\x64\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74":_0x91e6[4],"\x75\x72\x6C":`${_0x91e6[0]}${sc}${_0x91e6[0]}`}},{"\x71\x75\x69\x63\x6B\x52\x65\x70\x6C\x79\x42\x75\x74\x74\x6F\x6E":{"\x64\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74":_0x91e6[5],"\x69\x64":_0x91e6[6]}},{"\x71\x75\x69\x63\x6B\x52\x65\x70\x6C\x79\x42\x75\x74\x74\x6F\x6E":{"\x64\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74":_0x91e6[7],"\x69\x64":_0x91e6[8]}}]);break
             default:
-                var _0xbe09=["\x3D\x3E","\x73\x74\x61\x72\x74\x73\x57\x69\x74\x68","\x6F\x77\x6E\x65\x72","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x66\x6F\x72\x6D\x61\x74","\x28\x61\x73\x79\x6E\x63\x20\x28\x29\x20\x3D\x3E\x20\x7B\x20\x72\x65\x74\x75\x72\x6E\x20","\x73\x6C\x69\x63\x65","\x20\x7D\x29\x28\x29"];if(budy[_0xbe09[1]](_0xbe09[0])){if(!isCreator){return reply(mess[_0xbe09[2]])};function Return(_0x3685x2){sat= JSON[_0xbe09[3]](_0x3685x2,null,2);bang= util[_0xbe09[4]](sat);if(sat== undefined){bang= util[_0xbe09[4]](_0x3685x2)};reply(bang)}try{reply(util[_0xbe09[4]](eval(`${_0xbe09[5]}${budy[_0xbe09[6]](3)}${_0xbe09[7]}`)))}catch(e){reply(String(e))}}
-var _0xf579=["\x3E","\x73\x74\x61\x72\x74\x73\x57\x69\x74\x68","\x6F\x77\x6E\x65\x72","\x73\x6C\x69\x63\x65","\x73\x74\x72\x69\x6E\x67","\x69\x6E\x73\x70\x65\x63\x74","\x75\x74\x69\x6C","\x24","\x40\x73\x2E\x77\x68\x61\x74\x73\x61\x70\x70\x2E\x6E\x65\x74","\x65\x6E\x64\x73\x57\x69\x74\x68","\x63\x68\x61\x74","\x61\x6E\x6F\x6E\x79\x6D\x6F\x75\x73","\x73\x65\x6E\x64\x65\x72","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x61","\x62","\x73\x74\x61\x74\x65","\x43\x48\x41\x54\x54\x49\x4E\x47","\x66\x69\x6E\x64","\x76\x61\x6C\x75\x65\x73","\x74\x65\x78\x74","\x74\x65\x73\x74","\x2E\x6E\x65\x78\x74","\x2E\x6C\x65\x61\x76\x65","\x2E\x73\x74\x6F\x70","\x2E\x73\x74\x61\x72\x74","\x43\x61\x72\x69\x20\x50\x61\x72\x74\x6E\x65\x72","\x4B\x65\x6C\x75\x61\x72","\x4C\x61\x6E\x6A\x75\x74","\x53\x74\x6F\x70","\x71\x75\x6F\x74\x65\x64","\x66\x72\x6F\x6D\x4D\x65","\x63\x6F\x6E\x74\x65\x78\x74\x49\x6E\x66\x6F","\x6D\x73\x67","\x63\x6F\x70\x79\x4E\x46\x6F\x72\x77\x61\x72\x64","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x62\x72\x6F\x61\x64\x63\x61\x73\x74","\x69\x73\x42\x61\x69\x6C\x65\x79\x73","\x64\x61\x74\x61\x62\x61\x73\x65","\x64\x61\x74\x61","\x64\x62"];if(budy[_0xf579[1]](_0xf579[0])){if(!isCreator){return reply(mess[_0xf579[2]])};try{let evaled= await eval(budy[_0xf579[3]](2));if( typeof evaled!== _0xf579[4]){evaled= require(_0xf579[6])[_0xf579[5]](evaled)}; await reply(evaled)}catch(err){ await reply(String(err))}};if(budy[_0xf579[1]](_0xf579[7])){if(!isCreator){return reply(mess[_0xf579[2]])};exec(budy[_0xf579[3]](2),(_0x192ex2,_0x192ex3)=>{if(_0x192ex2){return reply(_0x192ex2)};if(_0x192ex3){return reply(_0x192ex3)}})};if(m[_0xf579[10]][_0xf579[9]](_0xf579[8])&& isCmd){this[_0xf579[11]]= this[_0xf579[11]]?this[_0xf579[11]]:{};let room=Object[_0xf579[19]](this[_0xf579[11]])[_0xf579[18]]((room)=>{return [room[_0xf579[14]],room[_0xf579[15]]][_0xf579[13]](m[_0xf579[12]])&& room[_0xf579[16]]=== _0xf579[17]});if(room){if(/^.*(next|leave|start)/[_0xf579[21]](m[_0xf579[20]])){return};if([_0xf579[22],_0xf579[23],_0xf579[24],_0xf579[25],_0xf579[26],_0xf579[27],_0xf579[28],_0xf579[29]][_0xf579[13]](m[_0xf579[20]])){return};let other=[room[_0xf579[14]],room[_0xf579[15]]][_0xf579[18]]((_0x192ex6)=>{return _0x192ex6!== m[_0xf579[12]]});m[_0xf579[34]](other,true,m[_0xf579[30]]&& m[_0xf579[30]][_0xf579[31]]?{contextInfo:{...m[_0xf579[33]][_0xf579[32]],forwardingScore:0,isForwarded:true,participant:other}}:{})};return !0};if(isCmd&& budy[_0xf579[35]]()!= undefined){if(m[_0xf579[10]][_0xf579[9]](_0xf579[36])){return};if(m[_0xf579[37]]){return};let msgs=global[_0xf579[40]][_0xf579[39]][_0xf579[38]];if(!(budy[_0xf579[35]]() in  msgs)){return};GarfieldAdd[_0xf579[34]](m[_0xf579[10]],msgs[budy[_0xf579[35]]()],true)}
-               
+                  if (budy.startsWith('=>')) {
+                    var _0x7b38=["\x6F\x77\x6E\x65\x72","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x66\x6F\x72\x6D\x61\x74","\x28\x61\x73\x79\x6E\x63\x20\x28\x29\x20\x3D\x3E\x20\x7B\x20\x72\x65\x74\x75\x72\x6E\x20","\x73\x6C\x69\x63\x65","\x20\x7D\x29\x28\x29"];if(!isCreator){return reply(mess[_0x7b38[0]])};function Return(_0xc7b7x2){sat= JSON[_0x7b38[1]](_0xc7b7x2,null,2);bang= util[_0x7b38[2]](sat);if(sat== undefined){bang= util[_0x7b38[2]](_0xc7b7x2)};reply(bang)}try{reply(util[_0x7b38[2]](eval(`${_0x7b38[3]}${budy[_0x7b38[4]](3)}${_0x7b38[5]}`)))}catch(e){reply(String(e))}
+                }
+
+                if (budy.startsWith('>')) {
+                    var _0x355b=["\x6F\x77\x6E\x65\x72","\x73\x6C\x69\x63\x65","\x73\x74\x72\x69\x6E\x67","\x69\x6E\x73\x70\x65\x63\x74","\x75\x74\x69\x6C"];if(!isCreator){return reply(mess[_0x355b[0]])};try{let evaled= await eval(budy[_0x355b[1]](2));if( typeof evaled!== _0x355b[2]){evaled= require(_0x355b[4])[_0x355b[3]](evaled)}; await reply(evaled)}catch(err){ await reply(String(err))}
+                }
+
+                if (budy.startsWith('$')) {
+                    var _0xa263=["\x6F\x77\x6E\x65\x72","\x73\x6C\x69\x63\x65"];if(!isCreator){return reply(mess[_0xa263[0]])};exec(budy[_0xa263[1]](2),(_0x91a2x1,_0x91a2x2)=>{if(_0x91a2x1){return reply(_0x91a2x1)};if(_0x91a2x2){return reply(_0x91a2x2)}})
+                }
+			
+		if (m.chat.endsWith('@s.whatsapp.net') && isCmd) {
+                    this.anonymous = this.anonymous ? this.anonymous : {}
+                    let room = Object.values(this.anonymous).find(room => [room.a, room.b].includes(m.sender) && room.state === 'CHATTING')
+                    if (room) {
+                        if (/^.*(next|leave|start)/.test(m.text)) return
+                        if (['.next', '.leave', '.stop', '.start', 'Cari Partner', 'Keluar', 'Lanjut', 'Stop'].includes(m.text)) return
+                        let other = [room.a, room.b].find(user => user !== m.sender)
+                        m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
+                            contextInfo: {
+                                ...m.msg.contextInfo,
+                                forwardingScore: 0,
+                                isForwarded: true,
+                                participant: other
+                            }
+                        } : {})
+                    }
+                    return !0
+                }
+			
+		if (isCmd && budy.toLowerCase() != undefined) {
+		    if (m.chat.endsWith('broadcast')) return
+		    if (m.isBaileys) return
+		    let msgs = global.db.data.database
+		    if (!(budy.toLowerCase() in msgs)) return
+		    GarfieldAdd.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+		}
+        }
+        
+
+    } catch (err) {
+        m.reply(util.format(err))
+    }
+}
+
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+	fs.unwatchFile(file)
+	console.log(chalk.redBright(`Update ${__filename}`))
+	delete require.cache[file]
+	require(file)
+})
+  
