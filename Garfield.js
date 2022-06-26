@@ -339,8 +339,14 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
 *${prefix}delvote* - To Delete Vote Session`
            var _0xa65a=["","\x75\x70\x76\x6F\x74\x65","\x55\x70\x76\x6F\x74\x65","\x64\x65\x76\x6F\x74\x65","\x44\x65\x76\x6F\x74\x65","\xA9\x20\x43\x6F\x64\x65\x64\x20\x62\x79\x20\x54\x68\x61\x72\x69\x6E\x64\x75\x20\x4C\x69\x79\x61\x6E\x61\x67\x65","\x63\x68\x61\x74","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];let buttonsUpvote=[{buttonId:`${_0xa65a[0]}${prefix}${_0xa65a[1]}`,buttonText:{displayText:_0xa65a[2]},type:1},{buttonId:`${_0xa65a[0]}${prefix}${_0xa65a[3]}`,buttonText:{displayText:_0xa65a[4]},type:1}];let buttonMessageUpvote={text:teks_vote,footer:`${_0xa65a[5]}`,buttons:buttonsUpvote,headerType:1,mentions:menvote};GarfieldAdd[_0xa65a[7]](m[_0xa65a[6]],buttonMessageUpvote)      
-            case 'devote': {
-            var _0x65c5=["\x69\x73\x47\x72\x6F\x75\x70","","\x67\x72\x6F\x75\x70","\x63\x68\x61\x74","\x5F\x2A\x4E\x6F\x20\x56\x6F\x74\x69\x6E\x67\x20\x49\x6E\x20\x54\x68\x69\x73\x20\x47\x72\x6F\x75\x70\x21\x2A\x5F\x5C\x6E\x5C\x6E\x2A","\x76\x6F\x74\x65\x2A\x20\x2D\x20\x54\x6F\x20\x53\x74\x61\x72\x74\x20\x56\x6F\x74\x69\x6E\x67","\x63\x6F\x6E\x63\x61\x74","\x73\x65\x6E\x64\x65\x72","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x59\x6F\x75\x27\x76\x65\x20\x56\x6F\x74\x65\x64","\x70\x75\x73\x68"];if(!m[_0x65c5[0]]){return replay(`${_0x65c5[1]}${mess[_0x65c5[2]]}${_0x65c5[1]}`)};if(!(m[_0x65c5[3]] in  vote)){return replay(`${_0x65c5[4]}${prefix}${_0x65c5[5]}`)};isVote= vote[m[_0x65c5[3]]][1][_0x65c5[6]](vote[m[_0x65c5[3]]][2]);wasVote= isVote[_0x65c5[8]](m[_0x65c5[7]]);if(wasVote){return replay(`${_0x65c5[9]}`)};vote[m[_0x65c5[3]]][2][_0x65c5[10]](m[_0x65c5[7]]);menvote= vote[m[_0x65c5[3]]][1][_0x65c5[6]](vote[m[_0x65c5[3]]][2])
+                case 'devote': {
+            if (!m.isGroup) return replay(`${mess.group}`)
+            if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            isVote = vote[m.chat][1].concat(vote[m.chat][2])
+            wasVote = isVote.includes(m.sender)
+            if (wasVote) return replay(`You've Voted`)
+            vote[m.chat][2].push(m.sender)
+            menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `*「 VOTE 」*
 
 *Reason:* ${vote[m.chat][0]}
@@ -360,7 +366,21 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 └────
 
 *${prefix}delvote* - To Delete Vote Session`
-             var _0x819d=["","\x75\x70\x76\x6F\x74\x65","\x55\x70\x76\x6F\x74\x65","\x64\x65\x76\x6F\x74\x65","\x44\x65\x76\x6F\x74\x65","\xA9\x20\x43\x6F\x64\x65\x64\x20\x62\x79\x20\x54\x68\x61\x72\x69\x6E\x64\x75\x20\x4C\x69\x79\x61\x6E\x61\x67\x65","\x63\x68\x61\x74","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];let buttonsDevote=[{buttonId:`${_0x819d[0]}${prefix}${_0x819d[1]}`,buttonText:{displayText:_0x819d[2]},type:1},{buttonId:`${_0x819d[0]}${prefix}${_0x819d[3]}`,buttonText:{displayText:_0x819d[4]},type:1}];let buttonMessageDevote={text:teks_vote,footer:`${_0x819d[5]}`,buttons:buttonsDevote,headerType:1,mentions:menvote};GarfieldAdd[_0x819d[7]](m[_0x819d[6]],buttonMessageDevote)                
+            let buttonsDevote = [
+              {buttonId: `${prefix}upvote`, buttonText: {displayText: 'Upvote'}, type: 1},
+              {buttonId: `${prefix}devote`, buttonText: {displayText: 'Devote'}, type: 1}
+            ]
+
+            let buttonMessageDevote = {
+                text: teks_vote,
+                footer: `© Coded by Tharindu Liyanage`,
+                buttons: buttonsDevote,
+                headerType: 1,
+                mentions: menvote
+            }
+            GarfieldAdd.sendMessage(m.chat, buttonMessageDevote)
+	}
+            break          
 case 'checkvote':
 var _0xcf49=["\x69\x73\x47\x72\x6F\x75\x70","","\x67\x72\x6F\x75\x70","\x63\x68\x61\x74","\x5F\x2A\x4E\x6F\x20\x56\x6F\x74\x69\x6E\x67\x20\x49\x6E\x20\x54\x68\x69\x73\x20\x47\x72\x6F\x75\x70\x21\x2A\x5F\x5C\x6E\x5C\x6E\x2A","\x76\x6F\x74\x65\x2A\x20\x2D\x20\x54\x6F\x20\x53\x74\x61\x72\x74\x20\x56\x6F\x74\x69\x6E\x67"];if(!m[_0xcf49[0]]){return replay(`${_0xcf49[1]}${mess[_0xcf49[2]]}${_0xcf49[1]}`)};if(!(m[_0xcf49[3]] in  vote)){return replay(`${_0xcf49[4]}${prefix}${_0xcf49[5]}`)}
 teks_vote = `*「 VOTE 」*
