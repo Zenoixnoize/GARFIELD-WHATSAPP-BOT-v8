@@ -526,8 +526,29 @@ var _0x5b7b=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x65\x6E\x6F\x72\x2E\x67\x6F\x
                 case 'upload': 
                 var _0x793d=["\x77\x61\x69\x74","\x2E\x2F\x6C\x69\x62\x2F\x75\x70\x6C\x6F\x61\x64\x65\x72","\x64\x6F\x77\x6E\x6C\x6F\x61\x64\x41\x6E\x64\x53\x61\x76\x65\x4D\x65\x64\x69\x61\x4D\x65\x73\x73\x61\x67\x65","\x74\x65\x73\x74","\x66\x6F\x72\x6D\x61\x74","\x75\x6E\x6C\x69\x6E\x6B\x53\x79\x6E\x63"];{reply(mess[_0x793d[0]]);let {UploadFileUgu,webp2mp4File,TelegraPh}=require(_0x793d[1]);let media= await GarfieldAdd[_0x793d[2]](quoted);if(/image/[_0x793d[3]](mime)){let anu= await TelegraPh(media);reply(util[_0x793d[4]](anu))}else {if(!/image/[_0x793d[3]](mime)){let anu= await UploadFileUgu(media);reply(util[_0x793d[4]](anu))}}; await fs[_0x793d[5]](media)}break
 //Remove bg                                        
-    case 'imagenobg': case 'removebg': case 'remove-bg': { 
-    var _0xd999=["\x53\x65\x6E\x64\x2F\x52\x65\x70\x6C\x79\x20\x49\x6D\x61\x67\x65\x20\x57\x69\x74\x68\x20\x43\x61\x70\x74\x69\x6F\x6E\x20","","\x74\x65\x73\x74","\x72\x65\x6D\x6F\x76\x65\x2E\x62\x67","\x71\x36\x31\x66\x61\x58\x7A\x7A\x52\x35\x7A\x4E\x55\x36\x63\x76\x63\x72\x77\x74\x55\x6B\x52\x55","\x53\x32\x35\x38\x64\x69\x5A\x68\x63\x75\x46\x4A\x6F\x6F\x41\x74\x48\x54\x61\x50\x45\x6E\x34\x54","\x35\x4C\x6A\x66\x43\x56\x41\x70\x34\x76\x56\x4E\x59\x69\x54\x6A\x71\x39\x6D\x58\x4A\x57\x48\x46","\x61\x54\x37\x69\x62\x66\x55\x73\x47\x53\x77\x46\x79\x6A\x61\x50\x5A\x39\x65\x6F\x4A\x63\x36\x31","\x42\x59\x36\x33\x74\x37\x56\x78\x32\x74\x53\x36\x38\x59\x5A\x46\x59\x36\x41\x4A\x34\x48\x48\x46","\x35\x47\x64\x71\x31\x73\x53\x57\x53\x65\x79\x5A\x7A\x50\x4D\x48\x71\x7A\x37\x45\x4E\x66\x69\x38","\x38\x36\x68\x36\x64\x36\x75\x34\x41\x58\x72\x73\x74\x34\x42\x56\x4D\x44\x39\x64\x7A\x64\x47\x5A","\x78\x70\x38\x70\x53\x44\x61\x76\x41\x67\x66\x45\x35\x58\x53\x63\x71\x58\x6F\x39\x55\x4B\x48\x46","\x64\x57\x62\x43\x6F\x43\x62\x33\x54\x61\x63\x43\x50\x39\x33\x69\x6D\x4E\x45\x63\x50\x78\x63\x4C","\x72\x61\x6E\x64\x6F\x6D","\x6C\x65\x6E\x67\x74\x68","\x66\x6C\x6F\x6F\x72","\x2E\x2F\x58\x36\x32\x38\x2F\x72\x65\x6D\x6F\x62\x67\x2D","\x64\x6F\x77\x6E\x6C\x6F\x61\x64\x41\x6E\x64\x53\x61\x76\x65\x4D\x65\x64\x69\x61\x4D\x65\x73\x73\x61\x67\x65","\x2E\x2F\x58\x36\x32\x38\x2F\x68\x72\x65\x6D\x6F\x2D","\x2E\x70\x6E\x67","\x77\x61\x69\x74","\x63\x68\x61\x74","\x72\x65\x61\x64\x46\x69\x6C\x65\x53\x79\x6E\x63","\x73\x75\x63\x63\x65\x73\x73","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65","\x75\x6E\x6C\x69\x6E\x6B\x53\x79\x6E\x63","\x74\x68\x65\x6E","\x72\x65\x67\x75\x6C\x61\x72","\x61\x75\x74\x6F","\x31\x30\x30\x25","\x72\x65\x6D\x6F\x76\x65\x42\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x46\x72\x6F\x6D\x49\x6D\x61\x67\x65\x46\x69\x6C\x65"];if(!quoted){return replay(`${_0xd999[0]}${prefix+ command}${_0xd999[1]}`)};if(!/image/[_0xd999[2]](mime)){return replay(`${_0xd999[0]}${prefix+ command}${_0xd999[1]}`)};if(/webp/[_0xd999[2]](mime)){return replay(`${_0xd999[0]}${prefix+ command}${_0xd999[1]}`)};let remobg=require(_0xd999[3]);let apirnobg=[_0xd999[4],_0xd999[5],_0xd999[6],_0xd999[7],_0xd999[8],_0xd999[9],_0xd999[10],_0xd999[11],_0xd999[12]];let apinobg=apirnobg[Math[_0xd999[15]](Math[_0xd999[13]]()* apirnobg[_0xd999[14]])];hmm= await;_0xd999[16]+ getRandom(_0xd999[1]);localFile=  await GarfieldAdd[_0xd999[17]](quoted,hmm);outputFile= await;_0xd999[18]+ getRandom(_0xd999[19]);reply(mess[_0xd999[20]]);remobg[_0xd999[30]]({path:localFile,apiKey:apinobg,size:_0xd999[27],type:_0xd999[28],scale:_0xd999[29],outputFile})[_0xd999[26]](async (_0x8010x4)=>{GarfieldAdd[_0xd999[24]](m[_0xd999[21]],{image:fs[_0xd999[22]](outputFile),caption:mess[_0xd999[23]]},{quoted:m}); await fs[_0xd999[25]](localFile); await fs[_0xd999[25]](outputFile)})
+    case 'imagenobg': case 'removebg': case 'remove-bg': {
+	    if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+	    if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+	    if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+	    let remobg = require('remove.bg')
+	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
+	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
+	    hmm = await './X628/remobg-'+getRandom('')
+	    localFile = await GarfieldAdd.downloadAndSaveMediaMessage(quoted, hmm)
+	    outputFile = await './X628/hremo-'+getRandom('.png')
+	    reply(mess.wait)
+	    remobg.removeBackgroundFromImageFile({
+	      path: localFile,
+	      apiKey: apinobg,
+	      size: "regular",
+	      type: "auto",
+	      scale: "100%",
+	      outputFile 
+	    }).then(async result => {
+	    GarfieldAdd.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
+	    await fs.unlinkSync(localFile)
+	    await fs.unlinkSync(outputFile)
+	    })
 	    }
 	    break
                                      
