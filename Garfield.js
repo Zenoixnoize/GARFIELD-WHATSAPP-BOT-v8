@@ -338,7 +338,8 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 └────
 
 *${prefix}delvote* - To Delete Vote Session`
-           var _0xa65a=["","\x75\x70\x76\x6F\x74\x65","\x55\x70\x76\x6F\x74\x65","\x64\x65\x76\x6F\x74\x65","\x44\x65\x76\x6F\x74\x65","\xA9\x20\x43\x6F\x64\x65\x64\x20\x62\x79\x20\x54\x68\x61\x72\x69\x6E\x64\x75\x20\x4C\x69\x79\x61\x6E\x61\x67\x65","\x63\x68\x61\x74","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];let buttonsUpvote=[{buttonId:`${_0xa65a[0]}${prefix}${_0xa65a[1]}`,buttonText:{displayText:_0xa65a[2]},type:1},{buttonId:`${_0xa65a[0]}${prefix}${_0xa65a[3]}`,buttonText:{displayText:_0xa65a[4]},type:1}];let buttonMessageUpvote={text:teks_vote,footer:`${_0xa65a[5]}`,buttons:buttonsUpvote,headerType:1,mentions:menvote};GarfieldAdd[_0xa65a[7]](m[_0xa65a[6]],buttonMessageUpvote)      
+           var _0xa65a=["","\x75\x70\x76\x6F\x74\x65","\x55\x70\x76\x6F\x74\x65","\x64\x65\x76\x6F\x74\x65","\x44\x65\x76\x6F\x74\x65","\xA9\x20\x43\x6F\x64\x65\x64\x20\x62\x79\x20\x54\x68\x61\x72\x69\x6E\x64\x75\x20\x4C\x69\x79\x61\x6E\x61\x67\x65","\x63\x68\x61\x74","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];let buttonsUpvote=[{buttonId:`${_0xa65a[0]}${prefix}${_0xa65a[1]}`,buttonText:{displayText:_0xa65a[2]},type:1},{buttonId:`${_0xa65a[0]}${prefix}${_0xa65a[3]}`,buttonText:{displayText:_0xa65a[4]},type:1}];let buttonMessageUpvote={text:teks_vote,footer:`${_0xa65a[5]}`,buttons:buttonsUpvote,headerType:1,mentions:menvote};GarfieldAdd[_0xa65a[7]](m[_0xa65a[6]],buttonMessageUpvote)    
+                break
                 case 'devote': {
             if (!m.isGroup) return replay(`${mess.group}`)
             if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
