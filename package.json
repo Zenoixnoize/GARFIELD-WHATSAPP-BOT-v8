@@ -1,7 +1,7 @@
 {
   "name": "GARFIELD-WHATSAPP-BOT",
-  "version": "8.0.0",
-  "description": "GARFIELD BY NOIZE",
+  "version": "8.2.1",
+  "description": "Garfield Whatsapp Bot NOIZE developers",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
