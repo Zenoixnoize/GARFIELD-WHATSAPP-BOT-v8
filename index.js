@@ -1,4 +1,3 @@
-//Coded by Tharindu Liyanage
 // GARFIELD v8.2 BY NOIZE PROJECTS 🐼
 //Coded by Tharindu Liyanage
 var _0xe52d=["\x2E\x2F\x43\x6F\x6E\x66\x69\x67","\x40\x61\x64\x69\x77\x61\x6A\x73\x68\x69\x6E\x67\x2F\x62\x61\x69\x6C\x65\x79\x73","\x2E\x2F","\x2E\x6A\x73\x6F\x6E","\x70\x69\x6E\x6F","\x40\x68\x61\x70\x69\x2F\x62\x6F\x6F\x6D","\x66\x73","\x79\x61\x72\x67\x73\x2F\x79\x61\x72\x67\x73","\x63\x68\x61\x6C\x6B","\x66\x69\x6C\x65\x2D\x74\x79\x70\x65","\x70\x61\x74\x68","\x61\x77\x65\x73\x6F\x6D\x65\x2D\x70\x68\x6F\x6E\x65\x6E\x75\x6D\x62\x65\x72","\x2E\x2F\x6C\x69\x62\x2F\x65\x78\x69\x66","\x2E\x2F\x6C\x69\x62\x2F\x6D\x79\x66\x75\x6E\x63","\x6C\x6F\x77\x64\x62","\x2E\x2F\x6C\x69\x62\x2F\x6C\x6F\x77\x64\x62","\x2E\x2F\x6C\x69\x62\x2F\x6D\x6F\x6E\x67\x6F\x44\x42"];require(_0xe52d[0]);const {default:XmodulesConnect,useSingleFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,proto}=require(_0xe52d[1]);const {state,saveState}=useSingleFileAuthState(`${_0xe52d[2]}${sessionName}${_0xe52d[3]}`);const pino=require(_0xe52d[4]);const {Boom}=require(_0xe52d[5]);const fs=require(_0xe52d[6]);const yargs=require(_0xe52d[7]);const chalk=require(_0xe52d[8]);const FileType=require(_0xe52d[9]);const path=require(_0xe52d[10]);const PhoneNumber=require(_0xe52d[11]);const {imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0xe52d[12]);const {smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0xe52d[13]);var low;try{low= require(_0xe52d[14])}catch(e){low= require(_0xe52d[15])};const {Low,JSONFile}=low;const mongoDB=require(_0xe52d[16])
@@ -491,7 +490,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
             mime: 'application/octet-stream',
             ext: '.bin'
         }
-        filename = path.join(__filename, '../src/' + new Date * 1 + '.' + type.ext)
+        filename = path.join(__filename, '../X628/' + new Date * 1 + '.' + type.ext)
         if (data && save) fs.promises.writeFile(filename, data)
         return {
             res,
