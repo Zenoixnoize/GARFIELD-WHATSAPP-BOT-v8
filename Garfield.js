@@ -54,7 +54,8 @@ const reply = (teks) => {
         const replay = (teks) => {
             GarfieldAdd.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title":` 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т `,"body": `ＸＮＯＤＥＳ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./TempCloud/logo.png`),"sourceUrl": `http://Wa.me//${global.owner}?text=*Hello🦋*`}}}, { quoted: m})
         }
-//Coded by Tharindu Liyanage 
+
+
         //Public & Self\\
         if (!GarfieldAdd.public) {
             if (!m.key.fromMe) return
