@@ -66,7 +66,7 @@ var _0x5710=["\x69\x73\x47\x72\x6F\x75\x70","\x63\x61\x74\x63\x68","\x63\x68\x61
             console.log('Limit Reseted')
         }, {
             scheduled: true,
-            timezone: "Asia/Mumbai"
+            timezone: "Asia/Colombo"
         })
         
 	// UCAPAN LEMBUT
