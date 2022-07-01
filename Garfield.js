@@ -1,5 +1,6 @@
 //Coded by Tharindu Liyanage
 // GARFIELD v8.2 BY NOIZE PROJECTS 🐼
+process.on('uncaughtException', console.error) //Safe Log Error
 require('./Config')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
@@ -26,7 +27,90 @@ const xmodules = require('xfarr-api')
 
 
 //rpg function\\
-var _0xc25c=["\x2E\x2F\x49\x4D\x47\x44\x65\x73\x63\x2F\x75\x73\x65\x72\x2F\x64\x61\x72\x61\x68\x2E\x6A\x73","\x2E\x2F\x49\x4D\x47\x44\x65\x73\x63\x2F\x75\x73\x65\x72\x2F\x61\x6C\x61\x74\x5F\x74\x75\x6B\x61\x72\x2E\x6A\x73","\x2E\x2F\x49\x4D\x47\x44\x65\x73\x63\x2F\x75\x73\x65\x72\x2F\x6D\x6F\x6E\x61\x79\x2E\x6A\x73","\x2E\x2F\x49\x4D\x47\x44\x65\x73\x63\x2F\x75\x73\x65\x72\x2F\x6C\x69\x6D\x69\x74\x2E\x6A\x73","\x2E\x2F\x49\x4D\x47\x44\x65\x73\x63\x2F\x75\x73\x65\x72\x2F\x62\x75\x72\x75\x61\x6E\x2E\x6A\x73","\x64\x61\x72\x61\x68\x61\x77\x61\x6C","\x72\x70\x67","\x73\x65\x6E\x64\x65\x72","\uD83D\uDC3C","\uD83E\uDD8B"];const {addInventoriDarah,cekDuluJoinAdaApaKagaDiJson,addDarah,kurangDarah,getDarah}=require(_0xc25c[0]);const {cekInventoryAdaAtauGak,addInventori,addBesi,addEmas,addEmerald,addUmpan,addPotion,kurangBesi,kurangEmas,kurangEmerald,kurangUmpan,kurangPotion,getBesi,getEmas,getEmerald,getUmpan,getPotion}=require(_0xc25c[1]);const {addInventoriMonay,cekDuluJoinAdaApaKagaMonaynyaDiJson,addMonay,kurangMonay,getMonay}=require(_0xc25c[2]);const {addInventoriLimit,cekDuluJoinAdaApaKagaLimitnyaDiJson,addLimit,kurangLimit,getLimit}=require(_0xc25c[3]);const {cekDuluHasilBuruanNya,addInventoriBuruan,addIkan,addAyam,addKelinci,addDomba,addSapi,addGajah,kurangIkan,kurangAyam,kurangKelinci,kurangDomba,kurangSapi,kurangGajah,getIkan,getAyam,getKelinci,getDomba,getSapi,getGajah}=require(_0xc25c[4]);let DarahAwal=global[_0xc25c[6]][_0xc25c[5]];const isDarah=cekDuluJoinAdaApaKagaDiJson(m[_0xc25c[7]]);const isCekDarah=getDarah(m[_0xc25c[7]]);const isUmpan=getUmpan(m[_0xc25c[7]]);const isPotion=getPotion(m[_0xc25c[7]]);const isIkan=getIkan(m[_0xc25c[7]]);const isAyam=getAyam(m[_0xc25c[7]]);const isKelinci=getKelinci(m[_0xc25c[7]]);const isDomba=getDomba(m[_0xc25c[7]]);const isSapi=getSapi(m[_0xc25c[7]]);const isGajah=getGajah(m[_0xc25c[7]]);const isMonay=getMonay(m[_0xc25c[7]]);const isLimit=getLimit(m[_0xc25c[7]]);const isBesi=getBesi(m[_0xc25c[7]]);const isEmas=getEmas(m[_0xc25c[7]]);const isEmerald=getEmerald(m[_0xc25c[7]]);const isInventory=cekInventoryAdaAtauGak(m[_0xc25c[7]]);const isInventoriBuruan=cekDuluHasilBuruanNya(m[_0xc25c[7]]);const isInventoryLimit=cekDuluJoinAdaApaKagaLimitnyaDiJson(m[_0xc25c[7]]);const isInventoryMonay=cekDuluJoinAdaApaKagaMonaynyaDiJson(m[_0xc25c[7]]);const ikan=[_0xc25c[8],_0xc25c[9]]   
+ const { 
+     addInventoriDarah, 
+      cekDuluJoinAdaApaKagaDiJson, 
+      addDarah, 
+      kurangDarah, 
+     getDarah 
+   }  = require('./IMGDesc/user/darah.js')
+   const { 
+     cekInventoryAdaAtauGak, 
+      addInventori,  
+       addBesi, 
+       addEmas, 
+       addEmerald,
+       addUmpan,
+       addPotion,
+       kurangBesi, 
+       kurangEmas, 
+       kurangEmerald, 
+       kurangUmpan,
+       kurangPotion,
+       getBesi, 
+      getEmas, 
+     getEmerald,
+     getUmpan,
+    getPotion
+   } = require('./IMGDesc/user/alat_tukar.js')
+   const { 
+    addInventoriMonay, 
+    cekDuluJoinAdaApaKagaMonaynyaDiJson, 
+    addMonay, 
+    kurangMonay, 
+   getMonay 
+   } = require('./IMGDesc/user/monay.js')
+   const { 
+    addInventoriLimit, 
+    cekDuluJoinAdaApaKagaLimitnyaDiJson, 
+    addLimit, 
+    kurangLimit, 
+    getLimit 
+   } = require('./IMGDesc/user/limit.js')
+    const { 
+    cekDuluHasilBuruanNya, 
+     addInventoriBuruan, 
+     addIkan,
+      addAyam, 
+      addKelinci, 
+      addDomba, 
+      addSapi,
+      addGajah,
+      kurangIkan,
+      kurangAyam, 
+      kurangKelinci, 
+      kurangDomba, 
+      kurangSapi,
+      kurangGajah,
+      getIkan,
+      getAyam, 
+      getKelinci, 
+      getDomba,
+     getSapi,
+    getGajah
+   } = require('./IMGDesc/user/buruan.js')
+   let DarahAwal =  global.rpg.darahawal
+   const isDarah = cekDuluJoinAdaApaKagaDiJson(m.sender)   
+   const isCekDarah = getDarah(m.sender)
+   const isUmpan = getUmpan(m.sender)
+   const isPotion = getPotion(m.sender)
+   const isIkan = getIkan(m.sender)
+   const isAyam = getAyam(m.sender)
+   const isKelinci = getKelinci(m.sender)
+   const isDomba = getDomba(m.sender)
+   const isSapi = getSapi(m.sender)
+   const isGajah = getGajah(m.sender)
+   const isMonay = getMonay(m.sender)
+   const isLimit = getLimit(m.sender)
+   const isBesi = getBesi(m.sender)
+   const isEmas = getEmas(m.sender)
+   const isEmerald = getEmerald(m.sender)
+   const isInventory = cekInventoryAdaAtauGak(m.sender)
+   const isInventoriBuruan = cekDuluHasilBuruanNya(m.sender)
+   const isInventoryLimit = cekDuluJoinAdaApaKagaLimitnyaDiJson(m.sender)
+   const isInventoryMonay = cekDuluJoinAdaApaKagaMonaynyaDiJson(m.sender)
+   const ikan = ['🐼','🦋']   
+
 //rpg database\\
  let _limit = JSON.parse(fs.readFileSync('./IMGDesc/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./IMGDesc/user/hasil_buruan.json'));
@@ -173,7 +257,19 @@ if(time2 < "05:00:00"){
 var ucapannya2 = `Good morning 🌅`
 }
 	  //antilink\\
-        if (db.data.chats[m.chat].antilink) { var _0xa27f=["\x63\x68\x61\x74\x2E\x77\x68\x61\x74\x73\x61\x70\x70\x2E\x63\x6F\x6D","\x6D\x61\x74\x63\x68","\u300C\x20\x41\x4E\x54\x49\x20\x4C\x49\x4E\x4B\x20\u300D\x5C\x6E\x5C\x6E\x59\x6F\x75\x20\x68\x61\x76\x65\x20\x62\x65\x65\x6E\x20\x64\x65\x74\x65\x63\x74\x65\x64\x20\x73\x65\x6E\x64\x69\x6E\x67\x20\x61\x20\x67\x72\x6F\x75\x70\x20\x6C\x69\x6E\x6B\x2C\x20\x73\x6F\x72\x72\x79\x20\x79\x6F\x75\x20\x77\x69\x6C\x6C\x20\x62\x65\x20\x6B\x69\x63\x6B\x65\x64\x20\x21","\x49\x20\x41\x6D\x20\x4E\x6F\x74\x20\x41\x6E\x20\x41\x64\x6D\x69\x6E\x2C\x20\x48\x6F\x77\x20\x43\x6F\x75\x6C\x64\x20\x49\x20\x4B\x69\x63\x6B\x20\x53\x6F\x6D\x65\x62\x6F\x64\x79\x20\x57\x68\x6F\x20\x53\x65\x6E\x64\x20\x4C\x69\x6E\x6B\x20\uD83D\uDE12","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x68\x61\x74\x2E\x77\x68\x61\x74\x73\x61\x70\x70\x2E\x63\x6F\x6D\x2F","\x63\x68\x61\x74","\x67\x72\x6F\x75\x70\x49\x6E\x76\x69\x74\x65\x43\x6F\x64\x65","\x69","\x74\x65\x78\x74","\x74\x65\x73\x74","\x47\x72\x6F\x75\x70\x20\x49\x73\x20\x49\x6E\x73\x74\x61\x6C\x6C\x65\x64\x20\x57\x69\x74\x68\x20\x41\x6E\x74\x69\x2D\x4C\x69\x6E\x6B\x20\x42\x75\x74\x20\x49\x20\x57\x6F\x6E\x27\x74\x20\x4B\x69\x63\x6B\x20\x59\x6F\x75\x20\uD83D\uDE09\x2C\x20\x42\x65\x63\x61\x75\x73\x65\x20\x59\x6F\x75\x20\x53\x65\x6E\x74\x20\x54\x68\x69\x73\x20\x47\x72\x6F\x75\x70\x20\x4C\x69\x6E\x6B\u2764\uFE0F","\x47\x72\x6F\x75\x70\x20\x49\x73\x20\x49\x6E\x73\x74\x61\x6C\x6C\x65\x64\x20\x57\x69\x74\x68\x20\x41\x6E\x74\x69\x2D\x4C\x69\x6E\x6B\x20\x42\x75\x74\x20\x49\x20\x57\x6F\x6E\x27\x74\x20\x4B\x69\x63\x6B\x20\x59\x6F\x75\x20\uD83D\uDE09\x2C\x20\x42\x65\x63\x61\x75\x73\x65\x20\x59\x6F\x75\x20\x41\x72\x65\x20\x41\x6E\x20\x41\x64\x6D\x69\x6E\x20\x4F\x66\x20\x54\x68\x65\x20\x47\x72\x6F\x75\x70\u2764\uFE0F","\x47\x72\x6F\x75\x70\x20\x49\x73\x20\x49\x6E\x73\x74\x61\x6C\x6C\x65\x64\x20\x57\x69\x74\x68\x20\x41\x6E\x74\x69\x2D\x4C\x69\x6E\x6B\x20\x42\x75\x74\x20\x49\x20\x57\x6F\x6E\x27\x74\x20\x4B\x69\x63\x6B\x20\x59\x6F\x75\x20\uD83D\uDE09\x2C\x20\x42\x65\x63\x61\x75\x73\x65\x20\x59\x6F\x75\x20\x41\x72\x65\x20\x4D\x79\x20\x4F\x77\x6E\x65\x72\x20\x48\x61\x68\x61\x68\x61\x68\x61\x68\uD83E\uDD23\uD83D\uDE18\x2C\x20\x59\x6F\x75\x20\x54\x68\x69\x6E\x6B\x20\x49\x20\x57\x69\x6C\x6C\x20\x42\x65\x74\x72\x61\x79\x20\x59\x6F\x75\x20\x48\x75\x68\x20","\x65\x6D\x6F\x6A\x69\x30\x31","\x20","\x73\x65\x6E\x64\x65\x72","\x72\x65\x6D\x6F\x76\x65","\x67\x72\x6F\x75\x70\x50\x61\x72\x74\x69\x63\x69\x70\x61\x6E\x74\x73\x55\x70\x64\x61\x74\x65"];if(budy[_0xa27f[1]](`${_0xa27f[0]}`)){reply(`${_0xa27f[2]}`);if(!isBotAdmins){return reply(`${_0xa27f[3]}`)};let gclink=(`${_0xa27f[4]}`+  await GarfieldAdd[_0xa27f[6]](m[_0xa27f[5]]));let isLinkThisGc= new RegExp(gclink,_0xa27f[7]);let isgclink=isLinkThisGc[_0xa27f[9]](m[_0xa27f[8]]);if(isgclink){return reply(`${_0xa27f[10]}`)};if(isAdmins){return reply(`${_0xa27f[11]}`)};if(isCreator){return reply(`${_0xa27f[12]}${global[_0xa27f[13]]}${_0xa27f[14]}`)};GarfieldAdd[_0xa27f[17]](m[_0xa27f[5]],[m[_0xa27f[15]]],_0xa27f[16])}  }
+      if (db.data.chats[m.chat].antilink) {
+        if (budy.match(`chat.whatsapp.com`)) {
+        reply(`「 ANTI LINK 」\n\nYou have been detected sending a group link, sorry you will be kicked !`)
+        if (!isBotAdmins) return reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
+        let gclink = (`https://chat.whatsapp.com/`+await GarfieldAdd.groupInviteCode(m.chat))
+        let isLinkThisGc = new RegExp(gclink, 'i')
+        let isgclink = isLinkThisGc.test(m.text)
+        if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
+        if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are An Admin Of The Group❤️`)
+        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh ${global.emoji01} `)
+        GarfieldAdd.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        }
+        }
 
         //auto reply 
         for (let anji of setik){
@@ -204,7 +300,7 @@ var ucapannya2 = `Good morning 🌅`
       }
         
         //media detect \\
-		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
+			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 		const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 		const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
 		const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
@@ -251,13 +347,80 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (isWin || isSurender) delete _family100['family100'+m.chat]
         }
 
-var _0x51fb=["\x40","\x73\x70\x6C\x69\x74","\x73\x65\x6E\x64\x65\x72","\x68\x61\x73\x4F\x77\x6E\x50\x72\x6F\x70\x65\x72\x74\x79","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x63\x68\x61\x74","\x67\x75\x65\x73\x73\x20\x73\x6F\x6E\x67","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x53\x6F\x6E\x67","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x4D\x75\x73\x69\x63\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77","\x20","\x62\x6F\x74\x6E\x61\x6D\x65","\x73\x65\x6E\x64\x42\x75\x74\x74\x6F\x6E\x54\x65\x78\x74","\x2A\x57\x72\x6F\x6E\x67\x20\x41\x6E\x73\x77\x65\x72\x21\x2A","\uD83C\uDFAE\x20\x4D\x61\x74\x68\x20\x51\x75\x69\x7A\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x53\x65\x6E\x64\x20","\x6D\x61\x74\x68\x20\x6D\x6F\x64\x65","\x67\x75\x65\x73\x73\x20\x70\x69\x63\x74\x75\x72\x65","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x50\x69\x63\x74\x75\x72\x65","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x50\x69\x63\x74\x75\x72\x65\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77","\x67\x75\x65\x73\x73\x20\x77\x6F\x72\x64","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x57\x6F\x72\x64","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x57\x6F\x72\x64\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77","\x67\x75\x65\x73\x73\x20\x62\x6C\x61\x6E\x6B","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x42\x6C\x61\x6E\x6B","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x42\x6C\x61\x6E\x6B\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x2A","\x2A\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77","\x67\x75\x65\x73\x73\x20\x73\x65\x6E\x74\x65\x6E\x63\x65","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x53\x65\x6E\x74\x65\x6E\x63\x65","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x53\x65\x6E\x74\x65\x6E\x63\x65\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77","\x67\x75\x65\x73\x73\x20\x6C\x79\x72\x69\x63\x73","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x4C\x79\x72\x69\x63\x73","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x4C\x79\x72\x69\x63\x73\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77","\x67\x75\x65\x73\x73\x20\x72\x69\x64\x64\x6C\x65","\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x52\x69\x64\x64\x6C\x65","\uD83C\uDFAE\x20\x47\x75\x65\x73\x73\x20\x54\x68\x65\x20\x52\x69\x64\x64\x6C\x65\x20\uD83C\uDFAE\x5C\x6E\x5C\x6E\x43\x6F\x72\x72\x65\x63\x74\x20\x41\x6E\x73\x77\x65\x72\x20\uD83C\uDF89\x5C\x6E\x5C\x6E\x57\x61\x6E\x74\x20\x54\x6F\x20\x50\x6C\x61\x79\x20\x41\x67\x61\x69\x6E\x3F\x20\x50\x72\x65\x73\x73\x20\x54\x68\x65\x20\x42\x75\x74\x74\x6F\x6E\x20\x42\x65\x6C\x6F\x77"];if(tebaklagu[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= tebaklagu[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[6],buttonText:{displayText:_0x51fb[7]},type:1}],`${_0x51fb[8]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete tebaklagu[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(kuismath[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= kuismath[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await reply(`${_0x51fb[13]}${prefix}${_0x51fb[14]}`);delete kuismath[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(tebakgambar[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= tebakgambar[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[15],buttonText:{displayText:_0x51fb[16]},type:1}],`${_0x51fb[17]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete tebakgambar[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(tebakkata[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= tebakkata[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[18],buttonText:{displayText:_0x51fb[19]},type:1}],`${_0x51fb[20]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete tebakkata[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(caklontong[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= caklontong[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];deskripsi= caklontong_desk[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[21],buttonText:{displayText:_0x51fb[22]},type:1}],`${_0x51fb[23]}${deskripsi}${_0x51fb[24]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete caklontong[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];delete caklontong_desk[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(tebakkalimat[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= tebakkalimat[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[25],buttonText:{displayText:_0x51fb[26]},type:1}],`${_0x51fb[27]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete tebakkalimat[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(tebaklirik[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= tebaklirik[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[28],buttonText:{displayText:_0x51fb[29]},type:1}],`${_0x51fb[30]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete tebaklirik[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}};if(tebaktebakan[_0x51fb[3]](m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0])&& isCmd){kuis= true;jawaban= tebaktebakan[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]];if(budy[_0x51fb[4]]()== jawaban){ await GarfieldAdd[_0x51fb[11]](m[_0x51fb[5]],[{buttonId:_0x51fb[31],buttonText:{displayText:_0x51fb[32]},type:1}],`${_0x51fb[33]}`,`${_0x51fb[9]}${global[_0x51fb[10]]}${_0x51fb[9]}`,m);delete tebaktebakan[m[_0x51fb[2]][_0x51fb[1]](_0x51fb[0])[0]]}else {reply(_0x51fb[12])}}
-        
-        //TicTacToe\\
-	    this.game = this.game ? this.game : {}
-	    let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
-	    if (room) { var _0x1f61=["\x74\x65\x78\x74","\x74\x65\x73\x74","\x73\x65\x6E\x64\x65\x72","\x63\x75\x72\x72\x65\x6E\x74\x54\x75\x72\x6E","\x67\x61\x6D\x65","\x70\x6C\x61\x79\x65\x72\x4F","\x74\x75\x72\x6E","\x47\x61\x6D\x65\x20\x48\x61\x73\x20\x45\x6E\x64\x65\x64","\x49\x6E\x76\x61\x6C\x69\x64","\x49\x6E\x76\x61\x6C\x69\x64\x20\x50\x6F\x73\x69\x74\x69\x6F\x6E","\x77\x69\x6E\x6E\x65\x72","\x62\x6F\x61\x72\x64","\u274C","\u2B55","\x31\uFE0F\u20E3","\x32\uFE0F\u20E3","\x33\uFE0F\u20E3","\x34\uFE0F\u20E3","\x35\uFE0F\u20E3","\x36\uFE0F\u20E3","\x37\uFE0F\u20E3","\x38\uFE0F\u20E3","\x39\uFE0F\u20E3","\x6D\x61\x70","\x72\x65\x6E\x64\x65\x72","\x5F\x63\x75\x72\x72\x65\x6E\x74\x54\x75\x72\x6E","\x70\x6C\x61\x79\x65\x72\x58","\x52\x6F\x6F\x6D\x20\x49\x44\x3A\x20","\x69\x64","\x0D\x0A\x0D\x0A","","\x6A\x6F\x69\x6E","\x73\x6C\x69\x63\x65","\x0D\x0A","\x40","\x73\x70\x6C\x69\x74","\x20\x57\x6F\x6E\x21","\x47\x61\x6D\x65\x20\x4F\x76\x65\x72","\x54\x75\x72\x6E\x20","\x20\x28\x40","\x29","\x0D\x0A\u274C\x3A\x20\x40","\x0D\x0A\u2B55\x3A\x20\x40","\x0D\x0A\x0D\x0A\x54\x79\x70\x65\x64\x20\x2A\x73\x75\x72\x72\x65\x6E\x64\x65\x72\x2A\x20\x74\x6F\x20\x73\x75\x72\x72\x65\x6E\x64\x65\x72\x20\x61\x6E\x64\x20\x61\x64\x6D\x69\x74\x65\x64\x20\x64\x65\x66\x65\x61\x74","\x78","\x6F","\x63\x68\x61\x74","\x73\x65\x6E\x64\x54\x65\x78\x74"];let ok;let isWin=!1;let isTie=!1;let isSurrender=!1;if(!/^([1-9]|(me)?give up|surr?ender|off|skip)$/i[_0x1f61[1]](m[_0x1f61[0]])){return};isSurrender=  !/^[1-9]$/[_0x1f61[1]](m[_0x1f61[0]]);if(m[_0x1f61[2]]!== room[_0x1f61[4]][_0x1f61[3]]){if(!isSurrender){return !0}};if(!isSurrender&& 1> (ok= room[_0x1f61[4]][_0x1f61[6]](m[_0x1f61[2]]=== room[_0x1f61[4]][_0x1f61[5]],parseInt(m[_0x1f61[0]])- 1))){reply({'\x2D\x33':_0x1f61[7],'\x2D\x32':_0x1f61[8],'\x2D\x31':_0x1f61[9],0:_0x1f61[9]}[ok]);return !0};if(m[_0x1f61[2]]=== room[_0x1f61[4]][_0x1f61[10]]){isWin= true}else {if(room[_0x1f61[4]][_0x1f61[11]]=== 511){isTie= true}};let arr=room[_0x1f61[4]][_0x1f61[24]]()[_0x1f61[23]]((_0x164bx6)=>{return {X:_0x1f61[12],O:_0x1f61[13],1:_0x1f61[14],2:_0x1f61[15],3:_0x1f61[16],4:_0x1f61[17],5:_0x1f61[18],6:_0x1f61[19],7:_0x1f61[20],8:_0x1f61[21],9:_0x1f61[22]}[_0x164bx6]});if(isSurrender){room[_0x1f61[4]][_0x1f61[25]]= m[_0x1f61[2]]=== room[_0x1f61[4]][_0x1f61[26]];isWin= true};let winner=isSurrender?room[_0x1f61[4]][_0x1f61[3]]:room[_0x1f61[4]][_0x1f61[10]];let str=`${_0x1f61[27]}${room[_0x1f61[28]]}${_0x1f61[29]}${arr[_0x1f61[32]](0,3)[_0x1f61[31]](_0x1f61[30])}${_0x1f61[33]}${arr[_0x1f61[32]](3,6)[_0x1f61[31]](_0x1f61[30])}${_0x1f61[33]}${arr[_0x1f61[32]](6)[_0x1f61[31]](_0x1f61[30])}${_0x1f61[29]}${isWin?`${_0x1f61[34]}${winner[_0x1f61[35]](_0x1f61[34])[0]}${_0x1f61[36]}`:isTie?`${_0x1f61[37]}`:`${_0x1f61[38]}${[_0x1f61[12],_0x1f61[13]][1* room[_0x1f61[4]][_0x1f61[25]]]}${_0x1f61[39]}${room[_0x1f61[4]][_0x1f61[3]][_0x1f61[35]](_0x1f61[34])[0]}${_0x1f61[40]}`}${_0x1f61[41]}${room[_0x1f61[4]][_0x1f61[26]][_0x1f61[35]](_0x1f61[34])[0]}${_0x1f61[42]}${room[_0x1f61[4]][_0x1f61[5]][_0x1f61[35]](_0x1f61[34])[0]}${_0x1f61[43]}`;if((room[_0x1f61[4]][_0x1f61[25]]^ isSurrender?room[_0x1f61[44]]:room[_0x1f61[45]])!== m[_0x1f61[46]]){room[room[_0x1f61[4]][_0x1f61[25]]^ isSurrender?_0x1f61[44]:_0x1f61[45]]= m[_0x1f61[46]]};if(room[_0x1f61[44]]!== room[_0x1f61[45]]){ await GarfieldAdd[_0x1f61[47]](room[_0x1f61[44]],str,m,{mentions:parseMention(str)})}; await GarfieldAdd[_0x1f61[47]](room[_0x1f61[45]],str,m,{mentions:parseMention(str)});if(isTie|| isWin){delete this[_0x1f61[4]][room[_0x1f61[28]]]} }
+        if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = tebaklagu[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete tebaklagu[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
 
+        if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = kuismath[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await reply(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
+                delete kuismath[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+
+        if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = tebakgambar[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete tebakgambar[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+
+        if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = tebakkata[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete tebakkata[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+
+        if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = caklontong[m.sender.split('@')[0]]
+	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete caklontong[m.sender.split('@')[0]]
+		delete caklontong_desk[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+
+        if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = tebakkalimat[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete tebakkalimat[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+
+        if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = tebaklirik[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete tebaklirik[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+	    
+	if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            jawaban = tebaktebakan[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == jawaban) {
+                await GarfieldAdd.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, ` ${global.botname} `, m)
+                delete tebaktebakan[m.sender.split('@')[0]]
+            } else reply('*Wrong Answer!*')
+        }
+        
         //Suit PvP\\
 	    this.suit = this.suit ? this.suit : {}
 	    let roof = Object.values(this.suit).find(roof => roof.id && roof.status && [roof.p, roof.p2].includes(m.sender))
@@ -355,7 +518,8 @@ In ${clockString(new Date - user.afkTime)}
             user.afkReason = ''
         }
 switch(command) {
-        case 'inventori': case 'inventory': case 'profile':{ var _0x71ab=["\x2D\x2D\x68\x65\x6C\x70","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x73\x65\x6E\x64\x65\x72","\x55\x73\x65\x72\x27\x73\x20\x49\x6E\x76\x65\x6E\x74\x6F\x72\x79","\x5F\x5B\x20\uD83D\uDC69\uD83C\uDFFB\u200D\uD83D\uDCBC\x49\x4E\x46\x4F\x20\x55\x53\x45\x52\uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBC\x20\x5D\x5F\x5C\x6E\x5C\x6E","\x2A\u2764\uFE0F\x59\x6F\x75\x72\x20\x42\x6C\x6F\x6F\x64\x2A\x20\x3A\x20","\x5C\x6E","\x2A\u25FB\uFE0F\uFE0F\x59\x6F\x75\x72\x20\x49\x72\x6F\x6E\x2A\x20\x3A\x20","\x2A\uD83C\uDF1F\x59\x6F\x75\x72\x20\x47\x6F\x6C\x64\x2A\x20\x3A\x20","\x2A\uD83D\uDC8E\x59\x6F\x75\x72\x20\x45\x6D\x65\x72\x61\x6C\x64\x2A\x20\x3A\x20","\x2A\u23FA\uFE0F\x59\x6F\x75\x72\x20\x4C\x69\x6D\x69\x74\x2A\x20\x3A\x20","\x2A\uD83E\uDDEA\x59\x6F\x75\x72\x20\x50\x6F\x74\x69\x6F\x6E\x2A\x20\x3A\x20","\x5C\x6E\x5C\x6E","\x5F\x5B\x20\uD83D\uDC3A\x48\x55\x4E\x54\x20\x52\x45\x53\x55\x4C\x54\uD83D\uDC3A\x20\x5D\x5F\x5C\x6E","\x2A\uD83D\uDC1F\x46\x69\x73\x68\x2A\x20\x3A\x20","\x2A\uD83D\uDC14\x43\x68\x69\x63\x6B\x65\x6E\x2A\x20\x3A\x20","\x2A\uD83D\uDC07\x52\x61\x62\x62\x69\x74\x2A\x20\x3A\x20","\x2A\uD83D\uDC11\x53\x68\x65\x65\x70\x2A\x20\x3A\x20","\x2A\uD83D\uDC04\x43\x6F\x77\x2A\x20\x3A\x20","\x2A\uD83D\uDC18\x45\x6C\x65\x70\x68\x61\x6E\x74\x2A\x20\x3A\x20","\x5F\x2A","\x2A\x5F","","\xA9\x20","\x46\x6F\x6C\x6C\x6F\x77\x20\x55\x73\x20\u2139\uFE0F\x20","\x73\x65\x6E\x64\x35\x42\x75\x74\x49\x6D\x67"];if(q[_0x71ab[1]](_0x71ab[0])){return reply(examkosong)};if(!isDarah){addInventoriDarah(m[_0x71ab[2]],DarahAwal)};if(!isInventory){addInventori(m[_0x71ab[2]])};if(!isInventoriBuruan){addInventoriBuruan(m[_0x71ab[2]])};var GarfieldAdd= await getBuffer(picak+ `${_0x71ab[3]}`);let teksehmazeh=`${_0x71ab[4]}`;teksehmazeh+= `${_0x71ab[5]}${getDarah(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[7]}${getBesi(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[8]}${getEmas(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[9]}${getEmerald(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[10]}${getLimit(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[11]}${getPotion(m[_0x71ab[2]])}${_0x71ab[12]}`;teksehmazeh+= `${_0x71ab[13]}`;teksehmazeh+= `${_0x71ab[14]}${getIkan(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[15]}${getAyam(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[16]}${getKelinci(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[17]}${getDomba(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[18]}${getSapi(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[19]}${getGajah(m[_0x71ab[2]])}${_0x71ab[12]}`;teksehmazeh+= `${_0x71ab[20]}${pushname}${_0x71ab[21]}`; await GarfieldAdd[_0x71ab[25]](from,`${_0x71ab[22]}`+ _0x71ab[22]+ teksehmazeh,`${_0x71ab[23]}${footer}${_0x71ab[22]}`,GarfieldAdd,[{"\x75\x72\x6C\x42\x75\x74\x74\x6F\x6E":{"\x64\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74":_0x71ab[24],"\x75\x72\x6C":`${_0x71ab[22]}${myweb}${_0x71ab[22]}`}}]) }
+        case 'inventori': case 'inventory': case 'profile':
+        { var _0x71ab=["\x2D\x2D\x68\x65\x6C\x70","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x73\x65\x6E\x64\x65\x72","\x55\x73\x65\x72\x27\x73\x20\x49\x6E\x76\x65\x6E\x74\x6F\x72\x79","\x5F\x5B\x20\uD83D\uDC69\uD83C\uDFFB\u200D\uD83D\uDCBC\x49\x4E\x46\x4F\x20\x55\x53\x45\x52\uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBC\x20\x5D\x5F\x5C\x6E\x5C\x6E","\x2A\u2764\uFE0F\x59\x6F\x75\x72\x20\x42\x6C\x6F\x6F\x64\x2A\x20\x3A\x20","\x5C\x6E","\x2A\u25FB\uFE0F\uFE0F\x59\x6F\x75\x72\x20\x49\x72\x6F\x6E\x2A\x20\x3A\x20","\x2A\uD83C\uDF1F\x59\x6F\x75\x72\x20\x47\x6F\x6C\x64\x2A\x20\x3A\x20","\x2A\uD83D\uDC8E\x59\x6F\x75\x72\x20\x45\x6D\x65\x72\x61\x6C\x64\x2A\x20\x3A\x20","\x2A\u23FA\uFE0F\x59\x6F\x75\x72\x20\x4C\x69\x6D\x69\x74\x2A\x20\x3A\x20","\x2A\uD83E\uDDEA\x59\x6F\x75\x72\x20\x50\x6F\x74\x69\x6F\x6E\x2A\x20\x3A\x20","\x5C\x6E\x5C\x6E","\x5F\x5B\x20\uD83D\uDC3A\x48\x55\x4E\x54\x20\x52\x45\x53\x55\x4C\x54\uD83D\uDC3A\x20\x5D\x5F\x5C\x6E","\x2A\uD83D\uDC1F\x46\x69\x73\x68\x2A\x20\x3A\x20","\x2A\uD83D\uDC14\x43\x68\x69\x63\x6B\x65\x6E\x2A\x20\x3A\x20","\x2A\uD83D\uDC07\x52\x61\x62\x62\x69\x74\x2A\x20\x3A\x20","\x2A\uD83D\uDC11\x53\x68\x65\x65\x70\x2A\x20\x3A\x20","\x2A\uD83D\uDC04\x43\x6F\x77\x2A\x20\x3A\x20","\x2A\uD83D\uDC18\x45\x6C\x65\x70\x68\x61\x6E\x74\x2A\x20\x3A\x20","\x5F\x2A","\x2A\x5F","","\xA9\x20","\x46\x6F\x6C\x6C\x6F\x77\x20\x55\x73\x20\u2139\uFE0F\x20","\x73\x65\x6E\x64\x35\x42\x75\x74\x49\x6D\x67"];if(q[_0x71ab[1]](_0x71ab[0])){return reply(examkosong)};if(!isDarah){addInventoriDarah(m[_0x71ab[2]],DarahAwal)};if(!isInventory){addInventori(m[_0x71ab[2]])};if(!isInventoriBuruan){addInventoriBuruan(m[_0x71ab[2]])};var GarfieldAdd= await getBuffer(picak+ `${_0x71ab[3]}`);let teksehmazeh=`${_0x71ab[4]}`;teksehmazeh+= `${_0x71ab[5]}${getDarah(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[7]}${getBesi(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[8]}${getEmas(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[9]}${getEmerald(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[10]}${getLimit(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[11]}${getPotion(m[_0x71ab[2]])}${_0x71ab[12]}`;teksehmazeh+= `${_0x71ab[13]}`;teksehmazeh+= `${_0x71ab[14]}${getIkan(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[15]}${getAyam(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[16]}${getKelinci(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[17]}${getDomba(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[18]}${getSapi(m[_0x71ab[2]])}${_0x71ab[6]}`;teksehmazeh+= `${_0x71ab[19]}${getGajah(m[_0x71ab[2]])}${_0x71ab[12]}`;teksehmazeh+= `${_0x71ab[20]}${pushname}${_0x71ab[21]}`; await GarfieldAdd[_0x71ab[25]](from,`${_0x71ab[22]}`+ _0x71ab[22]+ teksehmazeh,`${_0x71ab[23]}${footer}${_0x71ab[22]}`,GarfieldAdd,[{"\x75\x72\x6C\x42\x75\x74\x74\x6F\x6E":{"\x64\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74":_0x71ab[24],"\x75\x72\x6C":`${_0x71ab[22]}${myweb}${_0x71ab[22]}`}}]) }
   break
         case 'userlimit': 
 {      
@@ -387,55 +551,7 @@ if (q.includes('--help')) return reply(examkosong)
  reply('Success! Your Bood Is Full')
  }
  break
- case 'hunt': case 'hunting': {
-if (q.includes('--help')) return reply(examkosong) 
- if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
- if (isCekDarah < 1) return reply('Your Blood Is Gone, Try To Heal Using Potions') 
- if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
-  let luka = ["Pierced by a thorn while hunting","Slipped into the abyss while hunting","Scratched by a wild animal","Not careful","Entangled in roots","Fall while hunting"]
-  let location = ["Jungle","Amazon forest","Tropical forest","Meadow","African forest","Mountains"]
-   var ikanmu = Math.ceil(Math.random() * 10)
-   var ayam = Math.ceil(Math.random() * 8)
-   var kelinci = Math.ceil(Math.random() * 7)
-   var dombanya = [3,0,4,0,5,4,6,0,1,0,2,3,0,3,0,1]
-   var sapinya = [2,0,3,0,4,0,5,0,1,0,2,0,3,0,1]
-   var gajahnya = [1,0,4,0,2,0,1,0,2,1,3,0,1]
-   var domba = dombanya[Math.floor(Math.random() * dombanya.length)] 
-   var sapi = sapinya[Math.floor(Math.random() * sapinya.length)] 
-   var gajah = gajahnya[Math.floor(Math.random() * gajahnya.length)]    
-   var lukanya = luka[Math.floor(Math.random() * luka.length)]
-   var lokasinya = location[Math.floor(Math.random() * location.length)]
- if (lokasinya === 'Jungle') {
-    var image = './storage/image/rimba.jpg'
-   } else
- if (lokasinya === 'Amazon forest') {
-    var image =  './storage/image/amazon.jpg'
-   } else
- if (lokasinya === 'Tropical forest') {
-    var image = './storage/image/tropis.jpg'
-   } else
- if (lokasinya === 'Meadow') {
-    var image = './storage/image/padang_rumput.jpg'
-   } else
- if (lokasinya === 'African forest') {
-    var image = './storage/image/afrika.jpg'
-   } else
- if (lokasinya === 'Mountains') {
-   var image = './storage/image/pegunungan.jpg'
-   }
- setTimeout( () => { var _0x960b=["\x47\x69\x74\x48\x75\x62\x20\x3A\x20\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x69\x74\x68\x75\x62\x2E\x63\x6F\x6D\x2F\x5A\x65\x6E\x6F\x69\x78\x6E\x6F\x69\x7A\x65\x2F\x47\x41\x52\x46\x49\x45\x4C\x44\x2D\x57\x48\x41\x54\x53\x41\x50\x50\x2D\x42\x4F\x54\x2D\x76\x38\x5C\x6E\x20\x44\x6F\x6E\x74\x20\x46\x6F\x72\x67\x65\x74\x20\x54\x6F\x20\x47\x69\x76\x65\x20\x53\x74\x61\x72\x5C\x6E\x5C\x6E\x46\x61\x63\x65\x62\x6F\x6F\x6B\x20\x3A\x20\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x66\x61\x63\x65\x62\x6F\x6F\x6B\x2E\x63\x6F\x6D\x2F\x67\x61\x72\x66\x69\x65\x6C\x64\x62\x6F\x74\x73\x2F\x20\x5C\x6E\x44\x6F\x6E\x74\x20\x46\x6F\x72\x67\x65\x74\x20\x54\x6F\x20\x4C\x69\x6B\x65\x20\x70\x61\x67\x65","\x5F\x5B\x20\x48\x55\x4E\x54\x20\x52\x45\x53\x55\x4C\x54\x20\x5D\x5F\x5C\x6E","\x2A\uD83D\uDC1F\x46\x69\x73\x68\x2A\x20\x3A\x20","\x5C\x6E","\x2A\uD83D\uDC14\x43\x68\x69\x63\x6B\x65\x6E\x2A\x20\x3A\x20","\x2A\uD83D\uDC07\x52\x61\x62\x62\x69\x74\x2A\x20\x3A\x20","\x2A\uD83D\uDC11\x53\x68\x65\x65\x70\x2A\x20\x3A\x20","\x2A\uD83D\uDC04\x43\x6F\x77\x2A\x20\x3A\x20","\x2A\uD83D\uDC18\x45\x6C\x65\x70\x68\x61\x6E\x74\x2A\x20\x3A\x20","\x5C\x6E\x5C\x6E","\x5F\x5B\x20\x49\x4E\x46\x4F\x20\x5D\x5F\x5C\x6E","\x2A\x4C\x6F\x63\x61\x74\x69\x6F\x6E\x2A\x20\x3A\x20","\x2A\x57\x6F\x75\x6E\x64\x65\x64\x2A\x20\x3A\x20","\x2C\x20\x62\x6C\x6F\x6F\x64\x20\x2D\x20\x31\x30\x5C\x6E","\x2A\x52\x65\x6D\x61\x69\x6E\x69\x6E\x67\x20\x62\x6C\x6F\x6F\x64\x2A\x20\x3A\x20","\x73\x65\x6E\x64\x65\x72","","\x48\x75\x6E\x74\x20\x41\x67\x61\x69\x6E\uFE0F\uD83C\uDFF9","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];reply(`${_0x960b[0]}`);let teksehmazeh=`${_0x960b[1]}`;teksehmazeh+= `${_0x960b[2]}${ikanmu}${_0x960b[3]}`;teksehmazeh+= `${_0x960b[4]}${ayam}${_0x960b[3]}`;teksehmazeh+= `${_0x960b[5]}${kelinci}${_0x960b[3]}`;teksehmazeh+= `${_0x960b[6]}${domba}${_0x960b[3]}`;teksehmazeh+= `${_0x960b[7]}${sapi}${_0x960b[3]}`;teksehmazeh+= `${_0x960b[8]}${gajah}${_0x960b[9]}`;teksehmazeh+= `${_0x960b[10]}`;teksehmazeh+= `${_0x960b[11]}${lokasinya}${_0x960b[3]}`;teksehmazeh+= `${_0x960b[12]}${lukanya}${_0x960b[13]}`;teksehmazeh+= `${_0x960b[14]}${getDarah(m[_0x960b[15]])}${_0x960b[3]}`;let buttons=[{buttonId:`${_0x960b[16]}${prefix+ command}${_0x960b[16]}`,buttonText:{displayText:_0x960b[17]},type:1}];let buttonMessage={image:{url:image},caption:teksehmazeh,footer:pushname,buttons:buttons,headerType:4};GarfieldAdd[_0x960b[18]](from,buttonMessage,{quoted:m}) }, 5000)  
- setTimeout( () => {
-  reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
-  }, 1000) 
- addIkan(m.sender, ikanmu) 
-   addAyam(m.sender, ayam) 
-   addKelinci(m.sender, kelinci)
-   addDomba(m.sender, domba)
-   addSapi(m.sender, sapi)
-  addGajah(m.sender, gajah)
- kurangDarah(m.sender, 10)
- }
- break
+
  case 'play': case 'song': case 'ytplay': { var _0xb277=["\x45\x78\x61\x6D\x70\x6C\x65\x20\x3A\x20","\x20\x6B\x75\x77\x65\x6E\x69","\x79\x74\x2D\x73\x65\x61\x72\x63\x68","\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x76\x69\x64\x65\x6F\x73","\x79\x74\x61\x75\x64\x69\x6F\x20","\x75\x72\x6C","","\uD83C\uDFB6\x20\x41\x75\x64\x69\x6F","\x79\x74\x76\x69\x64\x65\x6F\x20","\x56\x69\x64\x65\x6F\x20\uD83D\uDCFD\uFE0F","\x74\x68\x75\x6D\x62\x6E\x61\x69\x6C","\x20\x60\x60\x60\x54\x69\x74\x6C\x65\x60\x60\x60\x20\x2D\x20\x2A","\x74\x69\x74\x6C\x65","\x2A\x0A\x60\x60\x60\x44\x75\x72\x61\x74\x69\x6F\x6E\x60\x60\x60\x20\x2D\x20\x2A","\x74\x69\x6D\x65\x73\x74\x61\x6D\x70","\x2A\x0A\x60\x60\x60\x56\x69\x65\x77\x65\x73\x60\x60\x60\x20\x2D\x20\x2A","\x76\x69\x65\x77\x73","\x2A\x0A\x60\x60\x60\x55\x70\x6C\x6F\x61\x64\x65\x64\x20\x4F\x6E\x60\x60\x60\x20\x2D\x20\x2A","\x61\x67\x6F","\x2A\x0A\x60\x60\x60\x41\x75\x74\x68\x6F\x72\x60\x60\x60\x20\x2D\x20\x2A","\x6E\x61\x6D\x65","\x61\x75\x74\x68\x6F\x72","\x2A\x0A\x60\x60\x60\x43\x68\x61\x6E\x6E\x65\x6C\x60\x60\x60\x20\x2D\x20\x2A","\x2A\x0A\x60\x60\x60\x44\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E\x60\x60\x60\x20\x2D\x20\x2A","\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x2A\x0A\x60\x60\x60\x55\x52\x4C\x60\x60\x60\x20\x2D\x20\x2A","\x2A\x20","\xA9\x20\x47\x61\x72\x66\x69\x65\x6C\x64\x20\x57\x68\x61\x74\x73\x61\x70\x70\x20\x42\x6F\x74\x20\x32\x30\x32\x32","\x63\x68\x61\x74","\x73\x65\x6E\x64\x4D\x65\x73\x73\x61\x67\x65"];if(!text){return reply(`${_0xb277[0]}${prefix+ command}${_0xb277[1]}`)};let yts=require(_0xb277[2]);let search= await yts(text);let anu=search[_0xb277[5]][Math[_0xb277[4]](Math[_0xb277[3]]()* 1)];let buttons=[{buttonId:`${_0xb277[6]}${anu[_0xb277[7]]}${_0xb277[8]}`,buttonText:{displayText:_0xb277[9]},type:1},{buttonId:`${_0xb277[10]}${anu[_0xb277[7]]}${_0xb277[8]}`,buttonText:{displayText:_0xb277[11]},type:1}];let buttonMessage={image:{url:anu[_0xb277[12]]},caption:_0xb277[13]+ anu[_0xb277[14]]+ _0xb277[15]+ anu[_0xb277[16]]+ _0xb277[17]+ anu[_0xb277[18]]+ _0xb277[19]+ anu[_0xb277[20]]+ _0xb277[21]+ anu[_0xb277[23]][_0xb277[22]]+ _0xb277[24]+ anu[_0xb277[23]][_0xb277[7]]+ _0xb277[25]+ anu[_0xb277[26]]+ _0xb277[27]+ anu[_0xb277[7]]+ _0xb277[28],footer:`${_0xb277[29]}`,buttons:buttons,headerType:4};GarfieldAdd[_0xb277[31]](m[_0xb277[30]],buttonMessage,{quoted:m}) }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
