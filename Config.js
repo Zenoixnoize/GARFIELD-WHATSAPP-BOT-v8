@@ -27,6 +27,8 @@ global.author = ["NOIZE DEVELOPMENT"] // 👈 You Can change this your choice
 global.sessionName = 'session'  // 👈 You Can change this your choice 
 global.prefa = ['','!','.']  // 👈 You Can change this your choice 
 global.sp = ['ZENOI']  // 👈 You Can change this your choice 
+global.plwt = ["```Please Wait```"]
+
 global.mess = {
     success: ["Done 🐼"], //👈 Use these in your language of choice
     admin: ["This Feature Is Only For Admin!"], // 👈 Use these in your language of choice
@@ -35,7 +37,7 @@ global.mess = {
     group: ["Feature Used Only For Groups!"], //👈 Use these in your language of choice
     private: ["Features Used Only For Private Chat!"], // 👈 Use these in your language of choice
     bot: ["This Feature Is Only For Bot"], //👈 Use these in your language of choice
-    wait: ["```Please Wait 🐼```"], // 👈 Use these in your language of choice
+    wait: '```Please Wait 🐼```', // 👈 Use these in your language of choice
     error: ["Error! Maybe Api Key Is Expired 🐼!"], // 👈 Use these in your language of choice
     endLimit: ["Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours"],
 }
