@@ -95,8 +95,6 @@ function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
 //dokumen random
-let doku = [f1,f2,f3,f4,f5,f6]
-let feler = pickRandom(doku)
 // yoi
 
     GarfieldAdd.ev.on('group-participants.update', async (anu) => {
@@ -704,7 +702,6 @@ var _0x4c2a62 = _0x9d84;
 }
 
 startGarfieldAdd()
-
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
