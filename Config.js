@@ -14,6 +14,14 @@ global.owner = ['+94711502119'] //👈  Enter Your number)
 global.premium = ['+94711502119'] // 👈  Enter Your number)
 global.emoji01 = ['🐼'] // 👈 Enter your Emoji 
 global.emoji02 = ['🦋'] //👈 Enter your Emoji
+global.notice = (`- *Hi 🥰 I m*
+*ＮＯＩＺ Ξ*
+*I am 16 years old developer...*
+*From Sri Lanka 🇱🇰*
+*I am a Learning.*
+*Not more..*
+*Also I am Student*
+*Follow My Facebook - https://www.facebook.com/zenoixnoize*`)  // 👈 Enter Your details and Social Media Links and Anything
 global.ownernomer = '+94711502119' //👈 Enter Your number
 global.ownername = 'ZENOI' //👈 Enter Your name
 global.botname = 'ＧＡＲ ＦＩＥＬＤ ＢＯＴ ｖ8.2' //👈 Enter Your Bot name
