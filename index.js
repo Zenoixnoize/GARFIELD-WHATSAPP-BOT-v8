@@ -33,7 +33,7 @@ global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
     new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ?
       new mongoDB(opts['db']) :
-      new JSONFile(`src/database.json`)
+      new JSONFile(`database/database.json`)
 )
 global.db.data = {
     users: {},
