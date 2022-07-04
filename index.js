@@ -1,3 +1,105 @@
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
+//Coded by Tharindu Liyanage
 require('./Config')
 const { default: NexusNwIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
@@ -133,9 +235,9 @@ async function startGarfieldAdd() {
         let nama = await GarfieldAdd.getName(num)
 memb = metadata.participants.length
 
-Kon = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://i.ibb.co/x7qYTrq/20220605-103944.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
+Kon = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
 
-Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://i.ibb.co/x7qYTrq/20220605-103944.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
+Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
                     GarfieldAdd.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `
 🦋 Hi👋 @${num.split("@")[0]},
