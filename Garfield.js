@@ -183,12 +183,12 @@ module.exports = GarfieldNeural = async (GarfieldNeural, m, chatUpdate, store) =
                 antilink: false,
             }
 		
-	    let setting = global.db.data.Settings[botNumber]
-            if (typeof setting !== 'object') global.db.data.Settings[botNumber] = {}
+	    let setting = global.db.data.settings[botNumber]
+            if (typeof setting !== 'object') global.db.data.settings[botNumber] = {}
 	    if (setting) {
 		if (!isNumber(setting.status)) setting.status = 0
 		if (!('autobio' in setting)) setting.autobio = false
-	    } else global.db.data.Settings[botNumber] = {
+	    } else global.db.data.settings[botNumber] = {
 		status: 0,
 		autobio: false,
 	    }
@@ -230,8 +230,8 @@ const reply = (teks) => {
         })
         
 	//auto set bio\\
-	if (db.data.Settings[botNumber].autobio) {
-	    let setting = global.db.data.Settings[botNumber]
+	if (db.data.settings[botNumber].autobio) {
+	    let setting = global.db.data.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
 		await GarfieldNeural.setStatus(`${GarfieldNeural.user.name} | Runtime : ${runtime(uptime)}`)
