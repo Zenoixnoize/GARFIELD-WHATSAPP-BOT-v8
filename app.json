@@ -5,7 +5,7 @@
   "logo": "https://i.ibb.co/G2bpd2B/Pics-Art-22-03-26-14-51-06-509.png",
   "keywords": ["NOIZE", "Tharindu Liyanage", "whatsapp bot", "GARFIELD BOT", "Whatsapp"],
   "buildpacks": [
-   {
+    {
       "url": "heroku/nodejs"
     },
     {
