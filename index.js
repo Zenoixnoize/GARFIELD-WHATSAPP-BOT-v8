@@ -643,7 +643,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
             mime: 'application/octet-stream',
             ext: '.bin'
         }
-        filename = path.join(__filename, '../X628/' + new Date * 1 + '.' + type.ext)
+        filename = path.join(__filename, '../src/' + new Date * 1 + '.' + type.ext)
         if (data && save) fs.promises.writeFile(filename, data)
         return {
             res,
