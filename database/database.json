@@ -1,13 +1,13 @@
 {
   "users": {
-    "12496030270@s.whatsapp.net": {
+    "12345678901@s.whatsapp.net": {
       "afkTime": -1,
       "afkReason": "",
       "limit": "Infinity"
     }
   },
   "chats": {
-    "916909137213-1632759248@g.us": {
+    "94711502119-1632759248@g.us": {
       "mute": false,
       "antilink": false
     }
@@ -26,7 +26,7 @@
     "tebakan": []
   },
   "settings": {
-    "12496030270@s.whatsapp.net": {
+    "12345678901@s.whatsapp.net": {
       "status": 0,
       "autobio": false
     }
