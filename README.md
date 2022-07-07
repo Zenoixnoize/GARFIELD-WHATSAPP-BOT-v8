@@ -1,5 +1,5 @@
 # GARFIELD WHATSAPP USER BOT LATEST v8.3 (Button Update 🦋 And 24×7 hour Working 🐼 )
-# 💯 Fix Bot stoping
+# 💯 Fix Bot stopping
 <img src="/Cloud/PicsArt_22-04-17_16-25-53-440.png">
 
 <br>
