@@ -1,22 +1,23 @@
 # GARFIELD WHATSAPP USER BOT LATEST v8.3 (Button Update 🦋 And 24×7 hour Working 🐼 )
+# 💯 Fix Bot stoping
 <img src="/Cloud/PicsArt_22-04-17_16-25-53-440.png">
 
 <br>
 <center><img src="/Cloud/PicsArt_22-04-15_10-13-49-205.png"><center>
   
  <br>
- <h1> New Features and upgrades v8.3 🧬</h1>
+ <h1> New Features and upgrades v8.3 💯</h1>
  <br>
   <b>
   🦋 Fix Bot stoping (24 hour Activation 24×7)
   <br>
-    🦋 The time it takes for a bot to be deployed is reduced to a minute
+  🦋 The time it takes for a bot to be deployed is reduced to a minute
     <br>
   🦋 Add apk/Music/Wattpad/Facebook and more new modules
     <br>
   🦋 Create this file using your information and a bot name of your choice
     <br>
-  🦋 Update to Whatsapp buttons
+  🦋 Update Node modules
   <br>
   🦋 increase Uploading and Downloading speed
   <br>
@@ -57,7 +58,7 @@ You can use it without any hesitation
    <br>
    🦋 After fork this repo Clicking [Here](https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8/fork) and replace your session.js on it
      <br>
-     🦋 After (Config.js) Enter Your details and Create this file using your information and a bot name of your choice
+    🦋 After (Config.js) Enter Your details and Create this file using your information and a bot name of your choice
    <br>
    🦋 Then click on the Deploy App button and add app name 
    <br>
