@@ -32,6 +32,7 @@ global.footer = '© 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝖦𝖺𝗋𝖿𝗂�
 global.ig = 'https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8' // 👈 You Can change this your choice
 global.region = 'India, South India, Kerala' // 👈 You Can change this your choice
 global.sc = 'https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8'
+global.fbt = 'Follw Us ℹ️' // 👈 Enter (Subscribe/Follow/Like now) 
 global.myweb = 'https://www.facebook.com/garfieldbots/' // 👈 Enter your Social media link to follow now button
 global.packname = 'GARFIELD-BOTv8'  // 👈 You Can change this your choice 
 global.author = 'NOIZE DEVELOPMENT' // 👈 You Can change this your choice 
