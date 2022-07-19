@@ -1,1 +1,715 @@
-const _0x33ec08=_0x2a48;(function(_0x513db6,_0x3e0ffd){const _0x3ddda5=_0x2a48,_0x57dee3=_0x513db6();while(!![]){try{const _0x3e541c=parseInt(_0x3ddda5(0x141))/0x1*(parseInt(_0x3ddda5(0x139))/0x2)+-parseInt(_0x3ddda5(0x13f))/0x3*(-parseInt(_0x3ddda5(0x1d9))/0x4)+parseInt(_0x3ddda5(0x13c))/0x5*(-parseInt(_0x3ddda5(0x1ab))/0x6)+-parseInt(_0x3ddda5(0x1c4))/0x7*(-parseInt(_0x3ddda5(0x188))/0x8)+parseInt(_0x3ddda5(0x152))/0x9+-parseInt(_0x3ddda5(0x19a))/0xa+-parseInt(_0x3ddda5(0x1cd))/0xb*(parseInt(_0x3ddda5(0x133))/0xc);if(_0x3e541c===_0x3e0ffd)break;else _0x57dee3['push'](_0x57dee3['shift']());}catch(_0x963c3e){_0x57dee3['push'](_0x57dee3['shift']());}}}(_0x38a7,0x51f20),require(_0x33ec08(0x138)));const {default:NexusNwIncConnect,useSingleFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,proto}=require(_0x33ec08(0x1ca)),{state,saveState}=useSingleFileAuthState('./'+sessionName+_0x33ec08(0x153)),pino=require(_0x33ec08(0x183)),{Boom}=require(_0x33ec08(0x11e)),fs=require('fs'),yargs=require('yargs/yargs'),chalk=require(_0x33ec08(0x12f)),FileType=require(_0x33ec08(0x17f)),path=require(_0x33ec08(0x131)),PhoneNumber=require(_0x33ec08(0x1b4)),{imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0x33ec08(0x129)),{smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0x33ec08(0x13d));var low;try{low=require(_0x33ec08(0x1c8));}catch(_0x46950c){low=require(_0x33ec08(0x182));}const {Low,JSONFile}=low,mongoDB=require(_0x33ec08(0x181));global[_0x33ec08(0x1a4)]=(_0x409dae,_0x1333b9='/',_0x4e205c={},_0x5ae662)=>(_0x409dae in global[_0x33ec08(0x17d)]?global[_0x33ec08(0x17d)][_0x409dae]:_0x409dae)+_0x1333b9+(_0x4e205c||_0x5ae662?'?'+new URLSearchParams(Object[_0x33ec08(0x16b)]({..._0x4e205c,..._0x5ae662?{[_0x5ae662]:global[_0x33ec08(0x125)][_0x409dae in global[_0x33ec08(0x17d)]?global[_0x33ec08(0x17d)][_0x409dae]:_0x409dae]}:{}})):'');function _0x38a7(){const _0x4dfd95=['fromObject','https://hardianto.xyz/api/welcome3?profile=','sendVideo',',\x0a🦋\x20Welcome\x20To\x20','image','chalk','sendTextWithMentions','path','remove','16880952YgKers','Automatic\x20Block\x20System!\x0aDon\x27t\x20Call\x20Bot!\x0aPlease\x20Ask\x20Or\x20Contact\x20The\x20Owner\x20To\x20Unblock\x20You!','unlink','verifiedName','query','./Config','102594qMuELt','msg','profilePictureUrl','5OnGBrX','./lib/myfunc','viewOnceMessage','22767XQHsIm','timedOut','13ecLZjw','subject','@g.us','sendMedia','store','status','map','participant','messages','slice','connectionLost','output','decodeJid','sendContact','connection.update','ext','isBuffer','4865454uuXjtV','.json','length','「\x20Group\x20Settings\x20Changed\x20」\x0a\x0aGroup\x20Subject\x20Has\x20Been\x20Changed\x20To\x20*','bind','readViewOnce','call-creator','waUploadToServer','groupMetadata','data','https://hardianto.xyz/api/goodbye3?profile=','application/octet-stream','.bin','name','contextInfo','error','getName','🦋Connection\x20Lost\x20from\x20Server,\x20reconnecting...','announce','getNumber','test','setStatus','Update\x20','serializeM','「\x20Group\x20Settings\x20Changed\x20」\x0a\x0aGroup\x20Info\x20Has\x20Been\x20Restricted,\x20Now\x20Only\x20Admin\x20Can\x20Edit\x20Group\x20Info\x20!','entries','from','writeFile','concat','utf-8','key','imageMessage','../src/','1.0.0','tag','\x0aitem2.X-ABLabel:Script\x0aitem3.URL:','CB:call','BAE5','write','mimetype','sendVideoAsSticker','contacts','sticker','APIs','conversation','file-type','getFile','./lib/mongoDB','./lib/lowdb','pino','silent','&name=','@s.whatsapp.net','send5ButImg','24WDzTnk','status@broadcast','\x20Left\x20','\x0aitem1.TEL;waid=','relayMessage','ignore','video','action','downloadMediaMessage','sendText','connectionReplaced','Bad\x20Session\x20File,\x20Please\x20Delete\x20Session\x20and\x20Scan\x20Again','close','./Garfield','public','attrs','content','document','2372830IzWIPs','Group\x20Settings\x20Change\x20Message','groups.update','message','asDocument','contacts.update','restrict','loggedOut','redBright','startsWith','api','sendButtonText','text','caption','notify','logout','copyNForward','106440YbxrHt','「\x20Group\x20Settings\x20Changed\x20」\x0a\x0aThe\x20Group\x20Has\x20Been\x20Closed\x20By\x20Admin,\x20Now\x20Only\x20Admin\x20Can\x20Send\x20Messages\x20!','🦋Device\x20Logged\x20Out,\x20Please\x20Scan\x20Again\x20And\x20Run.','sendImage','🦋Unknown\x20DisconnectReason:\x20','split','base64','database/database.json','ephemeralMessage','awesome-phonenumber','author','@broadcast','fromBuffer','international','fromMe','user','audio','🦋Connection\x20Replaced,\x20Another\x20New\x20Session\x20Opened,\x20Please\x20Close\x20Current\x20Session\x20First','\x0aitem3.X-ABLabel:Script\x0aitem4.ADR:;;','withoutContact','remoteJid','alloc','image/webp',';;;;\x0aitem4.X-ABLabel:Region\x0aEND:VCARD','https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg','656803ozgWzS','readFileSync','「\x20Group\x20Settings\x20Changed\x20」\x0a\x0aGroup\x20Info\x20Has\x20Been\x20Opened,\x20Now\x20Participants\x20Can\x20Edit\x20Group\x20Info\x20!','cMod','lowdb','Message','@adiwajshing/baileys','endsWith','parse','11aQfGWC','json','log','end','argv','WhatsApp','BEGIN:VCARD\x0aVERSION:3.0\x0aN:','desc','string','Garfield\x20Working\x20Now\x20🦋','sendMessage','existsSync','268LDVJAU','\x20Contact','add','&bg=https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png&namegb=','replace','keys','downloadAndSaveMediaMessage','「\x20Group\x20Settings\x20Changed\x20」\x0a\x0aThe\x20Group\x20Has\x20Been\x20Opened\x20By\x20Admin,\x20Now\x20Participants\x20Can\x20Send\x20Messages\x20!','block','push','toString','mtype','creds.update','🦋Connection\x20TimedOut,\x20Reconnecting...','packname','@hapi/boom','exitProcess','Safari','promises','sendImageAsSticker','&member=','watchFile','APIKeys','categories','connectionClosed','server','./lib/exif'];_0x38a7=function(){return _0x4dfd95;};return _0x38a7();}function _0x2a48(_0x22392c,_0x3d7d3a){const _0x38a724=_0x38a7();return _0x2a48=function(_0x2a4849,_0x10053c){_0x2a4849=_0x2a4849-0x112;let _0x7eb881=_0x38a724[_0x2a4849];return _0x7eb881;},_0x2a48(_0x22392c,_0x3d7d3a);}const store=makeInMemoryStore({'logger':pino()['child']({'level':'silent','stream':_0x33ec08(0x145)})});global['opts']=new Object(yargs(process[_0x33ec08(0x1d1)][_0x33ec08(0x14a)](0x2))[_0x33ec08(0x11f)](![])[_0x33ec08(0x1cc)]()),global['db']=new Low(/https?:\/\//['test'](opts['db']||'')?new cloudDBAdapter(opts['db']):/mongodb/[_0x33ec08(0x166)](opts['db'])?new mongoDB(opts['db']):new JSONFile(_0x33ec08(0x1b2))),global['db'][_0x33ec08(0x15b)]={'users':{},'chats':{},'database':{},'game':{},'settings':{},'others':{},'sticker':{},...global['db']['data']||{}};if(global['db'])setInterval(async()=>{const _0x20111f=_0x33ec08;if(global['db'][_0x20111f(0x15b)])await global['db'][_0x20111f(0x178)]();},0x1e*0x3e8);async function startGojoMdNx(){const _0x26a20c=_0x33ec08,_0x1fb99c=NexusNwIncConnect({'logger':pino({'level':_0x26a20c(0x184)}),'printQRInTerminal':!![],'browser':['Gojo\x20SatoruNexus',_0x26a20c(0x120),_0x26a20c(0x173)],'auth':state});return store[_0x26a20c(0x156)](_0x1fb99c['ev']),_0x1fb99c['ws']['on'](_0x26a20c(0x176),async _0x2b91d8=>{const _0x887365=_0x26a20c,_0x2d761d=_0x2b91d8['content'][0x0][_0x887365(0x197)][_0x887365(0x158)];if(_0x2b91d8[_0x887365(0x198)][0x0][_0x887365(0x174)]=='offer'){let _0x412796=await _0x1fb99c[_0x887365(0x14e)](_0x2d761d,global['owner']);_0x1fb99c[_0x887365(0x1d7)](_0x2d761d,{'text':_0x887365(0x134)},{'quoted':_0x412796}),await sleep(0x1f40),await _0x1fb99c['updateBlockStatus'](_0x2d761d,_0x887365(0x117));}}),_0x1fb99c['ev']['on']('messages.upsert',async _0x21d294=>{const _0x489ea7=_0x26a20c;try{mek=_0x21d294[_0x489ea7(0x149)][0x0];if(!mek[_0x489ea7(0x19d)])return;mek[_0x489ea7(0x19d)]=Object[_0x489ea7(0x114)](mek[_0x489ea7(0x19d)])[0x0]===_0x489ea7(0x1b3)?mek['message'][_0x489ea7(0x1b3)]['message']:mek[_0x489ea7(0x19d)];if(mek[_0x489ea7(0x170)]&&mek[_0x489ea7(0x170)][_0x489ea7(0x1bf)]===_0x489ea7(0x189))return;if(!_0x1fb99c['public']&&!mek[_0x489ea7(0x170)][_0x489ea7(0x1b9)]&&_0x21d294['type']===_0x489ea7(0x1a8))return;if(mek[_0x489ea7(0x170)]['id'][_0x489ea7(0x1a3)](_0x489ea7(0x177))&&mek[_0x489ea7(0x170)]['id'][_0x489ea7(0x154)]===0x10)return;m=smsg(_0x1fb99c,mek,store),require(_0x489ea7(0x195))(_0x1fb99c,m,_0x21d294,store);}catch(_0x448bf5){console[_0x489ea7(0x1cf)](_0x448bf5);}}),_0x1fb99c['ev']['on'](_0x26a20c(0x19c),async _0x702204=>{const _0x46d20e=_0x26a20c;try{ppgc=await _0x1fb99c[_0x46d20e(0x13b)](_0x702204[0x0]['id'],'image');}catch{ppgc='https://shortlink.GojoMdNxarridho.my.id/rg1oT';}let _0x57ecbc={'url':ppgc};if(_0x702204[0x0][_0x46d20e(0x164)]==!![])_0x1fb99c[_0x46d20e(0x187)](_0x702204[0x0]['id'],_0x46d20e(0x1ac),_0x46d20e(0x19b),_0x57ecbc,[]);else{if(_0x702204[0x0][_0x46d20e(0x164)]==![])_0x1fb99c[_0x46d20e(0x187)](_0x702204[0x0]['id'],_0x46d20e(0x116),_0x46d20e(0x19b),_0x57ecbc,[]);else{if(_0x702204[0x0][_0x46d20e(0x1a0)]==!![])_0x1fb99c[_0x46d20e(0x187)](_0x702204[0x0]['id'],_0x46d20e(0x16a),'Group\x20Settings\x20Change\x20Message',_0x57ecbc,[]);else _0x702204[0x0][_0x46d20e(0x1a0)]==![]?_0x1fb99c[_0x46d20e(0x187)](_0x702204[0x0]['id'],_0x46d20e(0x1c6),_0x46d20e(0x19b),_0x57ecbc,[]):_0x1fb99c[_0x46d20e(0x187)](_0x702204[0x0]['id'],_0x46d20e(0x155)+_0x702204[0x0]['subject']+'*',_0x46d20e(0x19b),_0x57ecbc,[]);}}}),_0x1fb99c['ev']['on']('group-participants.update',async _0x4a1c33=>{const _0x3a767c=_0x26a20c;console[_0x3a767c(0x1cf)](_0x4a1c33);try{let _0x43b099=await _0x1fb99c[_0x3a767c(0x15a)](_0x4a1c33['id']),_0x4d9a31=_0x4a1c33['participants'];for(let _0x59760d of _0x4d9a31){try{ppuser=await _0x1fb99c[_0x3a767c(0x13b)](_0x59760d,_0x3a767c(0x12e));}catch{ppuser=_0x3a767c(0x1c3);}try{ppgroup=await _0x1fb99c['profilePictureUrl'](_0x4a1c33['id'],'image');}catch{ppgroup=_0x3a767c(0x1c3);}let _0x3d91d7=await _0x1fb99c[_0x3a767c(0x162)](_0x59760d);memb=_0x43b099['participants'][_0x3a767c(0x154)],Kon=await getBuffer(_0x3a767c(0x12b)+encodeURIComponent(ppuser)+_0x3a767c(0x185)+encodeURIComponent(_0x3d91d7)+_0x3a767c(0x112)+encodeURIComponent(_0x43b099[_0x3a767c(0x142)])+_0x3a767c(0x123)+encodeURIComponent(memb)),Tol=await getBuffer(_0x3a767c(0x15c)+encodeURIComponent(ppuser)+_0x3a767c(0x185)+encodeURIComponent(_0x3d91d7)+_0x3a767c(0x112)+encodeURIComponent(_0x43b099['subject'])+_0x3a767c(0x123)+encodeURIComponent(memb));if(_0x4a1c33[_0x3a767c(0x18f)]==_0x3a767c(0x1db))_0x1fb99c['sendMessage'](_0x4a1c33['id'],{'image':Kon,'contextInfo':{'mentionedJid':[_0x59760d]},'caption':'\x0a🦋\x20Hi👋\x20@'+_0x59760d[_0x3a767c(0x1b0)]('@')[0x0]+_0x3a767c(0x12d)+_0x43b099[_0x3a767c(0x142)]+'\x0a\x0a🦋\x20Description:\x20'+_0x43b099[_0x3a767c(0x1d4)]+'\x0a!'});else _0x4a1c33[_0x3a767c(0x18f)]==_0x3a767c(0x132)&&_0x1fb99c[_0x3a767c(0x1d7)](_0x4a1c33['id'],{'image':Tol,'contextInfo':{'mentionedJid':[_0x59760d]},'caption':'🦋\x20@'+_0x59760d[_0x3a767c(0x1b0)]('@')[0x0]+_0x3a767c(0x18a)+_0x43b099[_0x3a767c(0x142)]+'\x0a\x0a*🦋\x20Bye\x20Bye\x20Mother\x20F#cker*'});}}catch(_0x7cf4ed){console[_0x3a767c(0x1cf)](_0x7cf4ed);}}),_0x1fb99c[_0x26a20c(0x14d)]=_0x3145c5=>{const _0x35b695=_0x26a20c;if(!_0x3145c5)return _0x3145c5;if(/:\d+@/gi[_0x35b695(0x166)](_0x3145c5)){let _0x32cfa9=jidDecode(_0x3145c5)||{};return _0x32cfa9['user']&&_0x32cfa9['server']&&_0x32cfa9[_0x35b695(0x1ba)]+'@'+_0x32cfa9[_0x35b695(0x128)]||_0x3145c5;}else return _0x3145c5;},_0x1fb99c['ev']['on'](_0x26a20c(0x19f),_0x21550e=>{const _0x4f7360=_0x26a20c;for(let _0x1d1285 of _0x21550e){let _0x5e1489=_0x1fb99c['decodeJid'](_0x1d1285['id']);if(store&&store['contacts'])store['contacts'][_0x5e1489]={'id':_0x5e1489,'name':_0x1d1285[_0x4f7360(0x1a8)]};}}),_0x1fb99c[_0x26a20c(0x162)]=(_0x4a1a58,_0x56f63b=![])=>{const _0x1437c5=_0x26a20c;id=_0x1fb99c['decodeJid'](_0x4a1a58),_0x56f63b=_0x1fb99c[_0x1437c5(0x1be)]||_0x56f63b;let _0x454a62;if(id[_0x1437c5(0x1cb)](_0x1437c5(0x143)))return new Promise(async _0x296110=>{const _0x27601f=_0x1437c5;_0x454a62=store[_0x27601f(0x17b)][id]||{};if(!(_0x454a62[_0x27601f(0x15f)]||_0x454a62[_0x27601f(0x142)]))_0x454a62=_0x1fb99c[_0x27601f(0x15a)](id)||{};_0x296110(_0x454a62[_0x27601f(0x15f)]||_0x454a62[_0x27601f(0x142)]||PhoneNumber('+'+id[_0x27601f(0x113)]('@s.whatsapp.net',''))[_0x27601f(0x165)](_0x27601f(0x1b8)));});else _0x454a62=id==='0@s.whatsapp.net'?{'id':id,'name':_0x1437c5(0x1d2)}:id===_0x1fb99c[_0x1437c5(0x14d)](_0x1fb99c[_0x1437c5(0x1ba)]['id'])?_0x1fb99c[_0x1437c5(0x1ba)]:store[_0x1437c5(0x17b)][id]||{};return(_0x56f63b?'':_0x454a62[_0x1437c5(0x15f)])||_0x454a62[_0x1437c5(0x142)]||_0x454a62[_0x1437c5(0x136)]||PhoneNumber('+'+_0x4a1a58[_0x1437c5(0x113)](_0x1437c5(0x186),''))[_0x1437c5(0x165)](_0x1437c5(0x1b8));},_0x1fb99c[_0x26a20c(0x14e)]=async(_0x5ecdff,_0x2c24cc,_0xd5fb69='',_0x1d56e4={})=>{const _0x43fc45=_0x26a20c;let _0x1c56cf=[];for(let _0x46a3b8 of _0x2c24cc){_0x1c56cf[_0x43fc45(0x118)]({'displayName':await _0x1fb99c[_0x43fc45(0x162)](_0x46a3b8+_0x43fc45(0x186)),'vcard':_0x43fc45(0x1d3)+ownername+_0x43fc45(0x18b)+_0x46a3b8+':'+_0x46a3b8+'\x0aitem1.X-ABLabel:Click\x20To\x20Chat\x0aitem2.EMAIL;type=INTERNET:'+sc+_0x43fc45(0x175)+myweb+_0x43fc45(0x1bd)+region+_0x43fc45(0x1c2)});}_0x1fb99c[_0x43fc45(0x1d7)](_0x5ecdff,{'contacts':{'displayName':_0x1c56cf[_0x43fc45(0x154)]+_0x43fc45(0x1da),'contacts':_0x1c56cf},..._0x1d56e4},{'quoted':_0xd5fb69});},_0x1fb99c[_0x26a20c(0x167)]=_0x11b44a=>{const _0x43a4a4=_0x26a20c;return _0x1fb99c[_0x43a4a4(0x137)]({'tag':'iq','attrs':{'to':_0x43a4a4(0x186),'type':'set','xmlns':_0x43a4a4(0x146)},'content':[{'tag':_0x43a4a4(0x146),'attrs':{},'content':Buffer[_0x43a4a4(0x16c)](_0x11b44a,_0x43a4a4(0x16f))}]}),_0x11b44a;},_0x1fb99c[_0x26a20c(0x196)]=!![],_0x1fb99c[_0x26a20c(0x169)]=_0x1bc8b4=>smsg(_0x1fb99c,_0x1bc8b4,store),_0x1fb99c['ev']['on'](_0x26a20c(0x14f),async _0x120aba=>{const _0x394d94=_0x26a20c,{connection:_0x3f3a0d,lastDisconnect:_0x53eed7}=_0x120aba;if(_0x3f3a0d===_0x394d94(0x194)){let _0x325e7c=new Boom(_0x53eed7?.[_0x394d94(0x161)])?.[_0x394d94(0x14c)]['statusCode'];if(_0x325e7c===DisconnectReason['badSession'])console['log'](_0x394d94(0x193)),_0x1fb99c['logout']();else{if(_0x325e7c===DisconnectReason[_0x394d94(0x127)])console['log']('🦋Connection\x20closed,\x20reconnecting....'),startGojoMdNx();else{if(_0x325e7c===DisconnectReason[_0x394d94(0x14b)])console[_0x394d94(0x1cf)](_0x394d94(0x163)),startGojoMdNx();else{if(_0x325e7c===DisconnectReason[_0x394d94(0x192)])console[_0x394d94(0x1cf)](_0x394d94(0x1bc)),_0x1fb99c[_0x394d94(0x1a9)]();else{if(_0x325e7c===DisconnectReason[_0x394d94(0x1a1)])console[_0x394d94(0x1cf)](_0x394d94(0x1ad)),_0x1fb99c[_0x394d94(0x1a9)]();else{if(_0x325e7c===DisconnectReason['restartRequired'])console[_0x394d94(0x1cf)]('🦋Restart\x20Required,\x20Restarting...'),startGojoMdNx();else{if(_0x325e7c===DisconnectReason[_0x394d94(0x140)])console[_0x394d94(0x1cf)](_0x394d94(0x11c)),startGojoMdNx();else _0x1fb99c[_0x394d94(0x1d0)](_0x394d94(0x1af)+_0x325e7c+'|'+_0x3f3a0d);}}}}}}}console[_0x394d94(0x1cf)](_0x394d94(0x1d6),_0x120aba);}),_0x1fb99c['ev']['on'](_0x26a20c(0x11b),saveState),_0x1fb99c[_0x26a20c(0x187)]=async(_0x415467,_0xbab217='',_0x151b4b='',_0xd110fc,_0x472fed=[],_0x28b247={})=>{const _0x27d616=_0x26a20c;let _0x3c0e7c=await prepareWAMessageMedia({'image':_0xd110fc},{'upload':_0x1fb99c[_0x27d616(0x159)]});var _0xc6f3b7=generateWAMessageFromContent(m['chat'],proto[_0x27d616(0x1c9)][_0x27d616(0x12a)]({'templateMessage':{'hydratedTemplate':{'imageMessage':_0x3c0e7c[_0x27d616(0x171)],'hydratedContentText':_0xbab217,'hydratedFooterText':_0x151b4b,'hydratedButtons':_0x472fed}}}),_0x28b247);_0x1fb99c[_0x27d616(0x18c)](_0x415467,_0xc6f3b7['message'],{'messageId':_0xc6f3b7[_0x27d616(0x170)]['id']});},_0x1fb99c[_0x26a20c(0x1a5)]=(_0x530e13,_0x4489a9=[],_0x2acbdc,_0x257ed5,_0x3a6bc2='',_0x875b24={})=>{const _0x332321=_0x26a20c;let _0x143d81={'text':_0x2acbdc,'footer':_0x257ed5,'buttons':_0x4489a9,'headerType':0x2,..._0x875b24};_0x1fb99c[_0x332321(0x1d7)](_0x530e13,_0x143d81,{'quoted':_0x3a6bc2,..._0x875b24});},_0x1fb99c[_0x26a20c(0x191)]=(_0x10aaba,_0xf91f6a,_0x4855f9='',_0x598ff9)=>_0x1fb99c[_0x26a20c(0x1d7)](_0x10aaba,{'text':_0xf91f6a,..._0x598ff9},{'quoted':_0x4855f9}),_0x1fb99c[_0x26a20c(0x1ae)]=async(_0x17e8d2,_0x559760,_0x71ef19='',_0x272646='',_0x3631bc)=>{const _0x1181c6=_0x26a20c;let _0x34b60a=Buffer['isBuffer'](_0x559760)?_0x559760:/^data:.*?\/.*?;base64,/i['test'](_0x559760)?Buffer[_0x1181c6(0x16c)](_0x559760[_0x1181c6(0x1b0)]`,`[0x1],'base64'):/^https?:\/\//['test'](_0x559760)?await await getBuffer(_0x559760):fs[_0x1181c6(0x1d8)](_0x559760)?fs['readFileSync'](_0x559760):Buffer[_0x1181c6(0x1c0)](0x0);return await _0x1fb99c[_0x1181c6(0x1d7)](_0x17e8d2,{'image':_0x34b60a,'caption':_0x71ef19,..._0x3631bc},{'quoted':_0x272646});},_0x1fb99c[_0x26a20c(0x12c)]=async(_0x45372a,_0x5b403e,_0x2256b5='',_0x1f738d='',_0x336e17=![],_0x458ab1)=>{const _0x4c1523=_0x26a20c;let _0x17980f=Buffer[_0x4c1523(0x151)](_0x5b403e)?_0x5b403e:/^data:.*?\/.*?;base64,/i['test'](_0x5b403e)?Buffer[_0x4c1523(0x16c)](_0x5b403e['split']`,`[0x1],_0x4c1523(0x1b1)):/^https?:\/\//[_0x4c1523(0x166)](_0x5b403e)?await await getBuffer(_0x5b403e):fs['existsSync'](_0x5b403e)?fs[_0x4c1523(0x1c5)](_0x5b403e):Buffer[_0x4c1523(0x1c0)](0x0);return await _0x1fb99c['sendMessage'](_0x45372a,{'video':_0x17980f,'caption':_0x2256b5,'gifPlayback':_0x336e17,..._0x458ab1},{'quoted':_0x1f738d});},_0x1fb99c['sendAudio']=async(_0x26777a,_0x391602,_0x21f947='',_0x14f562=![],_0x39138c)=>{const _0x277a3e=_0x26a20c;let _0x5361f0=Buffer[_0x277a3e(0x151)](_0x391602)?_0x391602:/^data:.*?\/.*?;base64,/i[_0x277a3e(0x166)](_0x391602)?Buffer[_0x277a3e(0x16c)](_0x391602[_0x277a3e(0x1b0)]`,`[0x1],'base64'):/^https?:\/\//[_0x277a3e(0x166)](_0x391602)?await await getBuffer(_0x391602):fs[_0x277a3e(0x1d8)](_0x391602)?fs['readFileSync'](_0x391602):Buffer[_0x277a3e(0x1c0)](0x0);return await _0x1fb99c[_0x277a3e(0x1d7)](_0x26777a,{'audio':_0x5361f0,'ptt':_0x14f562,..._0x39138c},{'quoted':_0x21f947});},_0x1fb99c[_0x26a20c(0x130)]=async(_0x25a08d,_0x2b1156,_0x2e1b46,_0x37ebab={})=>_0x1fb99c[_0x26a20c(0x1d7)](_0x25a08d,{'text':_0x2b1156,'contextInfo':{'mentionedJid':[..._0x2b1156['matchAll'](/@(\d{0,16})/g)][_0x26a20c(0x147)](_0x2cf778=>_0x2cf778[0x1]+_0x26a20c(0x186))},..._0x37ebab},{'quoted':_0x2e1b46}),_0x1fb99c[_0x26a20c(0x122)]=async(_0x40e851,_0x39a1e6,_0xb1fc7a,_0x1f59a1={})=>{const _0x487992=_0x26a20c;let _0x165944=Buffer[_0x487992(0x151)](_0x39a1e6)?_0x39a1e6:/^data:.*?\/.*?;base64,/i['test'](_0x39a1e6)?Buffer['from'](_0x39a1e6[_0x487992(0x1b0)]`,`[0x1],_0x487992(0x1b1)):/^https?:\/\//[_0x487992(0x166)](_0x39a1e6)?await await getBuffer(_0x39a1e6):fs[_0x487992(0x1d8)](_0x39a1e6)?fs[_0x487992(0x1c5)](_0x39a1e6):Buffer['alloc'](0x0),_0xd36ce;return _0x1f59a1&&(_0x1f59a1[_0x487992(0x11d)]||_0x1f59a1[_0x487992(0x1b5)])?_0xd36ce=await writeExifImg(_0x165944,_0x1f59a1):_0xd36ce=await imageToWebp(_0x165944),await _0x1fb99c[_0x487992(0x1d7)](_0x40e851,{'sticker':{'url':_0xd36ce},..._0x1f59a1},{'quoted':_0xb1fc7a}),_0xd36ce;},_0x1fb99c[_0x26a20c(0x17a)]=async(_0x246f07,_0x35b32f,_0xc9c398,_0x96b904={})=>{const _0x12f270=_0x26a20c;let _0x425ea2=Buffer[_0x12f270(0x151)](_0x35b32f)?_0x35b32f:/^data:.*?\/.*?;base64,/i[_0x12f270(0x166)](_0x35b32f)?Buffer['from'](_0x35b32f[_0x12f270(0x1b0)]`,`[0x1],_0x12f270(0x1b1)):/^https?:\/\//[_0x12f270(0x166)](_0x35b32f)?await await getBuffer(_0x35b32f):fs[_0x12f270(0x1d8)](_0x35b32f)?fs['readFileSync'](_0x35b32f):Buffer['alloc'](0x0),_0x325a18;return _0x96b904&&(_0x96b904[_0x12f270(0x11d)]||_0x96b904[_0x12f270(0x1b5)])?_0x325a18=await writeExifVid(_0x425ea2,_0x96b904):_0x325a18=await videoToWebp(_0x425ea2),await _0x1fb99c[_0x12f270(0x1d7)](_0x246f07,{'sticker':{'url':_0x325a18},..._0x96b904},{'quoted':_0xc9c398}),_0x325a18;},_0x1fb99c[_0x26a20c(0x115)]=async(_0x50a282,_0x353027,_0x41a893=!![])=>{const _0x361a43=_0x26a20c;let _0x43ebd0=_0x50a282['msg']?_0x50a282[_0x361a43(0x13a)]:_0x50a282,_0xddd0c6=(_0x50a282[_0x361a43(0x13a)]||_0x50a282)[_0x361a43(0x179)]||'',_0x46ab94=_0x50a282[_0x361a43(0x11a)]?_0x50a282[_0x361a43(0x11a)][_0x361a43(0x113)](/Message/gi,''):_0xddd0c6[_0x361a43(0x1b0)]('/')[0x0];const _0x487c80=await downloadContentFromMessage(_0x43ebd0,_0x46ab94);let _0x576024=Buffer[_0x361a43(0x16c)]([]);for await(const _0x531362 of _0x487c80){_0x576024=Buffer[_0x361a43(0x16e)]([_0x576024,_0x531362]);}let _0xca2e52=await FileType['fromBuffer'](_0x576024);return trueFileName=_0x41a893?_0x353027+'.'+_0xca2e52[_0x361a43(0x150)]:_0x353027,await fs['writeFileSync'](trueFileName,_0x576024),trueFileName;},_0x1fb99c[_0x26a20c(0x190)]=async _0x3d3bdb=>{const _0x3760ed=_0x26a20c;let _0x32f56d=(_0x3d3bdb[_0x3760ed(0x13a)]||_0x3d3bdb)[_0x3760ed(0x179)]||'',_0x5703c4=_0x3d3bdb[_0x3760ed(0x11a)]?_0x3d3bdb[_0x3760ed(0x11a)]['replace'](/Message/gi,''):_0x32f56d[_0x3760ed(0x1b0)]('/')[0x0];const _0x24ee42=await downloadContentFromMessage(_0x3d3bdb,_0x5703c4);let _0x4e0f8f=Buffer['from']([]);for await(const _0x4a59f7 of _0x24ee42){_0x4e0f8f=Buffer[_0x3760ed(0x16e)]([_0x4e0f8f,_0x4a59f7]);}return _0x4e0f8f;},_0x1fb99c[_0x26a20c(0x144)]=async(_0x2e8b4c,_0x388b75,_0xc4038f='',_0x5a74b2='',_0x537cc8='',_0x28e452={})=>{const _0x13aa58=_0x26a20c;let _0xd930cd=await _0x1fb99c[_0x13aa58(0x180)](_0x388b75,!![]),{mime:_0x518d2d,ext:_0x59f5a9,res:_0x2d6796,data:_0x2945dc,filename:_0xcd6107}=_0xd930cd;if(_0x2d6796&&_0x2d6796[_0x13aa58(0x146)]!==0xc8||file[_0x13aa58(0x154)]<=0x10000)try{throw{'json':JSON[_0x13aa58(0x1cc)](file[_0x13aa58(0x119)]())};}catch(_0x102c62){if(_0x102c62[_0x13aa58(0x1ce)])throw _0x102c62[_0x13aa58(0x1ce)];}let _0xbc2885='',_0x1eabbe=_0x518d2d,_0x59f731=_0xcd6107;if(_0x28e452[_0x13aa58(0x19e)])_0xbc2885='document';if(_0x28e452['asSticker']||/webp/[_0x13aa58(0x166)](_0x518d2d)){let {writeExif:_0x1273d6}=require(_0x13aa58(0x129)),_0x5c7e96={'mimetype':_0x518d2d,'data':_0x2945dc};_0x59f731=await _0x1273d6(_0x5c7e96,{'packname':_0x28e452[_0x13aa58(0x11d)]?_0x28e452[_0x13aa58(0x11d)]:global[_0x13aa58(0x11d)],'author':_0x28e452[_0x13aa58(0x1b5)]?_0x28e452[_0x13aa58(0x1b5)]:global[_0x13aa58(0x1b5)],'categories':_0x28e452[_0x13aa58(0x126)]?_0x28e452[_0x13aa58(0x126)]:[]}),await fs[_0x13aa58(0x121)][_0x13aa58(0x135)](_0xcd6107),_0xbc2885=_0x13aa58(0x17c),_0x1eabbe=_0x13aa58(0x1c1);}else{if(/image/[_0x13aa58(0x166)](_0x518d2d))_0xbc2885=_0x13aa58(0x12e);else{if(/video/[_0x13aa58(0x166)](_0x518d2d))_0xbc2885=_0x13aa58(0x18e);else{if(/audio/[_0x13aa58(0x166)](_0x518d2d))_0xbc2885=_0x13aa58(0x1bb);else _0xbc2885=_0x13aa58(0x199);}}}return await _0x1fb99c['sendMessage'](_0x2e8b4c,{[_0xbc2885]:{'url':_0x59f731},'caption':_0x5a74b2,'mimetype':_0x1eabbe,'fileName':_0xc4038f,..._0x28e452},{'quoted':_0x537cc8,..._0x28e452}),fs[_0x13aa58(0x121)][_0x13aa58(0x135)](_0x59f731);},_0x1fb99c[_0x26a20c(0x1aa)]=async(_0x158fc1,_0x4c6b49,_0x5a5e4b=![],_0x5d72ba={})=>{const _0x1f1e3b=_0x26a20c;let _0x2c5e56;_0x5d72ba[_0x1f1e3b(0x157)]&&(_0x4c6b49[_0x1f1e3b(0x19d)]=_0x4c6b49[_0x1f1e3b(0x19d)]&&_0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x1b3)]&&_0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x1b3)][_0x1f1e3b(0x19d)]?_0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x1b3)][_0x1f1e3b(0x19d)]:_0x4c6b49[_0x1f1e3b(0x19d)]||undefined,_0x2c5e56=Object[_0x1f1e3b(0x114)](_0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x13e)]['message'])[0x0],delete(_0x4c6b49[_0x1f1e3b(0x19d)]&&_0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x18d)]?_0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x18d)]:_0x4c6b49[_0x1f1e3b(0x19d)]||undefined),delete _0x4c6b49[_0x1f1e3b(0x19d)][_0x1f1e3b(0x13e)]['message'][_0x2c5e56]['viewOnce'],_0x4c6b49[_0x1f1e3b(0x19d)]={..._0x4c6b49[_0x1f1e3b(0x19d)]['viewOnceMessage'][_0x1f1e3b(0x19d)]});let _0x1e27ec=Object[_0x1f1e3b(0x114)](_0x4c6b49['message'])[0x0],_0x5e0aec=await generateForwardMessageContent(_0x4c6b49,_0x5a5e4b),_0x5b199d=Object[_0x1f1e3b(0x114)](_0x5e0aec)[0x0],_0x2eb197={};if(_0x1e27ec!=_0x1f1e3b(0x17e))_0x2eb197=_0x4c6b49[_0x1f1e3b(0x19d)][_0x1e27ec][_0x1f1e3b(0x160)];_0x5e0aec[_0x5b199d][_0x1f1e3b(0x160)]={..._0x2eb197,..._0x5e0aec[_0x5b199d][_0x1f1e3b(0x160)]};const _0x31cb53=await generateWAMessageFromContent(_0x158fc1,_0x5e0aec,_0x5d72ba?{..._0x5e0aec[_0x5b199d],..._0x5d72ba,..._0x5d72ba['contextInfo']?{'contextInfo':{..._0x5e0aec[_0x5b199d][_0x1f1e3b(0x160)],..._0x5d72ba[_0x1f1e3b(0x160)]}}:{}}:{});return await _0x1fb99c['relayMessage'](_0x158fc1,_0x31cb53[_0x1f1e3b(0x19d)],{'messageId':_0x31cb53[_0x1f1e3b(0x170)]['id']}),_0x31cb53;},_0x1fb99c[_0x26a20c(0x1c7)]=(_0x4e051a,_0x100971,_0x4d473f='',_0x3087ee=_0x1fb99c[_0x26a20c(0x1ba)]['id'],_0x4ef7fd={})=>{const _0x49335d=_0x26a20c;let _0x8756dd=Object['keys'](_0x100971[_0x49335d(0x19d)])[0x0],_0x21b299=_0x8756dd===_0x49335d(0x1b3);_0x21b299&&(_0x8756dd=Object[_0x49335d(0x114)](_0x100971[_0x49335d(0x19d)][_0x49335d(0x1b3)][_0x49335d(0x19d)])[0x0]);let _0x476b0f=_0x21b299?_0x100971[_0x49335d(0x19d)][_0x49335d(0x1b3)]['message']:_0x100971[_0x49335d(0x19d)],_0x439dd7=_0x476b0f[_0x8756dd];if(typeof _0x439dd7===_0x49335d(0x1d5))_0x476b0f[_0x8756dd]=_0x4d473f||_0x439dd7;else{if(_0x439dd7[_0x49335d(0x1a7)])_0x439dd7[_0x49335d(0x1a7)]=_0x4d473f||_0x439dd7[_0x49335d(0x1a7)];else{if(_0x439dd7[_0x49335d(0x1a6)])_0x439dd7['text']=_0x4d473f||_0x439dd7[_0x49335d(0x1a6)];}}if(typeof _0x439dd7!==_0x49335d(0x1d5))_0x476b0f[_0x8756dd]={..._0x439dd7,..._0x4ef7fd};if(_0x100971[_0x49335d(0x170)][_0x49335d(0x148)])_0x3087ee=_0x100971[_0x49335d(0x170)][_0x49335d(0x148)]=_0x3087ee||_0x100971['key']['participant'];else{if(_0x100971[_0x49335d(0x170)][_0x49335d(0x148)])_0x3087ee=_0x100971[_0x49335d(0x170)][_0x49335d(0x148)]=_0x3087ee||_0x100971[_0x49335d(0x170)]['participant'];}if(_0x100971[_0x49335d(0x170)][_0x49335d(0x1bf)]['includes'](_0x49335d(0x186)))_0x3087ee=_0x3087ee||_0x100971[_0x49335d(0x170)]['remoteJid'];else{if(_0x100971[_0x49335d(0x170)][_0x49335d(0x1bf)]['includes'](_0x49335d(0x1b6)))_0x3087ee=_0x3087ee||_0x100971[_0x49335d(0x170)][_0x49335d(0x1bf)];}return _0x100971[_0x49335d(0x170)][_0x49335d(0x1bf)]=_0x4e051a,_0x100971[_0x49335d(0x170)][_0x49335d(0x1b9)]=_0x3087ee===_0x1fb99c['user']['id'],proto['WebMessageInfo'][_0x49335d(0x12a)](_0x100971);},_0x1fb99c[_0x26a20c(0x180)]=async(_0x44415e,_0x36a4d3)=>{const _0x5b90fa=_0x26a20c;let _0x12bd8d,_0x587f6f=Buffer['isBuffer'](_0x44415e)?_0x44415e:/^data:.*?\/.*?;base64,/i[_0x5b90fa(0x166)](_0x44415e)?Buffer[_0x5b90fa(0x16c)](_0x44415e[_0x5b90fa(0x1b0)]`,`[0x1],_0x5b90fa(0x1b1)):/^https?:\/\//['test'](_0x44415e)?await(_0x12bd8d=await getBuffer(_0x44415e)):fs[_0x5b90fa(0x1d8)](_0x44415e)?(filename=_0x44415e,fs[_0x5b90fa(0x1c5)](_0x44415e)):typeof _0x44415e===_0x5b90fa(0x1d5)?_0x44415e:Buffer[_0x5b90fa(0x1c0)](0x0),_0x4af8b6=await FileType[_0x5b90fa(0x1b7)](_0x587f6f)||{'mime':_0x5b90fa(0x15d),'ext':_0x5b90fa(0x15e)};filename=path['join'](__filename,_0x5b90fa(0x172)+new Date()*0x1+'.'+_0x4af8b6[_0x5b90fa(0x150)]);if(_0x587f6f&&_0x36a4d3)fs['promises'][_0x5b90fa(0x16d)](filename,_0x587f6f);return{'res':_0x12bd8d,'filename':filename,'size':await getSizeMedia(_0x587f6f),..._0x4af8b6,'data':_0x587f6f};},_0x1fb99c;}startGojoMdNx();let file=require['resolve'](__filename);fs[_0x33ec08(0x124)](file,()=>{const _0x1bd82d=_0x33ec08;fs['unwatchFile'](file),console[_0x1bd82d(0x1cf)](chalk[_0x1bd82d(0x1a2)](_0x1bd82d(0x168)+__filename)),delete require['cache'][file],require(file);});
+//Coded by Tharindu Liyanage
+require('./Config')
+const { default: GarfieldNeuralConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
+const pino = require('pino')
+const { Boom } = require('@hapi/boom')
+const fs = require('fs')
+const yargs = require('yargs/yargs')
+const chalk = require('chalk')
+const FileType = require('file-type')
+const path = require('path')
+const PhoneNumber = require('awesome-phonenumber')
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
+const { formatp, tanggal, formatDate, getTime, clockString, runtime, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+
+var low
+try {
+  low = require('lowdb')
+} catch (e) {
+  low = require('./lib/lowdb')
+}
+
+const { Low, JSONFile } = low
+const mongoDB = require('./lib/mongoDB')
+
+global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
+
+const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
+
+global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+global.db = new Low(
+  /https?:\/\//.test(opts['db'] || '') ?
+    new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ?
+      new mongoDB(opts['db']) :
+      new JSONFile(`src/database.json`)
+)
+global.db.data = {
+    users: {},
+    chats: {},
+    database: {},
+    game: {},
+    settings: {},
+    others: {},
+    sticker: {},
+    ...(global.db.data || {})
+}
+
+// save database every 30seconds
+if (global.db) setInterval(async () => {
+    if (global.db.data) await global.db.write()
+  }, 30 * 1000)
+
+async function startGarfieldNeural() {
+    const GarfieldNeural = GarfieldNeuralConnect({
+        logger: pino({ level: 'silent' }),
+        printQRInTerminal: true,
+        browser: ['𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т','Safari','1.0.0'],
+        auth: state
+    })
+
+    store.bind(GarfieldNeural.ev)
+    
+    // anticall auto block
+    GarfieldNeural.ws.on('CB:call', async (json) => {
+    const callerId = json.content[0].attrs['call-creator']
+    if (json.content[0].tag == 'offer') {
+    let pa7rick = await GarfieldNeural.sendContact(callerId, global.owner)
+    GarfieldNeural.sendMessage(callerId, { text: `*Automatic system block!*\n*Don't call bot!\nPlease contact the owner to UNBLOCK!*`}, { quoted : pa7rick })
+    await sleep(8000)
+    await GarfieldNeural.updateBlockStatus(callerId, "block")
+    }
+    })
+
+    GarfieldNeural.ev.on('messages.upsert', async chatUpdate => {
+        //console.log(JSON.stringify(chatUpdate, undefined, 2))
+        try {
+        mek = chatUpdate.messages[0]
+        if (!mek.message) return
+        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
+        if (!GarfieldNeural.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+        m = smsg(GarfieldNeural, mek, store)
+        require("./Garfield.js")(GarfieldNeural, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
+    
+    
+    
+//anu
+function pickRandom(list) {
+return list[Math.floor(list.length * Math.random())]
+}
+//dokumen random
+let doku = [f1,f2,f3,f4,f5,f6]
+let feler = pickRandom(doku)
+// yoi
+
+    GarfieldNeural.ev.on('group-participants.update', async (anu) => {
+        console.log(anu)
+        try {
+            let metadata = await GarfieldNeural.groupMetadata(anu.id)
+            let participants = anu.participants
+            for (let num of participants) {
+                // Get Profile Picture User
+                try {
+                    ppuser = await GarfieldNeural.profilePictureUrl(num, 'image')
+                } catch {
+                    ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+                }
+
+                // Get Profile Picture Group
+                try {
+                    ppgroup = await GarfieldNeural.profilePictureUrl(anu.id, 'image')
+                } catch {
+                    ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+                }
+
+                if (anu.action == 'add') {
+                var buffer = await getBuffer(ppuser)
+                let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
+                let link = `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`
+let buttons = [
+{buttonId: `halo`, buttonText: {displayText: 'WELCOME'}, type: 1}
+]
+let buttonMessage = {
+document: fs.readFileSync('./lib/tes.xlsx'),
+mimetype: feler,
+jpegThumbnail:buffer,
+mentions: [num],
+fileName: `Welcome To ${metadata.subject}`,
+fileLength: 99999999999999,
+caption: he,
+footer: `© 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝖦𝖺𝗋𝖿𝗂𝖾𝗅𝖽 𝖡𝗈𝗍`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: `Don't forget to smile today`,
+body: `Follow Now`,
+mediaType:2,
+thumbnail: buffer,
+sourceUrl: link,
+mediaUrl: link,
+}}
+}
+GarfieldNeural.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
+                } else if (anu.action == 'remove') {
+                    let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                    he = `He/She is gone bro 🐼  ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
+                    let link = `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`
+let buttons = [
+{buttonId: `halo`, buttonText: {displayText: 'BYE'}, type: 1}
+]
+let buttonMessage = {
+document: fs.readFileSync('./lib/tes.xlsx'),
+mimetype: feler,
+jpegThumbnail:buffer,
+mentions: [num],
+fileName: `He/She is gone bro ${metadata.subject}`,
+fileLength: 99999999999999,
+caption: he,
+footer: `© 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝖦𝖺𝗋𝖿𝗂𝖾𝗅𝖽 𝖡𝗈𝗍`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: `Bye Bye 🐼`,
+body: `Follow Now ℹ️ `,
+mediaType:2,
+thumbnail: buffer,
+sourceUrl: link,
+mediaUrl: link,
+}}
+}
+GarfieldNeural.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    })
+	
+    // Setting
+    GarfieldNeural.decodeJid = (jid) => {
+        if (!jid) return jid
+        if (/:\d+@/gi.test(jid)) {
+            let decode = jidDecode(jid) || {}
+            return decode.user && decode.server && decode.user + '@' + decode.server || jid
+        } else return jid
+    }
+    
+    GarfieldNeural.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = GarfieldNeural.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+        }
+    })
+
+    GarfieldNeural.getName = (jid, withoutContact  = false) => {
+        id = GarfieldNeural.decodeJid(jid)
+        withoutContact = GarfieldNeural.withoutContact || withoutContact 
+        let v
+        if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
+            v = store.contacts[id] || {}
+            if (!(v.name || v.subject)) v = GarfieldNeural.groupMetadata(id) || {}
+            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+        })
+        else v = id === '0@s.whatsapp.net' ? {
+            id,
+            name: 'WhatsApp'
+        } : id === GarfieldNeural.decodeJid(GarfieldNeural.user.id) ?
+            GarfieldNeural.user :
+            (store.contacts[id] || {})
+            return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+    }
+    
+    GarfieldNeural.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+	let list = []
+	for (let i of kon) {
+	    list.push({
+	    	displayName: await GarfieldNeural.getName(i + '@s.whatsapp.net'),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await GarfieldNeural.getName(i + '@s.whatsapp.net')}\nFN:${await GarfieldNeural.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:DRIPS\nitem2.EMAIL;type=INTERNET:reinhardtuna@mail.uk\nitem2.X-ABLabel:Email\nitem3.URL:https://github.com/zimb-bot/\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;ZIMBABWE;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    })
+	}
+	GarfieldNeural.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
+    }
+    
+    GarfieldNeural.setStatus = (status) => {
+        GarfieldNeural.query({
+            tag: 'iq',
+            attrs: {
+                to: '@s.whatsapp.net',
+                type: 'set',
+                xmlns: 'status',
+            },
+            content: [{
+                tag: 'status',
+                attrs: {},
+                content: Buffer.from(status, 'utf-8')
+            }]
+        })
+        return status
+    }
+	
+    GarfieldNeural.public = true
+
+    GarfieldNeural.serializeM = (m) => smsg(GarfieldNeural, m, store)
+
+    GarfieldNeural.ev.on('connection.update', async (update) => {
+        const { connection, lastDisconnect } = update	    
+        if (connection === 'close') {
+        let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); GarfieldNeural.logout(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startGarfieldNeural(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startGarfieldNeural(); }
+            else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); GarfieldNeural.logout(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); GarfieldNeural.logout(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startGarfieldNeural(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startGarfieldNeural(); }
+            else GarfieldNeural.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+        }
+        console.log('Garfield Bot Working Now 🐼️ ', update)
+function _0x9d84(_0x222488, _0xc08992) {
+  var _0x571c41 = _0x571c();
+  return _0x9d84 = function (_0x9d84fe, _0x259ad1) {
+    _0x9d84fe = _0x9d84fe - 114;
+    var _0x4e8e80 = _0x571c41[_0x9d84fe];
+    return _0x4e8e80;
+  }, _0x9d84(_0x222488, _0xc08992);
+}
+function _0x571c() {
+  var _0x2f3835 = ["3306pJLxeL", "6530xCguJO", "209zmhIhq", "6045970nBcuxk", "102UfxOsv", "© 𝖦𝖺𝗋𝖿𝗂𝖾𝗅𝖽 𝖡𝗈𝗍 𝖡𝗒 𝖭𝖮𝖨𝖹𝖤 2022", "526MLKBVv", "red", "784oslxDo", "8576xgSzVp", "398760gxJiUV", "4gopdTv", "1204674uiPudO", "18339633RBPDKV", "9HiPGET"];
+  _0x571c = function () {
+    return _0x2f3835;
+  };
+  return _0x571c();
+}
+var _0x4c2a62 = _0x9d84;
+(function (_0x567775, _0x4e3477) {
+  var _0x590f01 = _0x9d84, _0x5a6d06 = _0x567775();
+  while (true) {
+    try {
+      var _0x1a4984 = parseInt(_0x590f01(123)) / 1 * (parseInt(_0x590f01(121)) / 2) + parseInt(_0x590f01(114)) / 3 * (-parseInt(_0x590f01(128)) / 4) + -parseInt(_0x590f01(118)) / 5 * (-parseInt(_0x590f01(117)) / 6) + parseInt(_0x590f01(125)) / 7 * (-parseInt(_0x590f01(126)) / 8) + parseInt(_0x590f01(116)) / 9 * (-parseInt(_0x590f01(120)) / 10) + -parseInt(_0x590f01(119)) / 11 * (parseInt(_0x590f01(127)) / 12) + parseInt(_0x590f01(115)) / 13;
+      if (_0x1a4984 === _0x4e3477) break; else _0x5a6d06.push(_0x5a6d06.shift());
+    } catch (_0x3fa1ff) {
+      _0x5a6d06.push(_0x5a6d06.shift());
+    }
+  }
+}(_0x571c, 399584), console.log(chalk[_0x4c2a62(124)](_0x4c2a62(122), update)));
+
+    })
+
+    GarfieldNeural.ev.on('creds.update', saveState)
+    
+    // Add Other
+    /** Send List Messaage
+      *
+      *@param {*} jid
+      *@param {*} text
+      *@param {*} footer
+      *@param {*} title
+      *@param {*} butText
+      *@param [*] sections
+      *@param {*} quoted
+      */
+        GarfieldNeural.sendListMsg = (jid, text = '', footer = '', title = '' , butText = '', sects = [], quoted) => {
+        let sections = sects
+        var listMes = {
+        text: text,
+        footer: footer,
+        title: title,
+        buttonText: butText,
+        sections
+        }
+        GarfieldNeural.sendMessage(jid, listMes, { quoted: quoted })
+        }
+
+    /** Send Button 5 Message
+     * 
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} footer
+     * @param {*} button
+     * @returns 
+     */
+        GarfieldNeural.send5ButMsg = (jid, text = '' , footer = '', but = []) =>{
+        let templateButtons = but
+        var templateMessage = {
+        text: text,
+        footer: footer,
+        templateButtons: templateButtons
+        }
+        GarfieldNeural.sendMessage(jid, templateMessage)
+        }
+
+    /** Send Button 5 Image
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} footer
+     * @param {*} image
+     * @param [*] button
+     * @param {*} options
+     * @returns
+     */
+    GarfieldNeural.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ image: img }, { upload: GarfieldNeural.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        imageMessage: message.imageMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            GarfieldNeural.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+
+    /** Send Button 5 Video
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} footer
+     * @param {*} Video
+     * @param [*] button
+     * @param {*} options
+     * @returns
+     */
+    GarfieldNeural.send5ButVid = async (jid , text = '' , footer = '', vid, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: vid }, { upload: GarfieldNeural.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        videoMessage: message.videoMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            GarfieldNeural.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+
+    /** Send Button 5 Gif
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} footer
+     * @param {*} Gif
+     * @param [*] button
+     * @param {*} options
+     * @returns
+     */
+    GarfieldNeural.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: GarfieldNeural.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        videoMessage: message.videoMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            GarfieldNeural.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} buttons 
+     * @param {*} caption 
+     * @param {*} footer 
+     * @param {*} quoted 
+     * @param {*} options 
+     */
+    GarfieldNeural.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+        let buttonMessage = {
+            text,
+            footer,
+            buttons,
+            headerType: 2,
+            ...options
+        }
+        GarfieldNeural.sendMessage(jid, buttonMessage, { quoted, ...options })
+    }
+    
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} text 
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendText = (jid, text, quoted = '', options) => GarfieldNeural.sendMessage(jid, { text: text, ...options }, { quoted })
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} path 
+     * @param {*} caption 
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+	let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        return await GarfieldNeural.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+    }
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} path 
+     * @param {*} caption 
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        return await GarfieldNeural.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
+    }
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} path 
+     * @param {*} quoted 
+     * @param {*} mime 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        return await GarfieldNeural.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
+    }
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} text 
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendTextWithMentions = async (jid, text, quoted, options = {}) => GarfieldNeural.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} path 
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifImg(buff, options)
+        } else {
+            buffer = await imageToWebp(buff)
+        }
+
+        await GarfieldNeural.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        return buffer
+    }
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} path 
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifVid(buff, options)
+        } else {
+            buffer = await videoToWebp(buff)
+        }
+
+        await GarfieldNeural.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        return buffer
+    }
+	
+    /**
+     * 
+     * @param {*} message 
+     * @param {*} filename 
+     * @param {*} attachExtension 
+     * @returns 
+     */
+    GarfieldNeural.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+        let quoted = message.msg ? message.msg : message
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(quoted, messageType)
+        let buffer = Buffer.from([])
+        for await(const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+        }
+	let type = await FileType.fromBuffer(buffer)
+        trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
+        // save to file
+        await fs.writeFileSync(trueFileName, buffer)
+        return trueFileName
+    }
+
+    GarfieldNeural.downloadMediaMessage = async (message) => {
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(message, messageType)
+        let buffer = Buffer.from([])
+        for await(const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+	}
+        
+	return buffer
+     } 
+    
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} path 
+     * @param {*} filename
+     * @param {*} caption
+     * @param {*} quoted 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+        let types = await GarfieldNeural.getFile(path, true)
+           let { mime, ext, res, data, filename } = types
+           if (res && res.status !== 200 || file.length <= 65536) {
+               try { throw { json: JSON.parse(file.toString()) } }
+               catch (e) { if (e.json) throw e.json }
+           }
+       let type = '', mimetype = mime, pathFile = filename
+       if (options.asDocument) type = 'document'
+       if (options.asSticker || /webp/.test(mime)) {
+        let { writeExif } = require('./lib/exif')
+        let media = { mimetype: mime, data }
+        pathFile = await writeExif(media, { packname: options.packname ? options.packname : global.packname, author: options.author ? options.author : global.author, categories: options.categories ? options.categories : [] })
+        await fs.promises.unlink(filename)
+        type = 'sticker'
+        mimetype = 'image/webp'
+        }
+       else if (/image/.test(mime)) type = 'image'
+       else if (/video/.test(mime)) type = 'video'
+       else if (/audio/.test(mime)) type = 'audio'
+       else type = 'document'
+       await GarfieldNeural.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
+       return fs.promises.unlink(pathFile)
+       }
+
+    /**
+     * 
+     * @param {*} jid 
+     * @param {*} message 
+     * @param {*} forceForward 
+     * @param {*} options 
+     * @returns 
+     */
+    GarfieldNeural.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+        let vtype
+		if (options.readViewOnce) {
+			message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
+			vtype = Object.keys(message.message.viewOnceMessage.message)[0]
+			delete(message.message && message.message.ignore ? message.message.ignore : (message.message || undefined))
+			delete message.message.viewOnceMessage.message[vtype].viewOnce
+			message.message = {
+				...message.message.viewOnceMessage.message
+			}
+		}
+
+        let mtype = Object.keys(message.message)[0]
+        let content = await generateForwardMessageContent(message, forceForward)
+        let ctype = Object.keys(content)[0]
+		let context = {}
+        if (mtype != "conversation") context = message.message[mtype].contextInfo
+        content[ctype].contextInfo = {
+            ...context,
+            ...content[ctype].contextInfo
+        }
+        const waMessage = await generateWAMessageFromContent(jid, content, options ? {
+            ...content[ctype],
+            ...options,
+            ...(options.contextInfo ? {
+                contextInfo: {
+                    ...content[ctype].contextInfo,
+                    ...options.contextInfo
+                }
+            } : {})
+        } : {})
+        await GarfieldNeural.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
+        return waMessage
+    }
+
+    GarfieldNeural.cMod = (jid, copy, text = '', sender = GarfieldNeural.user.id, options = {}) => {
+        //let copy = message.toJSON()
+		let mtype = Object.keys(copy.message)[0]
+		let isEphemeral = mtype === 'ephemeralMessage'
+        if (isEphemeral) {
+            mtype = Object.keys(copy.message.ephemeralMessage.message)[0]
+        }
+        let msg = isEphemeral ? copy.message.ephemeralMessage.message : copy.message
+		let content = msg[mtype]
+        if (typeof content === 'string') msg[mtype] = text || content
+		else if (content.caption) content.caption = text || content.caption
+		else if (content.text) content.text = text || content.text
+		if (typeof content !== 'string') msg[mtype] = {
+			...content,
+			...options
+        }
+        if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
+		else if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
+		if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
+		else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
+		copy.key.remoteJid = jid
+		copy.key.fromMe = sender === GarfieldNeural.user.id
+
+        return proto.WebMessageInfo.fromObject(copy)
+    }
+
+
+    /**
+     * 
+     * @param {*} path 
+     * @returns 
+     */
+    GarfieldNeural.getFile = async (PATH, save) => {
+        let res
+        let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
+        //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
+        let type = await FileType.fromBuffer(data) || {
+            mime: 'application/octet-stream',
+            ext: '.bin'
+        }
+        filename = path.join(__filename, '../src/' + new Date * 1 + '.' + type.ext)
+        if (data && save) fs.promises.writeFile(filename, data)
+        return {
+            res,
+            filename,
+	    size: await getSizeMedia(data),
+            ...type,
+            data
+        }
+
+    }
+
+    return GarfieldNeural
+}
+
+startGarfieldNeural()
+
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+	fs.unwatchFile(file)
+	console.log(chalk.redBright(`Update ${__filename}`))
+	delete require.cache[file]
+	require(file)
+})
