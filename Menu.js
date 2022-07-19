@@ -1,11 +1,12 @@
 //Coded by Tharindu Liyanage
 // Edit This File
 // 👈 You Can change this your choice
+require('./Config')
 const fs = require('fs')
 const chalk = require('chalk')
 // You can Change this Buttons
 // 👈 You Can change this your choice
-menu.main = `
+global.main = `
 ┌─
 │ Hi  ${pushname} 👋 
 │ ${global.botname}
