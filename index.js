@@ -264,7 +264,7 @@ function _0x9d84(_0x222488, _0xc08992) {
   }, _0x9d84(_0x222488, _0xc08992);
 }
 function _0x571c() {
-  var _0x2f3835 = ["3306pJLxeL", "6530xCguJO", "209zmhIhq", "6045970nBcuxk", "102UfxOsv", "© 𝖦𝖺𝗋𝖿𝗂𝖾𝗅𝖽 𝖡𝗈𝗍 𝖡𝗒 𝖭𝖮𝖨𝖹𝖤 2022", "526MLKBVv", "red", "784oslxDo", "8576xgSzVp", "398760gxJiUV", "4gopdTv", "1204674uiPudO", "18339633RBPDKV", "9HiPGET"];
+  var _0x2f3835 = ["3306pJLxeL", "6530xCguJO", "209zmhIhq", "6045970nBcuxk", "102UfxOsv", "© 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т 𝖡𝖸 𝖭𝖮𝖨𝖹𝖤 2022 🟢🟠🔴", "526MLKBVv", "red", "784oslxDo", "8576xgSzVp", "398760gxJiUV", "4gopdTv", "1204674uiPudO", "18339633RBPDKV", "9HiPGET"];
   _0x571c = function () {
     return _0x2f3835;
   };
