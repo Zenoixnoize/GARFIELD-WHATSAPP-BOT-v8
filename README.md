@@ -1,5 +1,5 @@
 # GARFIELD WHATSAPP USER BOT LATEST v8.3
-# 🍿Fix All bugs And Add new Plugins
+# 🎉 Fix All bugs And Add new Plugins
 <img src="/Cloud/PicsArt_22-04-17_16-25-53-440.png">
 
 <br>
