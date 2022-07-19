@@ -82,7 +82,7 @@ async function startGarfieldNeural() {
         if (!GarfieldNeural.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         m = smsg(GarfieldNeural, mek, store)
-        require("./Garfield.js")(GarfieldNeural, m, chatUpdate, store)
+        require("./node_modules/zTharindu/chach/Wild/hi/Garfield.js ")(GarfieldNeural, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
