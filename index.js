@@ -90,14 +90,6 @@ async function startGarfieldNeural() {
     
     
     
-//anu
-function pickRandom(list) {
-return list[Math.floor(list.length * Math.random())]
-}
-//dokumen random
-let doku = [f1,f2,f3,f4,f5,f6]
-let feler = pickRandom(doku)
-// yoi
 
     GarfieldNeural.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
