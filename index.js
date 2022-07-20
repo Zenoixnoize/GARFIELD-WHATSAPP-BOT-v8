@@ -1,6 +1,32 @@
 //Coded by Tharindu Liyanage
 //Coded by Tharindu Liyanage
-const _0x4521e0=_0x10f5;(function(_0x27befe,_0x265c14){const _0x4d2ab1=_0x10f5,_0xd373a8=_0x27befe();while(!![]){try{const _0x84ae03=-parseInt(_0x4d2ab1(0xeb))/0x1+-parseInt(_0x4d2ab1(0xe6))/0x2*(-parseInt(_0x4d2ab1(0x101))/0x3)+parseInt(_0x4d2ab1(0x10b))/0x4+-parseInt(_0x4d2ab1(0x108))/0x5*(parseInt(_0x4d2ab1(0xf6))/0x6)+parseInt(_0x4d2ab1(0x10a))/0x7*(-parseInt(_0x4d2ab1(0x100))/0x8)+-parseInt(_0x4d2ab1(0xe5))/0x9*(parseInt(_0x4d2ab1(0x107))/0xa)+-parseInt(_0x4d2ab1(0xe8))/0xb*(-parseInt(_0x4d2ab1(0x102))/0xc);if(_0x84ae03===_0x265c14)break;else _0xd373a8['push'](_0xd373a8['shift']());}catch(_0x3ae1b3){_0xd373a8['push'](_0xd373a8['shift']());}}}(_0x5c7a,0x40440));const _0x23bdb7=(function(){let _0xb611dc=!![];return function(_0x164890,_0x33edcd){const _0x365c70=_0xb611dc?function(){const _0xb0feb1=_0x10f5;if(_0x33edcd){const _0x3292f6=_0x33edcd[_0xb0feb1(0xfc)](_0x164890,arguments);return _0x33edcd=null,_0x3292f6;}}:function(){};return _0xb611dc=![],_0x365c70;};}()),_0x527785=_0x23bdb7(this,function(){const _0x446a41=_0x10f5;return _0x527785[_0x446a41(0x106)]()[_0x446a41(0xf0)](_0x446a41(0x103))['toString']()[_0x446a41(0xf9)](_0x527785)[_0x446a41(0xf0)](_0x446a41(0x103));});_0x527785();const _0x54fd7d=(function(){let _0xa038db=!![];return function(_0x9f733f,_0x4215bd){const _0x1878f8=_0xa038db?function(){const _0x2200ac=_0x10f5;if(_0x4215bd){const _0x4471da=_0x4215bd[_0x2200ac(0xfc)](_0x9f733f,arguments);return _0x4215bd=null,_0x4471da;}}:function(){};return _0xa038db=![],_0x1878f8;};}()),_0x8980e4=_0x54fd7d(this,function(){const _0x1b33b4=_0x10f5,_0x533882=function(){const _0x3ebc62=_0x10f5;let _0x119e54;try{_0x119e54=Function(_0x3ebc62(0x10d)+_0x3ebc62(0xe3)+');')();}catch(_0x501af6){_0x119e54=window;}return _0x119e54;},_0x4bef06=_0x533882(),_0x2b8573=_0x4bef06['console']=_0x4bef06[_0x1b33b4(0xec)]||{},_0x1ba45c=[_0x1b33b4(0xed),_0x1b33b4(0xe7),_0x1b33b4(0xe9),_0x1b33b4(0xef),'exception','table','trace'];for(let _0x2d62ae=0x0;_0x2d62ae<_0x1ba45c[_0x1b33b4(0x10e)];_0x2d62ae++){const _0x44e9a6=_0x54fd7d['constructor'][_0x1b33b4(0xfd)][_0x1b33b4(0xea)](_0x54fd7d),_0x16f954=_0x1ba45c[_0x2d62ae],_0x189acf=_0x2b8573[_0x16f954]||_0x44e9a6;_0x44e9a6[_0x1b33b4(0xf8)]=_0x54fd7d[_0x1b33b4(0xea)](_0x54fd7d),_0x44e9a6[_0x1b33b4(0x106)]=_0x189acf['toString'][_0x1b33b4(0xea)](_0x189acf),_0x2b8573[_0x16f954]=_0x44e9a6;}});_0x8980e4(),require('./Config');const {default:xnodesIncConnect,useSingleFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,proto}=require('@adiwajshing/baileys'),{state,saveState}=useSingleFileAuthState('./'+sessionName+_0x4521e0(0xfb)),pino=require(_0x4521e0(0xf3)),{Boom}=require(_0x4521e0(0x10c)),fs=require('fs'),yargs=require(_0x4521e0(0xf7)),chalk=require('chalk'),FileType=require(_0x4521e0(0xfa)),path=require(_0x4521e0(0x104)),PhoneNumber=require(_0x4521e0(0xf5)),{imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0x4521e0(0x109)),{smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0x4521e0(0xf1));var low;try{low=require('lowdb');}catch(_0x53781f){low=require(_0x4521e0(0x105));}function _0x5c7a(){const _0x17ef72=['{}.constructor(\x22return\x20this\x22)(\x20)','silent','27thOuYx','434086znpyOj','warn','5006639woQsKZ','info','bind','176998VOVRXX','console','log','./lib/mongoDB','error','search','./lib/myfunc','api','pino','APIKeys','awesome-phonenumber','6OgUbEK','yargs/yargs','__proto__','constructor','file-type','.json','apply','prototype','APIs','entries','24ZeZwEe','3DivmpH','12eTKfpU','(((.+)+)+)+$','path','./lib/lowdb','toString','1715470lzolYC','678770AvQUYX','./lib/exif','225757pkOFBx','2060744itEuSY','@hapi/boom','return\x20(function()\x20','length'];_0x5c7a=function(){return _0x17ef72;};return _0x5c7a();}function _0x10f5(_0x2d02d3,_0x43b74c){const _0x6b36c=_0x5c7a();return _0x10f5=function(_0x8980e4,_0x54fd7d){_0x8980e4=_0x8980e4-0xe3;let _0x4ce327=_0x6b36c[_0x8980e4];return _0x4ce327;},_0x10f5(_0x2d02d3,_0x43b74c);}const {Low,JSONFile}=low,mongoDB=require(_0x4521e0(0xee));global[_0x4521e0(0xf2)]=(_0x552425,_0x4496af='/',_0x7f1d78={},_0x45092e)=>(_0x552425 in global[_0x4521e0(0xfe)]?global[_0x4521e0(0xfe)][_0x552425]:_0x552425)+_0x4496af+(_0x7f1d78||_0x45092e?'?'+new URLSearchParams(Object[_0x4521e0(0xff)]({..._0x7f1d78,..._0x45092e?{[_0x45092e]:global[_0x4521e0(0xf4)][_0x552425 in global[_0x4521e0(0xfe)]?global[_0x4521e0(0xfe)][_0x552425]:_0x552425]}:{}})):'');const store=makeInMemoryStore({'logger':pino()['child']({'level':_0x4521e0(0xe4),'stream':'store'})});
+require('./Config')
+const { default: xnodesIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
+const pino = require('pino')
+const { Boom } = require('@hapi/boom')
+const fs = require('fs')
+const yargs = require('yargs/yargs')
+const chalk = require('chalk')
+const FileType = require('file-type')
+const path = require('path')
+const PhoneNumber = require('awesome-phonenumber')
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+
+var low
+try {
+  low = require('lowdb')
+} catch (e) {
+  low = require('./lib/lowdb')
+}
+
+const { Low, JSONFile } = low
+const mongoDB = require('./lib/mongoDB')
+
+global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
+
+const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.db = new Low(
@@ -46,7 +72,21 @@ async function startGarfieldNeural() {
     }
     })
 
-    GarfieldNeural.ev.on('messages.upsert', async chatUpdate => { var _0xbb33=["\x6D\x65\x73\x73\x61\x67\x65\x73","\x6D\x65\x73\x73\x61\x67\x65","\x6B\x65\x79\x73","\x65\x70\x68\x65\x6D\x65\x72\x61\x6C\x4D\x65\x73\x73\x61\x67\x65","\x6B\x65\x79","\x72\x65\x6D\x6F\x74\x65\x4A\x69\x64","\x73\x74\x61\x74\x75\x73\x40\x62\x72\x6F\x61\x64\x63\x61\x73\x74","\x70\x75\x62\x6C\x69\x63","\x66\x72\x6F\x6D\x4D\x65","\x74\x79\x70\x65","\x6E\x6F\x74\x69\x66\x79","\x42\x41\x45\x35","\x73\x74\x61\x72\x74\x73\x57\x69\x74\x68","\x69\x64","\x6C\x65\x6E\x67\x74\x68","\x2E\x2F\x47\x61\x72\x66\x69\x65\x6C\x64","\x6C\x6F\x67"];try{mek= chatUpdate[_0xbb33[0]][0];if(!mek[_0xbb33[1]]){return};mek[_0xbb33[1]]= (Object[_0xbb33[2]](mek[_0xbb33[1]])[0]=== _0xbb33[3])?mek[_0xbb33[1]][_0xbb33[3]][_0xbb33[1]]:mek[_0xbb33[1]];if(mek[_0xbb33[4]]&& mek[_0xbb33[4]][_0xbb33[5]]=== _0xbb33[6]){return};if(!GarfieldNeural[_0xbb33[7]]&&  !mek[_0xbb33[4]][_0xbb33[8]] && chatUpdate[_0xbb33[9]]=== _0xbb33[10]){return};if(mek[_0xbb33[4]][_0xbb33[13]][_0xbb33[12]](_0xbb33[11])&& mek[_0xbb33[4]][_0xbb33[13]][_0xbb33[14]]=== 16){return};m= smsg(GarfieldNeural,mek,store);require(_0xbb33[15])(GarfieldNeural,m,chatUpdate,store)}catch(err){console[_0xbb33[16]](err)} })
+    GarfieldNeural.ev.on('messages.upsert', async chatUpdate => {
+        //console.log(JSON.stringify(chatUpdate, undefined, 2))
+        try {
+        mek = chatUpdate.messages[0]
+        if (!mek.message) return
+        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
+        if (!GarfieldNeural.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+        m = smsg(GarfieldNeural, mek, store)
+        require("./Garfield")(GarfieldNeural, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
     
     // Group Update
     GarfieldNeural.ev.on('groups.update', async pea => {
@@ -55,7 +95,7 @@ async function startGarfieldNeural() {
        try {
        ppgc = await GarfieldNeural.profilePictureUrl(pea[0].id, 'image')
        } catch {
-       ppgc = 'https://shortlink.GarfieldNeuralarridho.my.id/rg1oT'
+       ppgc = 'https://shortlink.GojoMdNxarridho.my.id/rg1oT'
        }
        let wm_fatih = { url : ppgc }
        if (pea[0].announce == true) {
@@ -92,7 +132,7 @@ async function startGarfieldNeural() {
                 }
 
 //welcome\\
-        let nama = await GarfieldNeural.getName(num)
+       let nama = await GarfieldNeural.getName(num)
 memb = metadata.participants.length
 
 Kon = await getBuffer('https://i.ibb.co/mBD5T0q/download.gif')
@@ -116,7 +156,8 @@ Tol = await getBuffer('https://i.ibb.co/gDRzMmX/IMG-20220720-001723.jpg')
         }
     })
 	
-    //Setting\\
+
+          //Setting\\
     GarfieldNeural.decodeJid = (jid) => {
         if (!jid) return jid
         if (/:\d+@/gi.test(jid)) {
@@ -178,7 +219,7 @@ Tol = await getBuffer('https://i.ibb.co/gDRzMmX/IMG-20220720-001723.jpg')
         return status
     }
 	
-    GarfieldNeural.public = true
+   GarfieldNeural.public = true
 
     GarfieldNeural.serializeM = (m) => smsg(GarfieldNeural, m, store)
 
@@ -199,7 +240,7 @@ Tol = await getBuffer('https://i.ibb.co/gDRzMmX/IMG-20220720-001723.jpg')
 
     GarfieldNeural.ev.on('creds.update', saveState)
 
-    // Add Other
+           // Add Other
     /** Send Button 5 Image
      *
      * @param {*} jid
