@@ -34,6 +34,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "fs": "0.0.1-security",
     "got": "^11.8.3",
+    "mumaker": "^1.0.0",
     "g-i-s": "^2.1.6",
     "google-it": "^1.6.2",
     "hxz-api": "^1.0.1",
