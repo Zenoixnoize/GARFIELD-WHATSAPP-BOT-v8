@@ -6,17 +6,7 @@
 // Not more..
 // Also I am Student
 // Follow My Facebook - https://www.facebook.com/TharinduLiyanages
-var _0x6b29=["\x2E\x2F\x43\x6F\x6E\x66\x69\x67","\x40\x61\x64\x69\x77\x61\x6A\x73\x68\x69\x6E\x67\x2F\x62\x61\x69\x6C\x65\x79\x73","\x2E\x2F","\x2E\x6A\x73\x6F\x6E","\x70\x69\x6E\x6F","\x40\x68\x61\x70\x69\x2F\x62\x6F\x6F\x6D","\x66\x73","\x79\x61\x72\x67\x73\x2F\x79\x61\x72\x67\x73","\x63\x68\x61\x6C\x6B","\x66\x69\x6C\x65\x2D\x74\x79\x70\x65","\x70\x61\x74\x68","\x61\x77\x65\x73\x6F\x6D\x65\x2D\x70\x68\x6F\x6E\x65\x6E\x75\x6D\x62\x65\x72","\x2E\x2F\x6C\x69\x62\x2F\x65\x78\x69\x66","\x2E\x2F\x6C\x69\x62\x2F\x6D\x79\x66\x75\x6E\x63"];require(_0x6b29[0]);const {default:GarfieldNeuralConnect,useSingleFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,proto}=require(_0x6b29[1]);const {state,saveState}=useSingleFileAuthState(`${_0x6b29[2]}${sessionName}${_0x6b29[3]}`);const pino=require(_0x6b29[4]);const {Boom}=require(_0x6b29[5]);const fs=require(_0x6b29[6]);const yargs=require(_0x6b29[7]);const chalk=require(_0x6b29[8]);const FileType=require(_0x6b29[9]);const path=require(_0x6b29[10]);const PhoneNumber=require(_0x6b29[11]);const {imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0x6b29[12]);const {formatp,tanggal,formatDate,getTime,clockString,runtime,jsonformat,format,parseMention,getRandom}=require(_0x6b29[13]);const {smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0x6b29[13])
-
-var low
-try {
-  low = require('lowdb')
-} catch (e) {
-  low = require('./lib/lowdb')
-}
-
-const { Low, JSONFile } = low
-const mongoDB = require('./lib/mongoDB')
+var _0xebc2=["\x2E\x2F\x43\x6F\x6E\x66\x69\x67","\x40\x61\x64\x69\x77\x61\x6A\x73\x68\x69\x6E\x67\x2F\x62\x61\x69\x6C\x65\x79\x73","\x2E\x2F","\x2E\x6A\x73\x6F\x6E","\x70\x69\x6E\x6F","\x40\x68\x61\x70\x69\x2F\x62\x6F\x6F\x6D","\x66\x73","\x79\x61\x72\x67\x73\x2F\x79\x61\x72\x67\x73","\x63\x68\x61\x6C\x6B","\x66\x69\x6C\x65\x2D\x74\x79\x70\x65","\x70\x61\x74\x68","\x61\x77\x65\x73\x6F\x6D\x65\x2D\x70\x68\x6F\x6E\x65\x6E\x75\x6D\x62\x65\x72","\x2E\x2F\x6C\x69\x62\x2F\x65\x78\x69\x66","\x2E\x2F\x6C\x69\x62\x2F\x6D\x79\x66\x75\x6E\x63","\x6C\x6F\x77\x64\x62","\x2E\x2F\x6C\x69\x62\x2F\x6C\x6F\x77\x64\x62","\x2E\x2F\x6C\x69\x62\x2F\x6D\x6F\x6E\x67\x6F\x44\x42"];require(_0xebc2[0]);const {default:GarfieldNeuralConnect,useSingleFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,proto}=require(_0xebc2[1]);const {state,saveState}=useSingleFileAuthState(`${_0xebc2[2]}${sessionName}${_0xebc2[3]}`);const pino=require(_0xebc2[4]);const {Boom}=require(_0xebc2[5]);const fs=require(_0xebc2[6]);const yargs=require(_0xebc2[7]);const chalk=require(_0xebc2[8]);const FileType=require(_0xebc2[9]);const path=require(_0xebc2[10]);const PhoneNumber=require(_0xebc2[11]);const {imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0xebc2[12]);const {formatp,tanggal,formatDate,getTime,clockString,runtime,jsonformat,format,parseMention,getRandom}=require(_0xebc2[13]);const {smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0xebc2[13]);var low;try{low= require(_0xebc2[14])}catch(e){low= require(_0xebc2[15])};const {Low,JSONFile}=low;const mongoDB=require(_0xebc2[16])
 
 global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 
@@ -49,7 +39,7 @@ async function startGarfieldNeural() {
     const GarfieldNeural = GarfieldNeuralConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т','OPERA','3.0.0'],
+        browser: ['ZIM BOT INC','Safari','1.0.0'],
         auth: state
     })
 
@@ -82,7 +72,6 @@ async function startGarfieldNeural() {
         }
     })
     
- 
 
     GarfieldNeural.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
@@ -136,7 +125,7 @@ GarfieldNeural.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
                 } else if (anu.action == 'remove') {
                     let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     he = `He/She is gone bro ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
-                    let link = `https://youtu.be/ww4z2m3uORU`
+                    let link = `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`
 let buttons = [
 {buttonId: `halo`, buttonText: {displayText: 'BYE'}, type: 1}
 ]
@@ -153,7 +142,7 @@ buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title: `BYE DONT COME BACK HERE OKAY`,
-body: `Follow Now`,
+body: `GARFIELD-WHATSAPP-BOT-v8`,
 mediaType:2,
 thumbnail: buffer,
 sourceUrl: link,
@@ -247,7 +236,33 @@ GarfieldNeural.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
             else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startGarfieldNeural(); }
             else GarfieldNeural.end(`Unknown DisconnectReason: ${reason}|${connection}`)
         }
-  var _0xefab=["","\x62\x6F\x74\x6E\x61\x6D\x65","\x20\x57\x6F\x72\x6B\x69\x6E\x67\x20\x4E\x6F\x77\x20\uD83E\uDD8B","\x6C\x6F\x67","\x33\x33\x30\x36\x70\x4A\x4C\x78\x65\x4C","\x36\x35\x33\x30\x78\x43\x67\x75\x4A\x4F","\x32\x30\x39\x7A\x6D\x68\x49\x68\x71","\x36\x30\x34\x35\x39\x37\x30\x6E\x42\x63\x75\x78\x6B","\x31\x30\x32\x55\x66\x78\x4F\x73\x76","\x50\x6F\x77\x65\x72\x65\x64\x20\x42\x79\x20\uD835\uDDA6\u039B\uD835\uDDB1\uD835\uDDA5\uD835\uDDA8\u039E\uD835\uDDAB\uD835\uDDA3\x20\uD835\uDDA1\uD835\uDDAE\u0422\x20\uD83D\uDEF0\uFE0F","\x35\x32\x36\x4D\x4C\x4B\x42\x56\x76","\x72\x65\x64","\x37\x38\x34\x6F\x73\x6C\x78\x44\x6F","\x38\x35\x37\x36\x78\x67\x53\x7A\x56\x70","\x33\x39\x38\x37\x36\x30\x67\x78\x4A\x69\x55\x56","\x34\x67\x6F\x70\x64\x54\x76","\x31\x32\x30\x34\x36\x37\x34\x75\x69\x50\x75\x64\x4F","\x31\x38\x33\x33\x39\x36\x33\x33\x52\x42\x50\x44\x4B\x56","\x39\x48\x69\x50\x47\x45\x54","\x73\x68\x69\x66\x74","\x70\x75\x73\x68"];console[_0xefab[3]](`${_0xefab[0]}${global[_0xefab[1]]}${_0xefab[2]}`,update);function _0x9d84(_0x1668x2,_0x1668x3){var _0x1668x4=_0x571c();return _0x9d84= function(_0x1668x5,_0x1668x6){_0x1668x5= _0x1668x5- 114;var _0x1668x7=_0x1668x4[_0x1668x5];return _0x1668x7},_0x9d84(_0x1668x2,_0x1668x3)}function _0x571c(){var _0x1668x9=[_0xefab[4],_0xefab[5],_0xefab[6],_0xefab[7],_0xefab[8],_0xefab[9],_0xefab[10],_0xefab[11],_0xefab[12],_0xefab[13],_0xefab[14],_0xefab[15],_0xefab[16],_0xefab[17],_0xefab[18]];_0x571c= function(){return _0x1668x9};return _0x571c()}var _0x4c2a62=_0x9d84;(function(_0x1668xb,_0x1668xc){var _0x1668xd=_0x9d84,_0x1668xe=_0x1668xb();while(true){try{var _0x1668xf=parseInt(_0x1668xd(123))/ 1* (parseInt(_0x1668xd(121))/ 2)+ parseInt(_0x1668xd(114))/ 3* (-parseInt(_0x1668xd(128))/ 4)+ -parseInt(_0x1668xd(118))/ 5 * (-parseInt(_0x1668xd(117))/ 6)+ parseInt(_0x1668xd(125))/ 7* (-parseInt(_0x1668xd(126))/ 8)+ parseInt(_0x1668xd(116))/ 9* (-parseInt(_0x1668xd(120))/ 10)+ -parseInt(_0x1668xd(119))/ 11 * (parseInt(_0x1668xd(127))/ 12)+ parseInt(_0x1668xd(115))/ 13;if(_0x1668xf=== _0x1668xc){break}else {_0x1668xe[_0xefab[20]](_0x1668xe[_0xefab[19]]())}}catch(_0x3fa1ff){_0x1668xe[_0xefab[20]](_0x1668xe[_0xefab[19]]())}}}(_0x571c,399584),console[_0xefab[3]](chalk[_0x4c2a62(124)](_0x4c2a62(122),update)))
+        console.log(`${global.botname} Working Now... 🦋`, update)
+function _0x9d84(_0x222488, _0xc08992) {
+  var _0x571c41 = _0x571c();
+  return _0x9d84 = function (_0x9d84fe, _0x259ad1) {
+    _0x9d84fe = _0x9d84fe - 114;
+    var _0x4e8e80 = _0x571c41[_0x9d84fe];
+    return _0x4e8e80;
+  }, _0x9d84(_0x222488, _0xc08992);
+}
+function _0x571c() {
+  var _0x71a3=["\x2E\x2F\x43\x6F\x6E\x66\x69\x67","\x40\x61\x64\x69\x77\x61\x6A\x73\x68\x69\x6E\x67\x2F\x62\x61\x69\x6C\x65\x79\x73","\x2E\x2F","\x2E\x6A\x73\x6F\x6E","\x70\x69\x6E\x6F","\x40\x68\x61\x70\x69\x2F\x62\x6F\x6F\x6D","\x66\x73","\x79\x61\x72\x67\x73\x2F\x79\x61\x72\x67\x73","\x63\x68\x61\x6C\x6B","\x66\x69\x6C\x65\x2D\x74\x79\x70\x65","\x70\x61\x74\x68","\x61\x77\x65\x73\x6F\x6D\x65\x2D\x70\x68\x6F\x6E\x65\x6E\x75\x6D\x62\x65\x72","\x2E\x2F\x6C\x69\x62\x2F\x65\x78\x69\x66","\x2E\x2F\x6C\x69\x62\x2F\x6D\x79\x66\x75\x6E\x63"];require(_0x71a3[0]);const {default:GarfieldNeuralConnect,useSingleFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,proto}=require(_0x71a3[1]);const {state,saveState}=useSingleFileAuthState(`${_0x71a3[2]}${sessionName}${_0x71a3[3]}`);const pino=require(_0x71a3[4]);const {Boom}=require(_0x71a3[5]);const fs=require(_0x71a3[6]);const yargs=require(_0x71a3[7]);const chalk=require(_0x71a3[8]);const FileType=require(_0x71a3[9]);const path=require(_0x71a3[10]);const PhoneNumber=require(_0x71a3[11]);const {imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0x71a3[12]);const {formatp,tanggal,formatDate,getTime,clockString,runtime,jsonformat,format,parseMention,getRandom}=require(_0x71a3[13]);const {smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0x71a3[13])
+}
+var _0x4c2a62 = _0x9d84;
+(function (_0x567775, _0x4e3477) {
+  var _0x590f01 = _0x9d84, _0x5a6d06 = _0x567775();
+  while (true) {
+    try {
+      var _0x1a4984 = parseInt(_0x590f01(123)) / 1 * (parseInt(_0x590f01(121)) / 2) + parseInt(_0x590f01(114)) / 3 * (-parseInt(_0x590f01(128)) / 4) + -parseInt(_0x590f01(118)) / 5 * (-parseInt(_0x590f01(117)) / 6) + parseInt(_0x590f01(125)) / 7 * (-parseInt(_0x590f01(126)) / 8) + parseInt(_0x590f01(116)) / 9 * (-parseInt(_0x590f01(120)) / 10) + -parseInt(_0x590f01(119)) / 11 * (parseInt(_0x590f01(127)) / 12) + parseInt(_0x590f01(115)) / 13;
+      if (_0x1a4984 === _0x4e3477) break; else _0x5a6d06.push(_0x5a6d06.shift());
+    } catch (_0x3fa1ff) {
+      _0x5a6d06.push(_0x5a6d06.shift());
+    }
+  }
+}(_0x571c, 399584), console.log(chalk[_0x4c2a62(124)](_0x4c2a62(122), update)));
+
+    })
+
     GarfieldNeural.ev.on('creds.update', saveState)
     
     // Add Other
