@@ -1,13 +1,15 @@
-# GARFIELD WHATSAPP USER BOT LATEST v8.3
-# 🎉 Fix All bugs And Add new Plugins
+# 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т LATEST v8.4
+# ❇️ INTRODUCING 𝖭Ξ𝖴𝖱Λ𝖫 Ai v1.0
 <img src="/Cloud/PicsArt_22-04-17_16-25-53-440.png">
 
 <br>
 <center><img src="/Cloud/PicsArt_22-04-15_10-13-49-205.png"><center>
   
  <br>
- <h1> New Features and upgrades v8.3 💯</h1>
+ <h1> New Features and upgrades v8.4 🛰️</h1>
  <br>
+ <br>
+ 🦋 Introducing Neural Ai v1.0
   <b>
   🦋 Fix Bot stoping (24 hour Activation 24×7)
   <br>
@@ -104,7 +106,7 @@ I am a Learning. Not more..
 Also I am Student 
     </b></b>
 
-   <h1>𝗩8.0 𝗡𝗲𝘄</h1>
+   <h1>𝗩8.4 𝗡𝗲𝘄</h1>
    <b>This has been updated to the latest 2022 npm module and Latest Whatsapp Button Version. There are 120+ plugins. Deploying is quick and easy. Download speeds and upload speeds are very fast.The speed of response has increased. Fixed some bugs. Updated daily baileys 2022 Updated</b>    
   <br>
    <br>
@@ -127,3 +129,4 @@ Join our Telegram helping group <a href="https://t.me/xnodesbot">Join Now</a>
 
 
   
+
