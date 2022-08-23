@@ -75,6 +75,18 @@ You can use it without any hesitation
    🦋 Then go More > View logs and Once loaded, open your WhatsApp and keep it online
 <br>
    <br>
+   <br>
+   <h1>𝖭Ξ𝖴𝖱Λ𝖫 ΛＩ❇️</h1>
+   <br>
+   <center><img src="https://i.ibb.co/TcLVfMZ/Picsart-22-08-22-15-21-41-175.png">
+   <br>
+     <br>
+   Neural Ai is an automated program powered by a Tts engine
+This can currently only be used with Garfeel bots. The deV of this is ZENOI.
+This can be used to make your work easier and even fun. Currently this is v1.0
+ This has been updated to the latest 2022 npm module and Latest Whatsapp  Version. There are 150+ plugins. Deploying is quick and easy. Download speeds and upload speeds are very fast.The speed of response has increased. Fixed some bugs. Updated daily baileys 2022 Updated    
+   <br>
+     <br>
   <center><img src="/Cloud/logo.png">
     <br>
    <h1>Licence 📑</h1>
