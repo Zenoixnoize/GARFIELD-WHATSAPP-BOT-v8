@@ -87,6 +87,9 @@ This can be used to make your work easier and even fun. Currently this is v1.0
  This has been updated to the latest 2022 npm module and Latest Whatsapp  Version. There are 150+ plugins. Deploying is quick and easy. Download speeds and upload speeds are very fast.The speed of response has increased. Fixed some bugs. Updated daily baileys 2022 Updated    
    <br>
      <br>
+     <br>
+     <h1>𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т</h1>
+     <br>
   <center><img src="/Cloud/logo.png">
     <br>
    <h1>Licence 📑</h1>
