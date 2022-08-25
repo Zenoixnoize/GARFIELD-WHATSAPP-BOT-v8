@@ -1,6 +1,6 @@
 {
   "name": "Garfield-Bot",
-  "version": "8.8.6",
+  "version": "8.0.6",
   "description": "WhatsApp Using Lib Baileys Multi Device",
   "main": "index.js",
   "type": "commonjs",
