@@ -1,6 +1,6 @@
 declare function makeOrderedDictionary<T>(idGetter: (item: T) => string): {
     array: T[];
-    get: (id: string) => T | undefined;
+    get: (id: string) => T;
     upsert: (item: T, mode: 'append' | 'prepend') => void;
     update: (item: T) => boolean;
     remove: (item: T) => boolean;

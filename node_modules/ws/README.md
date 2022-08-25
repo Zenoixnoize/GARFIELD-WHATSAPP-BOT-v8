@@ -33,7 +33,7 @@ can use one of the many wrappers available on npm, like
   - [Multiple servers sharing a single HTTP/S server](#multiple-servers-sharing-a-single-https-server)
   - [Client authentication](#client-authentication)
   - [Server broadcast](#server-broadcast)
-  - [echo.websocket.org demo](#echowebsocketorg-demo)
+  - [Round-trip time](#round-trip-time)
   - [Use the Node.js streams API](#use-the-nodejs-streams-api)
   - [Other examples](#other-examples)
 - [FAQ](#faq)
@@ -68,6 +68,13 @@ necessarily need to have a C++ compiler installed on your machine.
 - `npm install --save-optional utf-8-validate`: Allows to efficiently check if a
   message contains valid UTF-8.
 
+To not even try to require and use these modules, use the
+[`WS_NO_BUFFER_UTIL`](./doc/ws.md#ws_no_buffer_util) and
+[`WS_NO_UTF_8_VALIDATE`](./doc/ws.md#ws_no_utf_8_validate) environment
+variables. These might be useful to enhance security in systems where a user can
+put a package in the package search path of an application of another user, due
+to how the Node.js resolver algorithm works.
+
 ## API docs
 
 See [`/doc/ws.md`](./doc/ws.md) for Node.js-like documentation of ws classes and
@@ -97,9 +104,9 @@ into the creation of [raw deflate/inflate streams][node-zlib-deflaterawdocs].
 See [the docs][ws-server-options] for more options.
 
 ```js
-const WebSocket = require('ws');
+import WebSocket, { WebSocketServer } from 'ws';
 
-const wss = new WebSocket.Server({
+const wss = new WebSocketServer({
   port: 8080,
   perMessageDeflate: {
     zlibDeflateOptions: {
@@ -118,7 +125,7 @@ const wss = new WebSocket.Server({
     // Below options specified as default values.
     concurrencyLimit: 10, // Limits zlib concurrency for perf.
     threshold: 1024 // Size (in bytes) below which messages
-    // should not be compressed.
+    // should not be compressed if context takeover is disabled.
   }
 });
 ```
@@ -128,7 +135,7 @@ server. To always disable the extension on the client set the
 `perMessageDeflate` option to `false`.
 
 ```js
-const WebSocket = require('ws');
+import WebSocket from 'ws';
 
 const ws = new WebSocket('ws://www.host.com/path', {
   perMessageDeflate: false
@@ -140,7 +147,7 @@ const ws = new WebSocket('ws://www.host.com/path', {
 ### Sending and receiving text data
 
 ```js
-const WebSocket = require('ws');
+import WebSocket from 'ws';
 
 const ws = new WebSocket('ws://www.host.com/path');
 
@@ -148,15 +155,15 @@ ws.on('open', function open() {
   ws.send('something');
 });
 
-ws.on('message', function incoming(data) {
-  console.log(data);
+ws.on('message', function message(data) {
+  console.log('received: %s', data);
 });
 ```
 
 ### Sending binary data
 
 ```js
-const WebSocket = require('ws');
+import WebSocket from 'ws';
 
 const ws = new WebSocket('ws://www.host.com/path');
 
@@ -174,13 +181,13 @@ ws.on('open', function open() {
 ### Simple server
 
 ```js
-const WebSocket = require('ws');
+import { WebSocketServer } from 'ws';
 
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function incoming(message) {
-    console.log('received: %s', message);
+  ws.on('message', function message(data) {
+    console.log('received: %s', data);
   });
 
   ws.send('something');
@@ -190,19 +197,19 @@ wss.on('connection', function connection(ws) {
 ### External HTTP/S server
 
 ```js
-const fs = require('fs');
-const https = require('https');
-const WebSocket = require('ws');
+import { createServer } from 'https';
+import { readFileSync } from 'fs';
+import { WebSocketServer } from 'ws';
 
-const server = https.createServer({
-  cert: fs.readFileSync('/path/to/cert.pem'),
-  key: fs.readFileSync('/path/to/key.pem')
+const server = createServer({
+  cert: readFileSync('/path/to/cert.pem'),
+  key: readFileSync('/path/to/key.pem')
 });
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocketServer({ server });
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function incoming(message) {
-    console.log('received: %s', message);
+  ws.on('message', function message(data) {
+    console.log('received: %s', data);
   });
 
   ws.send('something');
@@ -214,13 +221,13 @@ server.listen(8080);
 ### Multiple servers sharing a single HTTP/S server
 
 ```js
-const http = require('http');
-const WebSocket = require('ws');
-const url = require('url');
+import { createServer } from 'http';
+import { parse } from 'url';
+import { WebSocketServer } from 'ws';
 
-const server = http.createServer();
-const wss1 = new WebSocket.Server({ noServer: true });
-const wss2 = new WebSocket.Server({ noServer: true });
+const server = createServer();
+const wss1 = new WebSocketServer({ noServer: true });
+const wss2 = new WebSocketServer({ noServer: true });
 
 wss1.on('connection', function connection(ws) {
   // ...
@@ -231,7 +238,7 @@ wss2.on('connection', function connection(ws) {
 });
 
 server.on('upgrade', function upgrade(request, socket, head) {
-  const pathname = url.parse(request.url).pathname;
+  const { pathname } = parse(request.url);
 
   if (pathname === '/foo') {
     wss1.handleUpgrade(request, socket, head, function done(ws) {
@@ -252,21 +259,21 @@ server.listen(8080);
 ### Client authentication
 
 ```js
-const http = require('http');
-const WebSocket = require('ws');
+import { createServer } from 'http';
+import { WebSocketServer } from 'ws';
 
-const server = http.createServer();
-const wss = new WebSocket.Server({ noServer: true });
+const server = createServer();
+const wss = new WebSocketServer({ noServer: true });
 
 wss.on('connection', function connection(ws, request, client) {
-  ws.on('message', function message(msg) {
-    console.log(`Received message ${msg} from user ${client}`);
+  ws.on('message', function message(data) {
+    console.log(`Received message ${data} from user ${client}`);
   });
 });
 
 server.on('upgrade', function upgrade(request, socket, head) {
   // This function is not defined on purpose. Implement it with your own logic.
-  authenticate(request, (err, client) => {
+  authenticate(request, function next(err, client) {
     if (err || !client) {
       socket.write('HTTP/1.1 401 Unauthorized\r\n\r\n');
       socket.destroy();
@@ -290,15 +297,15 @@ A client WebSocket broadcasting to all connected WebSocket clients, including
 itself.
 
 ```js
-const WebSocket = require('ws');
+import WebSocket, { WebSocketServer } from 'ws';
 
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function incoming(data) {
+  ws.on('message', function message(data, isBinary) {
     wss.clients.forEach(function each(client) {
       if (client.readyState === WebSocket.OPEN) {
-        client.send(data);
+        client.send(data, { binary: isBinary });
       }
     });
   });
@@ -309,29 +316,27 @@ A client WebSocket broadcasting to every other connected WebSocket clients,
 excluding itself.
 
 ```js
-const WebSocket = require('ws');
+import WebSocket, { WebSocketServer } from 'ws';
 
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function incoming(data) {
+  ws.on('message', function message(data, isBinary) {
     wss.clients.forEach(function each(client) {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
-        client.send(data);
+        client.send(data, { binary: isBinary });
       }
     });
   });
 });
 ```
 
-### echo.websocket.org demo
+### Round-trip time
 
 ```js
-const WebSocket = require('ws');
+import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://echo.websocket.org/', {
-  origin: 'https://websocket.org'
-});
+const ws = new WebSocket('wss://websocket-echo.com/');
 
 ws.on('open', function open() {
   console.log('connected');
@@ -342,8 +347,8 @@ ws.on('close', function close() {
   console.log('disconnected');
 });
 
-ws.on('message', function incoming(data) {
-  console.log(`Roundtrip time: ${Date.now() - data} ms`);
+ws.on('message', function message(data) {
+  console.log(`Round-trip time: ${Date.now() - data} ms`);
 
   setTimeout(function timeout() {
     ws.send(Date.now());
@@ -354,13 +359,11 @@ ws.on('message', function incoming(data) {
 ### Use the Node.js streams API
 
 ```js
-const WebSocket = require('ws');
+import WebSocket, { createWebSocketStream } from 'ws';
 
-const ws = new WebSocket('wss://echo.websocket.org/', {
-  origin: 'https://websocket.org'
-});
+const ws = new WebSocket('wss://websocket-echo.com/');
 
-const duplex = WebSocket.createWebSocketStream(ws, { encoding: 'utf8' });
+const duplex = createWebSocketStream(ws, { encoding: 'utf8' });
 
 duplex.pipe(process.stdout);
 process.stdin.pipe(duplex);
@@ -380,9 +383,9 @@ Otherwise, see the test cases.
 The remote IP address can be obtained from the raw socket.
 
 ```js
-const WebSocket = require('ws');
+import { WebSocketServer } from 'ws';
 
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws, req) {
   const ip = req.socket.remoteAddress;
@@ -408,15 +411,13 @@ In these cases ping messages can be used as a means to verify that the remote
 endpoint is still responsive.
 
 ```js
-const WebSocket = require('ws');
-
-function noop() {}
+import { WebSocketServer } from 'ws';
 
 function heartbeat() {
   this.isAlive = true;
 }
 
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
   ws.isAlive = true;
@@ -428,7 +429,7 @@ const interval = setInterval(function ping() {
     if (ws.isAlive === false) return ws.terminate();
 
     ws.isAlive = false;
-    ws.ping(noop);
+    ws.ping();
   });
 }, 30000);
 
@@ -445,7 +446,7 @@ without knowing it. You might want to add a ping listener on your clients to
 prevent that. A simple implementation would be:
 
 ```js
-const WebSocket = require('ws');
+import WebSocket from 'ws';
 
 function heartbeat() {
   clearTimeout(this.pingTimeout);
@@ -459,7 +460,7 @@ function heartbeat() {
   }, 30000 + 1000);
 }
 
-const client = new WebSocket('wss://echo.websocket.org/');
+const client = new WebSocket('wss://websocket-echo.com/');
 
 client.on('open', heartbeat);
 client.on('ping', heartbeat);
@@ -491,5 +492,4 @@ We're using the GitHub [releases][changelog] for changelog entries.
 [server-report]: http://websockets.github.io/ws/autobahn/servers/
 [session-parse-example]: ./examples/express-session-parse
 [socks-proxy-agent]: https://github.com/TooTallNate/node-socks-proxy-agent
-[ws-server-options]:
-  https://github.com/websockets/ws/blob/master/doc/ws.md#new-websocketserveroptions-callback
+[ws-server-options]: ./doc/ws.md#new-websocketserveroptions-callback
