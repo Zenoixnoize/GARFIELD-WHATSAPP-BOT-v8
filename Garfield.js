@@ -16,6 +16,7 @@ const { exec, spawn, execSync } = require("child_process")
 const axios = require('axios')
 const path = require('path')
 const os = require('os')
+const maker = require('mumaker')
 const fetch = require('node-fetch')
 const google = require('google-it')
 const mel = require('kitsune-api')
@@ -4812,7 +4813,7 @@ reply("Success Changing Menu To "+q)
                        
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -4843,56 +4844,39 @@ reply("Success Changing Menu To "+q)
            
              }
             break
-                                                    case 'command': {
-let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                listMessage :{
-                    title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu ${global.emoji02}\n\n`,
-                    buttonText: "Menu",
-                    footerText: `${global.botname}`,
-                    listType: "SINGLE_SELECT",
-                    sections: [
-						],
-          listType: 1
-                }
-            }), {})
-            GarfieldNeural.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-            break
-           case 'command':             
-  let sections = []   
-  let listmenu = [`mainmenu`,`allmenu`,`groupmenu`,`ownermenu`,`downloadmenu`,`searchmenu`,`searchmenu`,`textpromenu`,`animemenu`,`textpromenu`,`religiousmenu`,`Randomanimemenu`,`convertmenu`,`databasemenu`,`anonymouschatmenu`,`voicechangermenu`,`helps`]
-  let listmenuu = [`Main Menu 🦋`,`All Menu 🐣`,`Group Menu 💌`,`Owner Menu 🍿`,`Download Menu ⬇️`,`Search Menu 🔎`,`Random Menu 🧊`,`TEXTPRO Menu 💬`,`Religious Menu 🗑️`,`Random Anime Menu 🐦`,`Convert Menu 🔁`,`Data Base Menu 📡`,`Anonymous Chat Menu 🐻`,`Voice Changer Menu 🎙️`,`Thanks To 💐`]
-  
-  let nombor = 1
-  let startnum = 0
-  
-  for (let x of listmenu) {
-  const list = {title: 'MENU NUMBER ' + nombor++,                                                                             //by drips
-  rows: [
-  {
-  title: `${listmenuu[startnum++]}`,
-  
-  rowId: `${prefix}${x}`
-  }, 
-  ]
-  }
-  sections.push(list)   
-  }
+                 case 'music': {
+                   
+let sections = []   
+let listmenu = [`allmenu`,`mainmenu` ,`ownermenu`,`groupmenu`,`downloadmenu`,`convertmenu`,`searchmenu`,`chatmenu`,`gamemenu`,`funmenu`,`Textpromenu`,`rpgmenu`,`randommenu`,`databasemenu`,`horoscopemenu`,`Voicechangermenu`,`helps`]
+                    let listmenuu = [`All Menu 🎉`,`Main Menu 🐦`,`Owner Menu 🦋`,`Group Menu 🐻`,`Download Menu ⬇️`,`Convert Menu 🔁`,`Search Menu 🔎`,`Anonymous Chat Menu 💌`,`Game Menu 🎮`,`Fun Menu 🪁`,`TXT PRO MENU ☔`,
+`RPG menu 🦁`,`Random Menu 🍃`,`Database Menu 📑`,`Horoscope Menu 🌈`,`Voice Changer Menu 🎙️`,`Thanks To 💐`]
+                    let listmenuuu = [`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`,`${pushname}`]
+                    let nombor = 1
+                    let startnum = 0
+                    let startnumm = 0
+                    for (let x of listmenu) {
+                    const list = {title: 'RESULT NUMBER ' + nombor++,
+                    rows: [
+                       {
+                        title: `${listmenuu[startnum++]}`,
+                        description: `${listmenuuu[startnumm++]}`,
+                        rowId: `${prefix}${x}`
+	    }, 
+	    ]
+     }
+     sections.push(list)   
+     }
   const sendm =  GarfieldNeural.sendMessage(
-  m.chat, 
-  {
-  text: `
- Hi ${pushname}
- ${global.botname}
-`,
-  footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т`,
-  title: `*LIST MENU*`,
-  jpegThumbnail: buffer,
-  buttonText: "CLICK HERE",
-  sections
-  }, { quoted : m })
-break
+      m.chat, 
+      {
+       text: `Hi 👋 ${pushname}`,
+       footer: ` ${global.botname} `,
+       title: `*${global.botname} List Menu 🦋*`,
+       buttonText: "MENU",
+       sections
+      }, { quoted : m })
+      }
+     break
             
     case 'owner': case 'donate':  {
     var Hi = (`Hi ${pushname} ., I am ${global.botname} I was created by ${global.ownername}`)
@@ -5289,7 +5273,7 @@ break
             case 'mainmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5330,7 +5314,7 @@ break
             case 'rpgmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5361,7 +5345,7 @@ break
             case 'funmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5433,7 +5417,7 @@ break
             case 'ownermenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5476,7 +5460,7 @@ break
                         case 'downloadmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5523,7 +5507,7 @@ break
             case 'searchmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5575,7 +5559,7 @@ break
             case 'randommenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5601,7 +5585,7 @@ break
                         case 'randomanimenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5649,7 +5633,7 @@ break
             case 'textpromenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5701,7 +5685,7 @@ break
             case 'convertmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5736,7 +5720,7 @@ break
             case 'databasemenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5765,7 +5749,7 @@ break
             case 'chatmenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5790,7 +5774,7 @@ break
             case 'voicechangermenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5822,7 +5806,7 @@ break
             case 'horoscopemenu': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5874,7 +5858,7 @@ break
             case 'helps': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
@@ -5891,7 +5875,7 @@ break
             case 'deploy': {
                 let buttons = [
                     {buttonId: `allmenu`, buttonText: {displayText: `${global.allmenu}`}, type: 1},
-                    {buttonId:  `command`, buttonText: {displayText: `${global.listmenu}`}, type: 1},
+                    {buttonId:  `command`, buttonText: {displayText: `${global.list}`}, type: 1},
                     {buttonId: `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
                 ]
                 let buttonMessage = {
