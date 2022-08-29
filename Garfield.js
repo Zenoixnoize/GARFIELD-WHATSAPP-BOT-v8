@@ -4844,7 +4844,7 @@ reply("Success Changing Menu To "+q)
            
              }
             break
-                 case 'music': {
+                 case 'command': {
                    
 let sections = []   
 let listmenu = [`allmenu`,`mainmenu` ,`ownermenu`,`groupmenu`,`downloadmenu`,`convertmenu`,`searchmenu`,`chatmenu`,`gamemenu`,`funmenu`,`Textpromenu`,`rpgmenu`,`randommenu`,`databasemenu`,`horoscopemenu`,`Voicechangermenu`,`helps`]
