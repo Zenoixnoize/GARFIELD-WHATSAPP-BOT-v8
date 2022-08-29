@@ -320,10 +320,7 @@ const reply = (teks) => {
         }
 
         //Push Message To Console && Auto Read\\
-        if (m.message) {
-            GarfieldNeural.sendReadReceipt(m.chat, m.sender, [m.key.id])
-            console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('🦋 From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('🛰️ In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
-        }
+       //Remove from update
 	
 	//reset limit every 12 hours\\
         let cron = require('node-cron')
