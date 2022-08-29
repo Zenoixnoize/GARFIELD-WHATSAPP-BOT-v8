@@ -21,7 +21,7 @@
   "author": "TharinduLiyanage",
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys": "git+https://github.com/Zenoixnoize/GARFIELD-BOT-API.git",
+    "@adiwajshing/baileys": "git+https://github.com/NOIZE-DEVELOPMENT/Baileys.git",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "2.0.0",
     "awesome-phonenumber": "^3.3.0 ",
