@@ -1,14 +1,5 @@
-// Hi  I m
-// Tharindu Liyanage 
-// I am 16 years old developer...
-// From Sri Lanka
-// I am a Learning.
-// Not more..
-// Also I am Student
-// Follow My Facebook - https://www.facebook.com/TharinduLiyanages
-
 require('./Config')
-const { default: GarfieldXnodes, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: GarfieldNeuralConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
@@ -20,6 +11,7 @@ const path = require('path')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const moment = require('moment-timezone')
 
 var low
 try {
@@ -59,10 +51,10 @@ if (global.db) setInterval(async () => {
   }, 30 * 1000)
 
 async function startGarfieldNeural() {
-    const GarfieldNeural = GarfieldXnodes({
+    const GarfieldNeural = GarfieldNeuralConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['GARFIELD','Safari','1.0.0'],
+        browser: ['𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т','OPERA','3.0.0'],
         auth: state
     })
 
@@ -72,8 +64,8 @@ async function startGarfieldNeural() {
     GarfieldNeural.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
-    let pa7rick = await GarfieldNeural.sendContact(callerId, global.owner)
-    GarfieldNeural.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : pa7rick })
+    let Neuralfek = await GarfieldNeural.sendContact(callerId, global.owner)
+    GarfieldNeural.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : Neuralfek })
     await sleep(8000)
     await GarfieldNeural.updateBlockStatus(callerId, "block")
     }
@@ -104,19 +96,22 @@ async function startGarfieldNeural() {
        } catch {
        ppgc = 'https://shortlink.GarfieldNeuralarridho.my.id/rg1oT'
        }
-       let wm_fatih = { url : ppgc }
+       let lolNeural = { url : ppgc }
        if (pea[0].announce == true) {
-       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `Group Settings Change Message`, wm_fatih, [])
+       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${botname}`, lolNeural, [])
        } else if(pea[0].announce == false) {
-       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `Group Settings Change Message`, wm_fatih, [])
+       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${botname}`, lolNeural, [])
        } else if (pea[0].restrict == true) {
-       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `Group Settings Change Message`, wm_fatih, [])
+       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${botname}`, lolNeural, [])
        } else if (pea[0].restrict == false) {
-       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `Group Settings Change Message`, wm_fatih, [])
+       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${botname}`, lolNeural, [])
        } else {
-       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `Group Settings Change Message`, wm_fatih, [])
+       GarfieldNeural.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${botname}`, lolNeural, [])
      }
     })
+    
+
+//document randomizer
 
     GarfieldNeural.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
@@ -141,22 +136,96 @@ async function startGarfieldNeural() {
 //welcome\\
         let nama = await GarfieldNeural.getName(num)
 memb = metadata.participants.length
-
-Kon = await getBuffer('https://i.ibb.co/kGd1F8M/istockphoto-1185848117-170667a.jpg')
-
-Tol = await getBuffer('https://i.ibb.co/Hn1cY18/IMG-20220721-155108.jpg')
+NeuralWlcm = await getBuffer('https://i.ibb.co/kGd1F8M/istockphoto-1185848117-170667a.jpg')
+NeuralLft = await getBuffer('https://i.ibb.co/Hn1cY18/IMG-20220721-155108.jpg')
                 if (anu.action == 'add') {
-                    GarfieldNeural.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `
-🦋 Hi @${num.split("@")[0]},
-🦋 Welcome To ${metadata.subject}
-
-🦋 Description: ${metadata.desc}
-
-🦋 ${global.welcome}`} )
+                const Neuralbuffer = await getBuffer(ppuser)
+                let NeuralName = num
+                const xtime = moment.tz('Asia/Colombo').format('HH:mm:ss')
+	            const xdate = moment.tz('Asia/Colombo').format('DD/MM/YYYY')
+	            const xmembers = metadata.participants.length
+                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "94711502119-1631526398@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: NeuralWlcm, surface: 200, message: `${metadata.subject}`, orderTitle: 'Neural', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                Neuralbody = `┌─
+│「 𝗛𝗶 👋 」
+└┬ 「 @${NeuralName.split("@")[0]}  」
+   │${global.emoji02}  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
+   │${global.emoji02}  ${metadata.subject}
+   │${global.emoji02}  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │${global.emoji02} ${xmembers}th
+   │${global.emoji02}  𝗝𝗼𝗶𝗻𝗲𝗱 : 
+   │${global.emoji02} ${xtime} ${xdate}
+   └───────────────┈ ⳹`
+      //if you copy the code value,
+   //dont forget to put my name(Neural) as credit
+   //you fail to put, i sue you for sure!
+let buttons = [
+{buttonId: `wkwwk`, buttonText: {displayText: 'Welcome 💐'}, type: 1}
+]
+let buttonMessage = {
+document: fs.readFileSync('./TempCloud/Neura.xlsx'),
+mimetype: docs,
+jpegThumbnail:global.thumb,
+mentions: [num],
+fileName: `${metadata.subject}`,
+fileLength: 99999999999999,
+caption: Neuralbody,
+footer: `${global.botname}`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: `${global.botname}`,
+body: `${global.welcome}`,
+mediaType:2,
+thumbnail: global.thumb,
+sourceUrl: `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`,
+mediaUrl: `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`
+}}
+}
+GarfieldNeural.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                 } else if (anu.action == 'remove') {
-                    GarfieldNeural.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `🦋 @${num.split("@")[0]} Left ${metadata.subject}
-
-${global.bye}` })
+                	const Neuralbuffer = await getBuffer(ppuser)
+                    const Neuraltime = moment.tz('Asia/Colombo').format('HH:mm:ss')
+	                const Neuraldate = moment.tz('Asia/Colombo').format('DD/MM/YYYY')
+                	let NeuralName = num
+                    const Neuralmembers = metadata.participants.length
+                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "94711502119-1631526398@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: Neuralbuffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'Neural', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                    Neuralbody = `┌─
+│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
+└┬ 「 @${NeuralName.split("@")[0]}  」
+   │${global.emoji02}  𝗟𝗲𝗳𝘁 
+   │${global.emoji02} ${metadata.subject}
+   │${global.emoji02}  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │${global.emoji02} ${Neuralmembers}th
+   │${global.emoji02}  𝗧𝗶𝗺𝗲 : 
+   │${global.emoji02}  ${Neuraltime} ${Neuraldate}
+   └───────────────┈ ⳹`
+      //if you copy the code value,
+   //dont forget to put my name(Neural) as credit
+   //you fail to put, i sue you for sure!
+let buttons = [
+{buttonId: `hi`, buttonText: {displayText: 'BYE 🦋'}, type: 1}
+]
+let buttonMessage = {
+document: fs.readFileSync('./TempCloud/Neura.xlsx'),
+mimetype: docs,
+jpegThumbnail:global.thumb,
+mentions: [num],
+fileName: `${metadata.subject}`,
+fileLength: 99999999999999,
+caption: Neuralbody,
+footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: `${global.botname}`,
+body: `${global.bye}`,
+mediaType:2,
+thumbnail: global.thumb,
+sourceUrl: `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`,
+mediaUrl: `https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8`
+}}
+}
+GarfieldNeural.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                 }
             }
         } catch (err) {
@@ -203,7 +272,8 @@ ${global.bye}` })
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await GarfieldNeural.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${sc}\nitem2.X-ABLabel:Script\nitem3.URL:${myweb}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${region};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await GarfieldNeural.getName(i + '@s.whatsapp.net')}\nFN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${global.myweb}\nitem2.X-ABLabel:Git\nitem3.URL:${global.myweb}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;Colombo;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	////////////////////////////////////////////////////////////vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8\nitem2.X-ABLabel:Script\nitem3.URL:https://github.com/Zenoixnoize\nitem3.X-ABLabel:Script\nitem4.ADR:;;Mathugama};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	GarfieldNeural.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
@@ -235,13 +305,13 @@ ${global.bye}` })
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); GarfieldNeural.logout(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("🦋Connection closed, reconnecting...."); startGarfieldNeural(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("🦋Connection Lost from Server, reconnecting..."); startGarfieldNeural(); }
-            else if (reason === DisconnectReason.connectionReplaced) { console.log("🦋Connection Replaced, Another New Session Opened, Please Close Current Session First"); GarfieldNeural.logout(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`🦋Device Logged Out, Please Scan Again And Run.`); GarfieldNeural.logout(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("🦋Restart Required, Restarting..."); startGarfieldNeural(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("🦋Connection TimedOut, Reconnecting..."); startGarfieldNeural(); }
-            else GarfieldNeural.end(`🦋Unknown DisconnectReason: ${reason}|${connection}`)
+            else if (reason === DisconnectReason.connectionClosed) { console.log("🐼Connection closed, reconnecting...."); startGarfieldNeural(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("🐼Connection Lost from Server, reconnecting..."); startGarfieldNeural(); }
+            else if (reason === DisconnectReason.connectionReplaced) { console.log("🐼Connection Replaced, Another New Session Opened, Please Close Current Session First"); GarfieldNeural.logout(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`🐼Device Logged Out, Please Scan Again And Run.`); GarfieldNeural.logout(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("🐼Restart Required, Restarting..."); startGarfieldNeural(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("🐼Connection TimedOut, Reconnecting..."); startGarfieldNeural(); }
+            else GarfieldNeural.end(`🐼Unknown DisconnectReason: ${reason}|${connection}`)
         }
         console.log(`${global.botname} Working Now 🦋`, update)
     })
@@ -535,6 +605,83 @@ ${global.bye}` })
 		copy.key.fromMe = sender === GarfieldNeural.user.id
 
         return proto.WebMessageInfo.fromObject(copy)
+    }
+
+
+//send 5 button image by Neural
+    GarfieldNeural.send5ButImg = async (jid , text = '' , footer = '', img, but = [], thumb, options = {}) =>{
+        let message = await prepareWAMessageMedia({ image: img, jpegThumbnail:thumb }, { upload: GarfieldNeural.waUploadToServer })
+        var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        imageMessage: message.imageMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            GarfieldNeural.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+
+
+    //send5butvid by Neural
+        GarfieldNeural.send5ButVid = async (jid , text = '' , footer = '', vid, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: vid }, { upload: GarfieldNeural.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        videoMessage: message.videoMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            GarfieldNeural.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+    
+    
+    //send5butmsg by Neural
+            GarfieldNeural.send5ButMsg = (jid, text = '' , footer = '', but = []) =>{
+        let templateButtons = but
+        var templateMessage = {
+        text: text,
+        footer: footer,
+        templateButtons: templateButtons
+        }
+        GarfieldNeural.sendMessage(jid, templateMessage)
+        }
+
+
+//sendlistmsg by Neural
+        GarfieldNeural.sendListMsg = (jid, text = '', footer = '', title = '' , butText = '', sects = [], quoted) => {
+        let sections = sects
+        var listMes = {
+        text: text,
+        footer: footer,
+        title: title,
+        buttonText: butText,
+        sections
+        }
+        GarfieldNeural.sendMessage(jid, listMes, { quoted: quoted })
+        }
+
+
+    //send5butgif by Neural
+        GarfieldNeural.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: GarfieldNeural.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        videoMessage: message.videoMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            GarfieldNeural.relayMessage(jid, template.message, { messageId: template.key.id })
     }
 
 
