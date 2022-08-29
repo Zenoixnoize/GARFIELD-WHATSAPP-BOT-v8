@@ -320,7 +320,10 @@ const reply = (teks) => {
         }
 
         //Push Message To Console && Auto Read\\
-       
+        if (m.message) {
+            GarfieldNeural.sendReadReceipt(m.chat, m.sender, [m.key.id])
+            console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('🦋 From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('🛰️ In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
+        }
 	
 	//reset limit every 12 hours\\
         let cron = require('node-cron')
@@ -4823,7 +4826,7 @@ await GarfieldNeural.send5ButImg(from, `` + '' + ' ', `
 │ ${global.emoji02} 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │ ${global.emoji02} 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 │ ️${global.botname}  Created by ${global.ownername}  🪁
-│ ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝖭Ξ𝖴𝖱Λ𝖫 ΛＩ v8.4 and 
+│ ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т v8.4 and 
 │ 𝖭Ξ𝖴𝖱Λ𝖫 ΛＩ v1.00             
 └┬──────────────
    │ ${global.botname}
@@ -4835,9 +4838,20 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                     title: `Hi ${pushname}`,
                     description: `Please Choose The Menu ${global.emoji02}\n\n`,
                     buttonText: "Menu",
-                    footerText: `GarfieldNeural.user.name`,
+                    footerText: `${global.botname}`,
                     listType: "SINGLE_SELECT",
-                    sections: [{
+                    sections: [
+						],
+          listType: 1
+                }
+            }), {})
+            GarfieldNeural.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            }
+            break
+            case 'command': {
+
+                const list = {title: `${pushname}`,
+                rows: [{
 								"title": "Main Features",
 								"rows": [
 									{
@@ -4943,17 +4957,30 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									{
 										"title": "Thanks To 💐",
 										"description": "Displays The List Of Credit Of The Bot !!",
-										"rowId": `${prefix}project`
+										"rowId": `project`
 									}
 								]
 							}
-						],
-          listType: 1
-                }
-            }), {})
-            GarfieldNeural.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-            break
+	                 
+	                  ]
+                      }
+                      sections.push(list)   
+                      
+                      const sendm =  GarfieldNeural.sendMessage(
+                      m.chat, 
+                      {
+                      text: `*Hi ${pushname}
+Please Choose The Menu 🦋
+${global.botname}*`,
+                      footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т`,
+                      title: `${global.botname}`,
+                      buttonText: "List Menu",
+                      sections
+                      }, { quoted : m })
+                      }
+                  break
+
+            
     case 'owner': case 'donate':  {
     var Hi = (`Hi ${pushname} ., I am ${global.botname} I was created by ${global.ownername}`)
           let 
@@ -5289,6 +5316,40 @@ case 'neural' :
                 GarfieldNeural.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
+              case 'mainmenu': {
+                let buttons = [
+                    {buttonId: `donate`, buttonText: {displayText: `${global.donate }`}, type: 1},
+                    {buttonId:  `owner`, buttonText: {displayText: `${global.owner}`}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: `${global.thumb}` },
+                    caption:  `
+┏━「 User ${pushname}  ${global.emoji01} 」━━ 
+┃╔═ ©「 MAIN  ${global.emoji02}*  」
+┃╠  ${global.emoji01} alive
+┃╠  ${global.emoji01} script
+┃╠  ${global.emoji01} neural
+┃╠  ${global.emoji01} speedtest
+┃╠  ${global.emoji01} ping
+┃╠  ${global.emoji01} owner
+┃╠  ${global.emoji01} menu
+┃╠  ${global.emoji01} delete
+┃╠  ${global.emoji01} chatinfo
+┃╠  ${global.emoji01} quoted
+┃╠  ${global.emoji01} listpc
+┃╠  ${global.emoji01} listgc
+┃╠  ${global.emoji01} donate
+┃╠  ${global.emoji01} report [bug]
+┃╚═════════════ 
+┗━━「 User ${pushname}  ${global.emoji01} 」━©`,
+                    footer: `${global.botname}`,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                GarfieldNeural.sendMessage(m.chat, buttonMessage, { quoted: m })
+           
+             }
+            break
 case 'mainmenu':
 var unicorn = await getBuffer(global.thumb)
 await GarfieldNeural.send5ButImg(from, `` + '' + ' ', `
@@ -5481,9 +5542,10 @@ await GarfieldNeural.send5ButImg(from, `` + '' + ' ', `
 ┃╚═════════════ 
 ┗━━「 User ${pushname}  ${global.emoji01} 」━©`,unicorn, [{"urlButton": {"displayText": `${global.fbt}`,"url": `${myweb}`}},{"urlButton": {"displayText": `${global.script}`,"url": `${sc}`}},{"quickReplyButton": {"displayText": `${global.donate}`,"id": 'donate'}},{"quickReplyButton": {"displayText": `${global.owner}`,"id": 'owner'}}] )
 break
-case 'searchmenu':
-var unicorn = await getBuffer(global.thumb)
-await GarfieldNeural.send5ButImg(from, `` + '' + ' ', `
+case 'searchmenu': {
+  buffer = await getBuffer(global.thumb)
+  anu =`
+
 ┏━「 User ${pushname}  ${global.emoji01} 」━━ 
 ┃╔══  「 SEARCHER 🔎 」	        
 ┃╠  ${global.emoji01} play [Text]
@@ -5516,8 +5578,34 @@ await GarfieldNeural.send5ButImg(from, `` + '' + ' ', `
 ┃╠  ${global.emoji01} ringtone [Text]
 ┃╠  ${global.emoji01} webtoon [Text]
 ┃╚═════════════ 
-┗━━「 User ${pushname}  ${global.emoji01} 」━©`,unicorn, [{"urlButton": {"displayText": `${global.fbt}`,"url": `${myweb}`}},{"urlButton": {"displayText": `${global.script}`,"url": `${sc}`}},{"quickReplyButton": {"displayText": `${global.donate}`,"id": 'donate'}},{"quickReplyButton": {"displayText": `${global.owner}`,"id": 'owner'}}] )
+┗━━「 User ${pushname}  ${global.emoji01} 」━©
+  `
+  let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: GarfieldNeural.waUploadToServer })
+  const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  templateMessage: {
+  hydratedTemplate: {
+  imageMessage: message.imageMessage,
+  hydratedContentText: anu,
+  hydratedFooterText: `${global.botname}`,
+  hydratedButtons: [{        
+  "urlButton": {
+  "displayText": `${global.fbt}`,
+  "url": `${global.myweb}`
+  }
+  }, {
+  urlButton: {
+  displayText: `${global.script}`,
+  url: 'https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8'
+  }
+  }
+  ]
+  }
+  }
+  }), { userJid: m.chat })
+  GarfieldNeural.relayMessage(m.chat, template.message, { messageId: template.key.id })
+  }
 break
+
 case 'randommenu':
 var unicorn = await getBuffer(global.thumb)
 await GarfieldNeural.send5ButImg(from, `` + '' + ' ', `
