@@ -5879,7 +5879,7 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: `${global.thumb}` },
-                    caption:  'Garfield\nWhatsapp Bot\n From NOIZE Developers\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nPowered By X Nodes Servers\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nAlways On First Whatsapp User Bot in Sri Lanka 🇱🇰 \n▰▰▰▰▰▰▰▰▰▰▰▰▰\nCoded by ZENOI 2022\n▰▰▰▰▰▰▰▰▰▰▰▰▰\n 𝖨 𝖺𝗆 16 𝖸𝖾𝖺𝗋𝗌 𝖮𝗅𝖽 𝖲𝗍𝗎𝖽𝖾𝗇𝗍 𝗂𝗇 𝖲𝗋𝗂 𝖫𝖺𝗇𝗄𝖺 ©\n▰▰▰▰▰▰▰▰▰▰▰▰▰ \nSPECIAL THANKS \n- ʜᴀꜱɪɴᴅᴜ ᴅɪɴᴜꜱʜᴀɴ , ʟᴀꜱɪɴᴅᴜ ɴᴇᴛʜꜱᴀʀᴀ, ᴍᴀʟᴇᴇꜱʜᴀ ɴᴇᴛʜꜱᴀʀᴀ , ꜱᴀʀᴀɴɪ ᴍᴇᴛʜꜱᴀᴅᴇᴇ,ꜱᴇᴡᴍɪ ᴍᴀʟᴇᴇꜱʜᴀ , ᴀꜰɴᴀ ᴘᴀʟɪᴋᴋᴀʟ , ꜰᴀʀʜᴀɴ , ᴀᴛᴛɪᴄᴜꜱ , ʙᴀɪʟᴇʏꜱ , ᴛʜɪᴄᴄʏ ,ʏᴜꜱᴜꜰᴜꜱᴛᴀ  ',unicorn, ',
+                    caption:  'Garfield\nWhatsapp Bot\n From NOIZE Developers\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nPowered By X Nodes Servers\n▰▰▰▰▰▰▰▰▰▰▰▰▰\nAlways On First Whatsapp User Bot in Sri Lanka 🇱🇰 \n▰▰▰▰▰▰▰▰▰▰▰▰▰\nCoded by ZENOI 2022\n▰▰▰▰▰▰▰▰▰▰▰▰▰\n 𝖨 𝖺𝗆 16 𝖸𝖾𝖺𝗋𝗌 𝖮𝗅𝖽 𝖲𝗍𝗎𝖽𝖾𝗇𝗍 𝗂𝗇 𝖲𝗋𝗂 𝖫𝖺𝗇𝗄𝖺 ©\n▰▰▰▰▰▰▰▰▰▰▰▰▰ \nSPECIAL THANKS \n- ʜᴀꜱɪɴᴅᴜ ᴅɪɴᴜꜱʜᴀɴ , ʟᴀꜱɪɴᴅᴜ ɴᴇᴛʜꜱᴀʀᴀ, ᴍᴀʟᴇᴇꜱʜᴀ ɴᴇᴛʜꜱᴀʀᴀ , ꜱᴀʀᴀɴɪ ᴍᴇᴛʜꜱᴀᴅᴇᴇ,ꜱᴇᴡᴍɪ ᴍᴀʟᴇᴇꜱʜᴀ , ᴀꜰɴᴀ ᴘᴀʟɪᴋᴋᴀʟ , ꜰᴀʀʜᴀɴ , ᴀᴛᴛɪᴄᴜꜱ , ʙᴀɪʟᴇʏꜱ , ᴛʜɪᴄᴄʏ ,ʏᴜꜱᴜꜰᴜꜱᴛᴀ',
                     footer: `${global.botname}`,
                     buttons: buttons,
                     headerType: 4
