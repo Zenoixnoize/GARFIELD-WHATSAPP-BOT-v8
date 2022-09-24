@@ -1,12 +1,12 @@
-# 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т LATEST v8.4
-# ❇️ INTRODUCING 𝖭Ξ𝖴𝖱Λ𝖫 Ai v1.0
+# 𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т LATEST v8.5
+# 🍂 Update Node modules
 <img src="/Cloud/PicsArt_22-04-17_16-25-53-440.png">
 
 <br>
 <center><img src="/Cloud/PicsArt_22-04-15_10-13-49-205.png"><center>
   
  <br>
- <h1> New Features and upgrades v8.4 🛰️</h1>
+ <h1> New Features and upgrades v8.5 🛰️</h1>
  <br>
  <br>
  🦋 Introducing Neural Ai v1.0
