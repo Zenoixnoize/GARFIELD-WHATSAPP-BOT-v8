@@ -45,6 +45,7 @@
     "jsdom": "20.0.0",
     "lowdb": "3.0.0",
     "mongoose": "6.6.1",
+    "chalk": "5.0.1",
     "moment-timezone": "0.5.37",
     "kitsune-api": "0.0.0",
     "node-cron": "3.0.2",
