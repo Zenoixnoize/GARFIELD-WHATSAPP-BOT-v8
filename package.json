@@ -21,7 +21,7 @@
   "author": "TharinduLiyanage",
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys": "4.4.0",
+    "@adiwajshing/baileys": "github:Zenoixnoize/staX-API",
     "node-bot-db": "4.5.0"
   },
   "directories": {
