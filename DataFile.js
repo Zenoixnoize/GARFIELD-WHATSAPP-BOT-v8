@@ -5,38 +5,39 @@ const chalk = require('chalk')
 
 //Api Website\\
 global.APIs = {
-	zenz: 'https://zenzapis.xyz',
+	zenz: 'alamrekane6@gmail.com',
 }
 
 //Api Key\\
 global.APIKeys = {
-	'https://zenzapis.xyz': 'sanzychan01', //credit goes to sanzy yt, if api key expire, buy it and put it here?\\
+	'alamrekane6@gmail.com': 'sanzychan01', //credit goes to sanzy yt, if api key expire, buy it and put it here?\\
 }
 // 👈 You Can change this your choice
 global.emoji01 = ['✨'] // 👈 Enter your Emoji 
 global.emoji02 = ['✨'] //👈 Enter your Emoji
 global.notice = ` *Hi ✨ I m*
 *Amark Ξ*
-*I am 16 years old developer...*
-*From Sri Lanka 🇾🇪*
+*I am 17 years old developer...*
+*From Sri Lanka 🇪🇬*
 *I am a Learning.*
 *Not more..*
 *Also I am Student*
-*Follow My Facebook - https://www.facebook.com/zenoixnoize*`  // 👈 Enter Your details and Social Media Links and Anything
+*Follow My Facebook - 
+https://www.facebook.com/profile.php?id=100050653176574*`  // 👈 Enter Your details and Social Media Links and Anything
 global.owner =  ['+201227413255'] //👈  Enter Your number
 global.premium =  ['+201227413255'] //👈  Enter Your number
 global.ownernomer = '+201227413255' //👈  Enter Your number
-global.ownername = 'ZENOI' //👈 Enter Your name
-global.botname = 'ＧＡＲＦＩＥＬＤ ＢＯＴ' //👈 Enter Your Bot name
+global.ownername = 'alamrekani' //👈 Enter Your name
+global.botname = 'alamrekani ＢＯＴ' //👈 Enter Your Bot name
 global.footer = '© 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝖦𝖺𝗋𝖿𝗂𝖾𝗅𝖽 𝖡𝗈𝗍' //👈 Enter Your Name
-global.ig = 'https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v28' // 👈 You Can change this your choice
+global.ig = 'alamrekane6@gmail.com' // 👈 You Can change this your choice
 global.region = 'India, South India, Kerala' // 👈 You Can change this your choice
-global.sc = 'https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v28'
+global.sc = 'https://chat.whatsapp.com/FZdkx0lrGrE0eOkDezDdd6'
 global.fbt = 'Follw Us ✨' // 👈 Enter (Subscribe/Follow/Like now)
 global.myweb = 'https://www.facebook.com/profile.php?id=100050653176574'// 👈 Enter your Social media link to follow now button
 global.welcome = '*Welcome To The Group ✨*' // 👈 You Can change this your choice
 global.bye = '*Bye bye Mother fucker ✨*' // 👈 You Can change this your choice
-global.packname = 'GARFIELD-BOTv8'  // 👈 You Can change this your choice 
+global.packname = 'alamrekani Bot'  // 👈 You Can change this your choice 
 global.author = 'NOIZE DEVELOPMENT' // 👈 You Can change this your choice 
 global.sessionName = 'session' // 👈 You Can change this your choice
 global.prefa = ['','!','.','✨','✨','✨'] // 👈 You Can change this your choice
