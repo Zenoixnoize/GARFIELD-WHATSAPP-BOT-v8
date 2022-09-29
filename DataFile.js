@@ -18,10 +18,7 @@ global.emoji02 = ['✨'] //👈 Enter your Emoji
 global.notice = ` *Hi ✨ I m*
 *Amark Ξ*
 *I am 17 years old developer...*
-*From Sri Lanka 🇪🇬*
-*I am a Learning.*
-*Not more..*
-*Also I am Student*
+*I am misri.*
 *Follow My Facebook - 
 https://www.facebook.com/profile.php?id=100050653176574*`  // 👈 Enter Your details and Social Media Links and Anything
 global.owner =  ['+201227413255'] //👈  Enter Your number
@@ -38,12 +35,12 @@ global.myweb = 'https://www.facebook.com/profile.php?id=100050653176574'// 👈 
 global.welcome = '*Welcome To The Group ✨*' // 👈 You Can change this your choice
 global.bye = '*Bye bye Mother fucker ✨*' // 👈 You Can change this your choice
 global.packname = 'alamrekani Bot'  // 👈 You Can change this your choice 
-global.author = 'NOIZE DEVELOPMENT' // 👈 You Can change this your choice 
-global.sessionName = 'session' // 👈 You Can change this your choice
-global.prefa = ['','!','.','✨','✨','✨'] // 👈 You Can change this your choice
-//Go to https://imgbb.com/, upload a photo of your choice and put its link here
-global.thumb =  'https://i.ibb.co/Jz0mMnC/Pics-Art-22-06-03-01-01-46-876.png' 
-global.spoty = 'https://i.postimg.cc/HW2YbN1b/Pics-Art-22-08-09-16-12-14-489.png'
+عالمي . المؤلف   =   T  a '// 👈 يمكنك تغيير هذا اختياركma
+عالمي . sessionName  =  'session'  // 👈 يمكنك تغيير هذا اختياركr
+عالمي . برية  = [ '' ، '!' ، "." ، '✨' ، '✨' ، '' ] // 👈 يمكنك تغيير هذا اختياركk
+// اذهب إلى https://imgbb.com/ ، وقم بتحميل صورة من اختيارك وضع رابطه
+global.thumb =  'https://images.app.goo.gl/wLYMBYRYRNEbZvop9' 
+global.spoty = 'https://images.app.goo.gl/wLYMBYRYRNEbZvop9'
 //Go to https://imgbb.com/, upload a photo of your choice and put its link here
 global.sp = '⭔'
 global.mess = {
