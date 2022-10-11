@@ -1,0 +1,27 @@
+{
+  "name": "ＧＡＲＦＩＥＬＤ  ＷＨＡＴＳＡＰＰ ＢＯＴ ｖ8.5",
+  "description": "ＦＲＯＭ ＮＯＩＺＥ ᴅᴇᴠᴇʟᴏᴘᴇʀꜱ (24×7 𝖡𝖮𝖳,𝖡𝗎𝗍𝗍𝗈𝗇 𝖡𝗈𝗍 🦋)",
+  "repository": "https://github.com/Zenoixnoize/GARFIELD-WHATSAPP-BOT-v8",
+  "logo": "https://i.ibb.co/G2bpd2B/Pics-Art-22-03-26-14-51-06-509.png",
+  "keywords": ["Garfield", "bot", "whatsapp bot", "ZENOI", "multi device"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+            "url": "https://github.com/yespark/heroku-imagemagick-buildpack"
+        },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+   "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
