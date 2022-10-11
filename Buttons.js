@@ -2,7 +2,7 @@
 // Edit This File 
 const fs = require('fs')
 const chalk = require('chalk')
-// You can Change this Buttons
+// You can Change this Buttons 
 // 👈 You Can change this your choice
 global.list = ('List Menu 🧬')
 global.allmenu = ('All Menu 🎉')
