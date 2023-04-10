@@ -1,6 +1,6 @@
 require('./DataFile.js')
 const { default: XnodesConnect, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("garfield-bot-db")
-const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
+const { state, saveState } = require('./session.json')
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
