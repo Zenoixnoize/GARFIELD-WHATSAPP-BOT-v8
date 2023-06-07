@@ -34,7 +34,7 @@
     "fluent-ffmpeg": "2.1.2",
     "fs": "0.0.1-security",
     "g-i-s": "2.1.6",
-    "garfield-bot-db": "11.0.0",
+    "garfield-bot-db": "https://github.com/WhiskeySockets/Baileys.git",
     "google-it": "1.6.4",
     "google-translate-tts": "0.3.0",
     "got": "12.5.0",
